@@ -57,8 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=CROWDAR-IDEAPAD\MSSQLSERVER03;Initial Catalog=dbsistema;Integrated Se"& _ 
-            "curity=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=CROWDAR-IDEAPAD;Initial Catalog=dbsistema;User ID=sa;Password=asd123")>  _
         Public ReadOnly Property cn() As String
             Get
                 Return CType(Me("cn"),String)
