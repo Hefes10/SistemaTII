@@ -1,8 +1,11 @@
 ﻿Imports System.Windows.Forms
 
 Public Class FrmPrincipal
-
-    Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripButton.Click, NewWindowToolStripMenuItem.Click
+    Private _IdUsuario As String
+    Private _IdRol As String
+    Private _Rol As String
+    Private _Nombre As String
+    Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripButton.Click, NewWindowToolStripMenuItem.Click
         ' Create a new instance of the child form.
         Dim ChildForm As New System.Windows.Forms.Form
         ' Make it a child of this MDI form before showing it.
@@ -85,9 +88,41 @@ Public Class FrmPrincipal
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Property IdUsuario As String
+        Get
+            Return _IdUsuario
+        End Get
+        Set(value As String)
+            _IdUsuario = value
+        End Set
+    End Property
 
-    End Sub
+    Public Property IdRol As String
+        Get
+            Return _IdRol
+        End Get
+        Set(value As String)
+            _IdRol = value
+        End Set
+    End Property
+
+    Public Property Rol As String
+        Get
+            Return _Rol
+        End Get
+        Set(value As String)
+            _Rol = value
+        End Set
+    End Property
+
+    Public Property Nombre As String
+        Get
+            Return _Nombre
+        End Get
+        Set(value As String)
+            _Nombre = value
+        End Set
+    End Property
 
     Private Sub CategoriasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriasToolStripMenuItem.Click
         Dim frm As New FrmCategoria
@@ -111,5 +146,10 @@ Public Class FrmPrincipal
         Dim frm As New FrmUsuario
         frm.MdiParent = Me
         frm.Show()
+    End Sub
+
+    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TsBarrainferior.Text = "Usuario:" & Me.Nombre
+        MsgBox("Bienvenido" & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
     End Sub
 End Class

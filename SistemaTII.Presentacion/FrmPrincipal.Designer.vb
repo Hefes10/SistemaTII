@@ -67,7 +67,7 @@ Partial Class FrmPrincipal
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TsBarrainferior = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
@@ -223,13 +223,13 @@ Partial Class FrmPrincipal
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(174, 26)
         Me.ProveedoresToolStripMenuItem.Text = "&Proveedores"
         '
         'ComprasToolStripMenuItem
         '
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(174, 26)
         Me.ComprasToolStripMenuItem.Text = "&Compras"
         '
         'VentasToolStripMenuItem
@@ -242,13 +242,13 @@ Partial Class FrmPrincipal
         'ClientesToolStripMenuItem
         '
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
         Me.ClientesToolStripMenuItem.Text = "Clien&tes"
         '
         'VentasToolStripMenuItem1
         '
         Me.VentasToolStripMenuItem1.Name = "VentasToolStripMenuItem1"
-        Me.VentasToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.VentasToolStripMenuItem1.Size = New System.Drawing.Size(144, 26)
         Me.VentasToolStripMenuItem1.Text = "&Ventas"
         '
         'AccesoToolStripMenuItem
@@ -261,13 +261,13 @@ Partial Class FrmPrincipal
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(148, 26)
         Me.RolesToolStripMenuItem.Text = "&Roles"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(148, 26)
         Me.UsuariosToolStripMenuItem.Text = "&Usuarios"
         '
         'ConsultasToolStripMenuItem
@@ -366,7 +366,7 @@ Partial Class FrmPrincipal
         'StatusStrip
         '
         Me.StatusStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsBarrainferior})
         Me.StatusStrip.Location = New System.Drawing.Point(0, 704)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
@@ -374,11 +374,11 @@ Partial Class FrmPrincipal
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
-        'ToolStripStatusLabel
+        'TsBarrainferior
         '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(49, 20)
-        Me.ToolStripStatusLabel.Text = "Status"
+        Me.TsBarrainferior.Name = "TsBarrainferior"
+        Me.TsBarrainferior.Size = New System.Drawing.Size(49, 20)
+        Me.TsBarrainferior.Text = "Status"
         '
         'FrmPrincipal
         '
@@ -421,7 +421,7 @@ Partial Class FrmPrincipal
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents PrintPreviewToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
-    Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents TsBarrainferior As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents PrintToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents NewToolStripButton As System.Windows.Forms.ToolStripButton

@@ -22,13 +22,12 @@ Partial Class FrmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.TxtClave = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnAcceder = New System.Windows.Forms.Button()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -65,30 +64,31 @@ Partial Class FrmLogin
         '
         Me.TxtClave.Location = New System.Drawing.Point(141, 172)
         Me.TxtClave.Name = "TxtClave"
+        Me.TxtClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtClave.Size = New System.Drawing.Size(225, 22)
         Me.TxtClave.TabIndex = 3
         '
-        'Button1
+        'BtnAcceder
         '
-        Me.Button1.Location = New System.Drawing.Point(141, 255)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(97, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Acceder"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnAcceder.Location = New System.Drawing.Point(141, 255)
+        Me.BtnAcceder.Name = "BtnAcceder"
+        Me.BtnAcceder.Size = New System.Drawing.Size(97, 23)
+        Me.BtnAcceder.TabIndex = 4
+        Me.BtnAcceder.Text = "Acceder"
+        Me.BtnAcceder.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnCancelar
         '
-        Me.Button2.Location = New System.Drawing.Point(262, 255)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(104, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnCancelar.Location = New System.Drawing.Point(262, 255)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(104, 23)
+        Me.BtnCancelar.TabIndex = 5
+        Me.BtnCancelar.Text = "Cancelar"
+        Me.BtnCancelar.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.SistemaTII.Presentacion.My.Resources.Resources._1160922
         Me.PictureBox1.Location = New System.Drawing.Point(470, 81)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(223, 180)
@@ -126,8 +126,8 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnCancelar)
+        Me.Controls.Add(Me.BtnAcceder)
         Me.Controls.Add(Me.TxtClave)
         Me.Controls.Add(Me.TxtEmail)
         Me.Controls.Add(Me.Label2)
@@ -147,8 +147,8 @@ Partial Class FrmLogin
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents TxtClave As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnAcceder As Button
+    Friend WithEvents BtnCancelar As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label3 As Label

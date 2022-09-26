@@ -56,6 +56,7 @@ Partial Class FrmArticulo
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
+        Me.BtnListarTodos = New System.Windows.Forms.Button()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PicImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -313,9 +314,9 @@ Partial Class FrmArticulo
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(792, 19)
+        Me.BtnBuscar.Location = New System.Drawing.Point(647, 19)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(234, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(161, 23)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -324,7 +325,7 @@ Partial Class FrmArticulo
         '
         Me.TxtValor.Location = New System.Drawing.Point(7, 19)
         Me.TxtValor.Name = "TxtValor"
-        Me.TxtValor.Size = New System.Drawing.Size(721, 22)
+        Me.TxtValor.Size = New System.Drawing.Size(614, 22)
         Me.TxtValor.TabIndex = 2
         '
         'Lbltotal
@@ -338,6 +339,7 @@ Partial Class FrmArticulo
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnListarTodos)
         Me.TabPage1.Controls.Add(Me.BtnDesactivar)
         Me.TabPage1.Controls.Add(Me.BtnActivar)
         Me.TabPage1.Controls.Add(Me.BtnEliminar)
@@ -361,13 +363,13 @@ Partial Class FrmArticulo
         Me.DgvListado.AllowUserToOrderColumns = True
         Me.DgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seleccionar})
-        Me.DgvListado.Location = New System.Drawing.Point(6, 61)
+        Me.DgvListado.Location = New System.Drawing.Point(6, 73)
         Me.DgvListado.Name = "DgvListado"
         Me.DgvListado.ReadOnly = True
         Me.DgvListado.RowHeadersWidth = 51
         Me.DgvListado.RowTemplate.Height = 24
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(1020, 351)
+        Me.DgvListado.Size = New System.Drawing.Size(1020, 339)
         Me.DgvListado.TabIndex = 0
         '
         'TabGeneral
@@ -379,6 +381,15 @@ Partial Class FrmArticulo
         Me.TabGeneral.SelectedIndex = 0
         Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
         Me.TabGeneral.TabIndex = 1
+        '
+        'BtnListarTodos
+        '
+        Me.BtnListarTodos.Location = New System.Drawing.Point(873, 19)
+        Me.BtnListarTodos.Name = "BtnListarTodos"
+        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 23)
+        Me.BtnListarTodos.TabIndex = 8
+        Me.BtnListarTodos.Text = "Listar Todos"
+        Me.BtnListarTodos.UseVisualStyleBackColor = True
         '
         'FrmArticulo
         '
@@ -434,4 +445,5 @@ Partial Class FrmArticulo
     Friend WithEvents Label6 As Label
     Friend WithEvents TxtCodigo As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents BtnListarTodos As Button
 End Class
