@@ -48,9 +48,6 @@
         TxtNombre.Text = ""
         Txtdescripcion.Text = ""
     End Sub
-    'Private Sub FrmCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    Me.Listar()
-    'End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         Me.Buscar()
@@ -193,4 +190,7 @@
         End If
     End Sub
 
+    Private Sub BtnListarTodas_Click(sender As Object, e As EventArgs) Handles BtnListarTodas.Click
+        'Me.Listar()
+    End Sub
 End Class

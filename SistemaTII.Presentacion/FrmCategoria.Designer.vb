@@ -44,6 +44,7 @@ Partial Class FrmCategoria
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnInsertar = New System.Windows.Forms.Button()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.BtnListarTodas = New System.Windows.Forms.Button()
         Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +64,7 @@ Partial Class FrmCategoria
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnListarTodas)
         Me.TabPage1.Controls.Add(Me.BtnDesactivar)
         Me.TabPage1.Controls.Add(Me.BtnActivar)
         Me.TabPage1.Controls.Add(Me.BtnEliminar)
@@ -118,9 +120,9 @@ Partial Class FrmCategoria
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(665, 19)
+        Me.BtnBuscar.Location = New System.Drawing.Point(563, 19)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(234, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(150, 23)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -129,7 +131,7 @@ Partial Class FrmCategoria
         '
         Me.TxtValor.Location = New System.Drawing.Point(7, 19)
         Me.TxtValor.Name = "TxtValor"
-        Me.TxtValor.Size = New System.Drawing.Size(627, 22)
+        Me.TxtValor.Size = New System.Drawing.Size(526, 22)
         Me.TxtValor.TabIndex = 2
         '
         'Lbltotal
@@ -255,6 +257,15 @@ Partial Class FrmCategoria
         '
         Me.ErrorIcono.ContainerControl = Me
         '
+        'BtnListarTodas
+        '
+        Me.BtnListarTodas.Location = New System.Drawing.Point(742, 19)
+        Me.BtnListarTodas.Name = "BtnListarTodas"
+        Me.BtnListarTodas.Size = New System.Drawing.Size(145, 23)
+        Me.BtnListarTodas.TabIndex = 8
+        Me.BtnListarTodas.Text = "Listar Todas"
+        Me.BtnListarTodas.UseVisualStyleBackColor = True
+        '
         'FrmCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -296,4 +307,5 @@ Partial Class FrmCategoria
     Friend WithEvents BtnActivar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents ChkSeleccionar As CheckBox
+    Friend WithEvents BtnListarTodas As Button
 End Class

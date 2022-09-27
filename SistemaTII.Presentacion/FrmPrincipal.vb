@@ -151,5 +151,40 @@ Public Class FrmPrincipal
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TsBarrainferior.Text = "Usuario:" & Me.Nombre
         MsgBox("Bienvenido" & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
+        If (Me.Rol = "Administrador") Then
+            MnuAlmacen.Enabled = True
+            MnuIngresos.Enabled = True
+            MnuVentas.Enabled = True
+            MnuAcceso.Enabled = True
+            MnuConsultas.Enabled = True
+        ElseIf (Me.Rol = "Almacenero") Then
+            MnuAlmacen.Enabled = False
+            MnuIngresos.Enabled = True
+            MnuVentas.Enabled = False
+            MnuAcceso.Enabled = False
+            MnuConsultas.Enabled = False
+        ElseIf (Me.Rol = "Vendedor") Then
+            MnuAlmacen.Enabled = False
+            MnuIngresos.Enabled = False
+            MnuVentas.Enabled = True
+            MnuAcceso.Enabled = False
+            MnuConsultas.Enabled = False
+        Else
+            MnuAlmacen.Enabled = False
+            MnuIngresos.Enabled = False
+            MnuVentas.Enabled = False
+            MnuAcceso.Enabled = False
+            MnuConsultas.Enabled = False
+        End If
+    End Sub
+
+    Private Sub MnuSalir_Click(sender As Object, e As EventArgs) Handles MnuSalir.Click
+        If (MsgBox("Estas seguro de salir del sistema?", vbYesNo + vbQuestion, "Sistema") = vbYes) Then
+            End
+        End If
+    End Sub
+
+    Private Sub FrmPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        End
     End Sub
 End Class
