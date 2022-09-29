@@ -3,7 +3,7 @@
     Private _IdCategoria As Integer
     Private _Codigo As String
     Private _Nombre As String
-    Private _PrevioVenta As Decimal
+    Private _PrecioVenta As Decimal
     Private _Stock As Integer
     Private _Imagen As String
     Private _Descripcion As String
@@ -45,12 +45,12 @@
         End Set
     End Property
 
-    Public Property PrevioVenta As Decimal
+    Public Property PrecioVenta As Decimal
         Get
-            Return _PrevioVenta
+            Return _PrecioVenta
         End Get
         Set(value As Decimal)
-            _PrevioVenta = value
+            _PrecioVenta = value
         End Set
     End Property
 
