@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmCategoria
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,12 @@ Partial Class FrmCategoria
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnListarTodas = New System.Windows.Forms.Button()
         Me.BtnDesactivar = New System.Windows.Forms.Button()
         Me.BtnActivar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
@@ -44,7 +45,6 @@ Partial Class FrmCategoria
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnInsertar = New System.Windows.Forms.Button()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.BtnListarTodas = New System.Windows.Forms.Button()
         Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,6 +80,15 @@ Partial Class FrmCategoria
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnListarTodas
+        '
+        Me.BtnListarTodas.Location = New System.Drawing.Point(742, 19)
+        Me.BtnListarTodas.Name = "BtnListarTodas"
+        Me.BtnListarTodas.Size = New System.Drawing.Size(145, 23)
+        Me.BtnListarTodas.TabIndex = 8
+        Me.BtnListarTodas.Text = "Listar Todas"
+        Me.BtnListarTodas.UseVisualStyleBackColor = True
         '
         'BtnDesactivar
         '
@@ -256,15 +265,6 @@ Partial Class FrmCategoria
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
-        '
-        'BtnListarTodas
-        '
-        Me.BtnListarTodas.Location = New System.Drawing.Point(742, 19)
-        Me.BtnListarTodas.Name = "BtnListarTodas"
-        Me.BtnListarTodas.Size = New System.Drawing.Size(145, 23)
-        Me.BtnListarTodas.TabIndex = 8
-        Me.BtnListarTodas.Text = "Listar Todas"
-        Me.BtnListarTodas.UseVisualStyleBackColor = True
         '
         'FrmCategoria
         '

@@ -15,17 +15,17 @@
         ChkSeleccionar.CheckState = False
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.NCategoria
-    '        ' DgvListado.DataSource = Neg.Listar()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '        Me.Limpiar()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            'Dim Neg As New Negocio.NCategoria
+            ' DgvListado.DataSource = Neg.Listar()
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+            Me.Limpiar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
@@ -58,23 +58,23 @@
         TabGeneral.SelectedIndex = 0
     End Sub
 
-    ''Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
-    ''    'If Me.ValidateChildren = True And TxtNombre.Text <> "" Then
-    ''    Dim Obj As New Entidades.Categoria
-    ''        'Dim Neg As New Negocio.NCategoria
+    'Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
+    '    If Me.ValidateChildren = True And TxtNombre.Text <> "" Then
+    '        Dim Obj As New Entidades.Categoria
+    '        Dim Neg As New Negocio.NCategoria
 
-    ''        Obj.Nombre = TxtNombre.Text
-    ''        Obj.Descripcion = Txtdescripcion.Text
+    '        Obj.Nombre = TxtNombre.Text
+    '        Obj.Descripcion = Txtdescripcion.Text
 
-    ''    '    If (Neg.Insertar(Obj)) Then
-    ''    '        MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
-    ''    '        Me.Listar()
-    ''    '    Else
-    ''    '        MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
-    ''    '    End If
-    ''    'Else
-    ''    '        MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-    ''    'End If
+    '        If (Neg.Insertar(Obj)) Then
+    '            MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+    '            Me.Listar()
+    '        Else
+    '            MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
+    '        End If
+    '    Else
+    '        MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
+    '    End If
     'End Sub
 
     Private Sub TxtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtNombre.Validating
@@ -115,7 +115,7 @@
     '    End If
     'End Sub
 
-    Private Sub ChkSeleccionar_ChangeUICues(sender As Object, e As UICuesEventArgs) Handles ChkSeleccionar.ChangeUICues
+    Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
         If ChkSeleccionar.CheckState = CheckState.Checked Then
             DgvListado.Columns.Item("Seleccionar").Visible = True
             BtnEliminar.Visible = True
@@ -128,7 +128,6 @@
             BtnDesactivar.Visible = False
         End If
     End Sub
-
     Private Sub DgvListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellContentClick
         If e.ColumnIndex = DgvListado.Columns.Item("Seleccionar").Index Then
             Dim chkcell As DataGridViewCheckBoxCell = DgvListado.Rows(e.RowIndex).Cells("Seleccionar")
@@ -137,7 +136,7 @@
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Elimminar Registros") = vbYes) Then
+        If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
             Try
                 'Dim Neg As New Negocio.NCategoria
                 For Each row As DataGridViewRow In DgvListado.Rows
@@ -193,4 +192,5 @@
     Private Sub BtnListarTodas_Click(sender As Object, e As EventArgs) Handles BtnListarTodas.Click
         'Me.Listar()
     End Sub
+
 End Class
