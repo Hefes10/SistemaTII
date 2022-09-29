@@ -27,7 +27,7 @@ Public Class FrmPrincipal
         End If
     End Sub
 
-    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SaveAsToolStripMenuItem.Click
         Dim SaveFileDialog As New SaveFileDialog
         SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
         SaveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
@@ -187,4 +187,5 @@ Public Class FrmPrincipal
     Private Sub FrmPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         End
     End Sub
+
 End Class
