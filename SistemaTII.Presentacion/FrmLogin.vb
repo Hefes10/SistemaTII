@@ -15,19 +15,21 @@
             Email = TxtEmail.Text.Trim()
             Clave = TxtClave.Text.Trim()
             'Obj = Neg.Login(Email, Clave)
-            'If (Obj Is Nothing) Then
-            MsgBox("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
-            'Else
-            ''If (Obj.Estado = False) Then
-            'MsgBox("El usuario no está activo", vbOKOnly + vbCritical, "Usuario no tiene acceso")
-            '    Else
-            '        Me.Hide()
-            'FrmPrincipal.IdUsuario = Obj.IdUsuario
-            'FrmPrincipal.IdRol = Obj.IdRol
-            'FrmPrincipal.Rol = Obj.IdRol
-            'FrmPrincipal.Nombre = Obj.Nombre
-            '        FrmPrincipal.Show()
-            '    End If
+            Obj.Estado = True
+            If (Obj Is Nothing) Then
+                MsgBox("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
+            Else
+                If (Obj.Estado = False) Then
+                    MsgBox("El usuario no esta activo", vbOKOnly + vbCritical, "Usuario no tiene acceso")
+                Else
+                    Me.Hide()
+                    FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
+                    FrmPrincipal.IdRol = 1 'Obj.IdRol
+                    FrmPrincipal.Rol = "Administrador"
+                    FrmPrincipal.Nombre = "Martin"
+                    FrmPrincipal.Show()
+                End If
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

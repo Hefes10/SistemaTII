@@ -115,7 +115,7 @@
         End If
     End Sub
 
-    Private Sub ChkSeleccionar_ChangeUICues(sender As Object, e As UICuesEventArgs) Handles ChkSeleccionar.ChangeUICues
+    Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
         If ChkSeleccionar.CheckState = CheckState.Checked Then
             DgvListado.Columns.Item("Seleccionar").Visible = True
             BtnEliminar.Visible = True
@@ -192,5 +192,14 @@
 
     Private Sub BtnListarTodas_Click(sender As Object, e As EventArgs) Handles BtnListarTodas.Click
         Me.Listar()
+    End Sub
+
+    Private Sub FrmCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DgvListado.Columns.Item("Seleccionar").Visible = False
+        BtnEliminar.Visible = False
+        BtnActivar.Visible = False
+        BtnDesactivar.Visible = False
+        ChkSeleccionar.CheckState = False
+        Me.Limpiar()
     End Sub
 End Class

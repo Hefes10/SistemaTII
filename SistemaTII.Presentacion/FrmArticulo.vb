@@ -24,17 +24,17 @@ Public Class FrmArticulo
         ChkSeleccionar.CheckState = False
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.Narticulo
-    '        ' DgvListado.DataSource = Neg.Listar()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '        Me.Limpiar()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            'Dim Neg As New Negocio.NArticulo
+            'DgvListado.DataSource = Neg.Listar()
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+            Me.Limpiar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
