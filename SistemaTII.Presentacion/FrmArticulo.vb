@@ -65,8 +65,8 @@ Public Class FrmArticulo
     End Sub
     Private Sub CargarCategoria()
         Try
-            'Dim Neg As New Negocio.NCategoria
-            'CboCategoria.DataSource = Neg.Seleccionar
+            Dim Neg As New Negocio.NCategoria
+            CboCategoria.DataSource = Neg.Seleccionar
             CboCategoria.ValueMember = "idcategoria"
             CboCategoria.DisplayMember = "nombre"
         Catch ex As Exception
@@ -83,6 +83,7 @@ Public Class FrmArticulo
         BtnDesactivar.Visible = False
         ChkSeleccionar.CheckState = False
         Me.Limpiar()
+        Me.CargarCategoria()
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
