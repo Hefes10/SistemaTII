@@ -15,24 +15,24 @@
         ChkSeleccionar.CheckState = False
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.NCategoria
-    '        ' DgvListado.DataSource = Neg.Listar()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '        Me.Limpiar()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            Dim Neg As New Negocio.NCategoria
+            DgvListado.DataSource = Neg.Listar()
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+            Me.Limpiar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
-            'Dim Neg As New Negocio.NCategoria
+            Dim Neg As New Negocio.NCategoria
             Dim Valor As String
             Valor = TxtValor.Text
-            'DgvListado.DataSource = Neg.Buscar(Valor)
+            DgvListado.DataSource = Neg.Buscar(Valor)
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -58,24 +58,24 @@
         TabGeneral.SelectedIndex = 0
     End Sub
 
-    ''Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
-    ''    'If Me.ValidateChildren = True And TxtNombre.Text <> "" Then
-    ''    Dim Obj As New Entidades.Categoria
-    ''        'Dim Neg As New Negocio.NCategoria
+    Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
+        If Me.ValidateChildren = True And TxtNombre.Text <> "" Then
+            Dim Obj As New Entidades.Categoria
+            Dim Neg As New Negocio.NCategoria
 
-    ''        Obj.Nombre = TxtNombre.Text
-    ''        Obj.Descripcion = Txtdescripcion.Text
+            Obj.Nombre = TxtNombre.Text
+            Obj.Descripcion = Txtdescripcion.Text
 
-    ''    '    If (Neg.Insertar(Obj)) Then
-    ''    '        MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
-    ''    '        Me.Listar()
-    ''    '    Else
-    ''    '        MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
-    ''    '    End If
-    ''    'Else
-    ''    '        MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-    ''    'End If
-    'End Sub
+            If (Neg.Insertar(Obj)) Then
+                MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                Me.Listar()
+            Else
+                MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
+            End If
+        Else
+            MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
+        End If
+    End Sub
 
     Private Sub TxtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtNombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
@@ -94,26 +94,26 @@
         TabGeneral.SelectedIndex = 1
     End Sub
 
-    'Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
-    '    If Me.ValidateChildren = True And TxtNombre.Text <> "" And TxtId.Text <> "" Then
-    '        Dim Obj As New Entidades.Categoria
-    '        'Dim Neg As New Negocio.NCategoria
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        If Me.ValidateChildren = True And TxtNombre.Text <> "" And TxtId.Text <> "" Then
+            Dim Obj As New Entidades.Categoria
+            Dim Neg As New Negocio.NCategoria
 
-    '        Obj.IdCategoria = TxtId.Text
-    '        Obj.Nombre = TxtNombre.Text
-    '        Obj.Descripcion = Txtdescripcion.Text
+            Obj.IdCategoria = TxtId.Text
+            Obj.Nombre = TxtNombre.Text
+            Obj.Descripcion = Txtdescripcion.Text
 
-    '        If (Neg.Actualizar(Obj)) Then
-    '            MsgBox("Se ha Actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
-    '            Me.Listar()
-    '            TabGeneral.SelectedIndex = 0
-    '        Else
-    '            MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
-    '        End If
-    '    Else
-    '        MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-    '    End If
-    'End Sub
+            If (Neg.Actualizar(Obj)) Then
+                MsgBox("Se ha Actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
+                Me.Listar()
+                TabGeneral.SelectedIndex = 0
+            Else
+                MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
+            End If
+        Else
+            MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
+        End If
+    End Sub
 
     Private Sub ChkSeleccionar_ChangeUICues(sender As Object, e As UICuesEventArgs) Handles ChkSeleccionar.ChangeUICues
         If ChkSeleccionar.CheckState = CheckState.Checked Then
@@ -139,15 +139,15 @@
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Elimminar Registros") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NCategoria
+                Dim Neg As New Negocio.NCategoria
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        'Neg.Eliminar(OneKey)
+                        Neg.Eliminar(OneKey)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -157,15 +157,15 @@
     Private Sub BtnActivar_Click(sender As Object, e As EventArgs) Handles BtnActivar.Click
         If (MsgBox("Está seguro de acctivar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NCategoria
+                Dim Neg As New Negocio.NCategoria
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        'Neg.Activar(OneKey)
+                        Neg.Activar(OneKey)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -175,15 +175,15 @@
     Private Sub BtnDesactivar_Click(sender As Object, e As EventArgs) Handles BtnDesactivar.Click
         If (MsgBox("Está seguro de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Desactivar Registros") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NCategoria
+                Dim Neg As New Negocio.NCategoria
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        'Neg.Desactivar(OneKey)
+                        Neg.Desactivar(OneKey)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -191,6 +191,6 @@
     End Sub
 
     Private Sub BtnListarTodas_Click(sender As Object, e As EventArgs) Handles BtnListarTodas.Click
-        'Me.Listar()
+        Me.Listar()
     End Sub
 End Class
