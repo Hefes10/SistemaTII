@@ -150,7 +150,7 @@ Public Class FrmPrincipal
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TsBarrainferior.Text = "Usuario:" & Me.Nombre
-        MsgBox("Bienvenido" & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
+        MsgBox("Bienvenido " & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
         If (Me.Rol = "Administrador") Then
             MnuAlmacen.Enabled = True
             MnuIngresos.Enabled = True

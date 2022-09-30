@@ -54,9 +54,9 @@ Partial Class FrmArticulo
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnListarTodos = New System.Windows.Forms.Button()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
-        Me.BtnListarTodos = New System.Windows.Forms.Button()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PicImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -356,6 +356,15 @@ Partial Class FrmArticulo
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnListarTodos
+        '
+        Me.BtnListarTodos.Location = New System.Drawing.Point(873, 19)
+        Me.BtnListarTodos.Name = "BtnListarTodos"
+        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 23)
+        Me.BtnListarTodos.TabIndex = 8
+        Me.BtnListarTodos.Text = "Listar Todos"
+        Me.BtnListarTodos.UseVisualStyleBackColor = True
+        '
         'DgvListado
         '
         Me.DgvListado.AllowUserToAddRows = False
@@ -381,15 +390,6 @@ Partial Class FrmArticulo
         Me.TabGeneral.SelectedIndex = 0
         Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
         Me.TabGeneral.TabIndex = 1
-        '
-        'BtnListarTodos
-        '
-        Me.BtnListarTodos.Location = New System.Drawing.Point(873, 19)
-        Me.BtnListarTodos.Name = "BtnListarTodos"
-        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 23)
-        Me.BtnListarTodos.TabIndex = 8
-        Me.BtnListarTodos.Text = "Listar Todos"
-        Me.BtnListarTodos.UseVisualStyleBackColor = True
         '
         'FrmArticulo
         '

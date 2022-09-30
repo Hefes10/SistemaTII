@@ -268,4 +268,31 @@ Public Class FrmArticulo
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
         'Me.Listar()
     End Sub
+
+    Private Sub FrmArticulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DgvListado.Columns.Item("Seleccionar").Visible = False
+        BtnEliminar.Visible = False
+        BtnActivar.Visible = False
+        BtnDesactivar.Visible = False
+        ChkSeleccionar.CheckState = False
+        Me.Limpiar()
+    End Sub
+
+    Private Sub TxtCodigo_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtCodigo.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtStock_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtStock.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtPrecioVenta_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtPrecioVenta.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
