@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Articulo.vb" />
     <Compile Include="Categoria.vb" />
+    <Compile Include="Ingreso.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -83,6 +84,7 @@
     </Compile>
     <Compile Include="Persona.vb" />
     <Compile Include="Usuario.vb" />
+    <Compile Include="Venta.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

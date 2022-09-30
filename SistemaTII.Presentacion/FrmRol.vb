@@ -7,6 +7,7 @@
         DgvListado.Columns(1).HeaderText = "Nombre"
     End Sub
 
+
     'Private Sub Listar()
     '    Try
     '        'Dim Neg As New Negocio.NRol

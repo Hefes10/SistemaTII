@@ -149,33 +149,33 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TsBarrainferior.Text = "Usuario:" & Me.Nombre
-        MsgBox("Bienvenido" & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
-        If (Me.Rol = "Administrador") Then
-            MnuAlmacen.Enabled = True
-            MnuIngresos.Enabled = True
-            MnuVentas.Enabled = True
-            MnuAcceso.Enabled = True
-            MnuConsultas.Enabled = True
-        ElseIf (Me.Rol = "Almacenero") Then
-            MnuAlmacen.Enabled = False
-            MnuIngresos.Enabled = True
-            MnuVentas.Enabled = False
-            MnuAcceso.Enabled = False
-            MnuConsultas.Enabled = False
-        ElseIf (Me.Rol = "Vendedor") Then
-            MnuAlmacen.Enabled = False
-            MnuIngresos.Enabled = False
-            MnuVentas.Enabled = True
-            MnuAcceso.Enabled = False
-            MnuConsultas.Enabled = False
-        Else
-            MnuAlmacen.Enabled = False
-            MnuIngresos.Enabled = False
-            MnuVentas.Enabled = False
-            MnuAcceso.Enabled = False
-            MnuConsultas.Enabled = False
-        End If
+        'TsBarrainferior.Text = "Usuario:" & Me.Nombre
+        'MsgBox("Bienvenido" & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
+        'If (Me.Rol = "Administrador") Then
+        '    MnuAlmacen.Enabled = True
+        '    MnuIngresos.Enabled = True
+        '    MnuVentas.Enabled = True
+        '    MnuAcceso.Enabled = True
+        '    MnuConsultas.Enabled = True
+        'ElseIf (Me.Rol = "Almacenero") Then
+        '    MnuAlmacen.Enabled = False
+        '    MnuIngresos.Enabled = True
+        '    MnuVentas.Enabled = False
+        '    MnuAcceso.Enabled = False
+        '    MnuConsultas.Enabled = False
+        'ElseIf (Me.Rol = "Vendedor") Then
+        '    MnuAlmacen.Enabled = False
+        '    MnuIngresos.Enabled = False
+        '    MnuVentas.Enabled = True
+        '    MnuAcceso.Enabled = False
+        '    MnuConsultas.Enabled = False
+        'Else
+        '    MnuAlmacen.Enabled = False
+        '    MnuIngresos.Enabled = False
+        '    MnuVentas.Enabled = False
+        '    MnuAcceso.Enabled = False
+        '    MnuConsultas.Enabled = False
+        'End If
     End Sub
 
     Private Sub MnuSalir_Click(sender As Object, e As EventArgs) Handles MnuSalir.Click
@@ -186,6 +186,30 @@ Public Class FrmPrincipal
 
     Private Sub FrmPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         End
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        Dim frm As New FrmProveedor
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Dim frm As New FrmCliente
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub ComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem.Click
+        Dim frm As New FrmIngreso
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub VentasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem1.Click
+        Dim frm As New FrmVenta
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
 End Class

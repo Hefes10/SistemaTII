@@ -128,7 +128,6 @@
             BtnDesactivar.Visible = False
         End If
     End Sub
-
     Private Sub DgvListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellContentClick
         If e.ColumnIndex = DgvListado.Columns.Item("Seleccionar").Index Then
             Dim chkcell As DataGridViewCheckBoxCell = DgvListado.Rows(e.RowIndex).Cells("Seleccionar")
@@ -137,7 +136,7 @@
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Elimminar Registros") = vbYes) Then
+        If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
             Try
                 Dim Neg As New Negocio.NCategoria
                 For Each row As DataGridViewRow In DgvListado.Rows
@@ -202,4 +201,5 @@
         ChkSeleccionar.CheckState = False
         Me.Limpiar()
     End Sub
+
 End Class

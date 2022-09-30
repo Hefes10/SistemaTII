@@ -1,7 +1,4 @@
 ﻿Public Class FrmLogin
-    Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         End

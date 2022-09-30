@@ -276,4 +276,5 @@ Public Class FrmArticulo
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
         Me.Listar()
     End Sub
+
 End Class

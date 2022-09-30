@@ -9,6 +9,7 @@
     Private _Email As String
     Private _Clave As String
     Private _Estado As Boolean
+    Private _Rol As String
 
     Public Property IdUsuario As Integer
         Get
@@ -97,6 +98,15 @@
         End Get
         Set(value As Boolean)
             _Estado = value
+        End Set
+    End Property
+
+    Public Property Rol As String
+        Get
+            Return _Rol
+        End Get
+        Set(value As String)
+            _Rol = value
         End Set
     End Property
 End Class
