@@ -24,7 +24,6 @@ Public Class FrmLogin
             Clave = TxtClave.Text.Trim()
             'Obj = Neg.Login(Email, Clave)
             Obj.Estado = True
-            'If TxtEmail.Text.Contains("@sistema.com") And TxtClave.Text <> "" Then
             If (bln = True And TxtClave.Text <> "") Then
                 If (Obj Is Nothing) Then
                     MsgBox("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
@@ -33,19 +32,30 @@ Public Class FrmLogin
                         MsgBox("El usuario no está activo", vbOKOnly + vbCritical, "Usuario no tiene acceso")
                     Else
                         Me.Hide()
+                    Me.Hide()
+                    If (Email = "admin@sistema.com") Then
                         FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
                         FrmPrincipal.IdRol = 1 'Obj.IdRol
                         FrmPrincipal.Rol = "Administrador"
                         FrmPrincipal.Nombre = "Martin"
                         FrmPrincipal.Show()
                     End If
+                    ElseIf (Email = "vendedor@sistema.com") Then
+                        FrmPrincipal.IdUsuario = 2 'Obj.IdUsuario
+                        FrmPrincipal.IdRol = 2 'Obj.IdRol
+                        FrmPrincipal.Rol = "Vendedor"
+                        FrmPrincipal.Nombre = "Martin"
+                    ElseIf (Email = "almacenero@sistema.com") Then
+                        FrmPrincipal.IdUsuario = 3 'Obj.IdUsuario
+                        FrmPrincipal.IdRol = 3 'Obj.IdRol
+                        FrmPrincipal.Rol = "Almacenero"
+                        FrmPrincipal.Nombre = "Luu Lezcano"
+                    End If
+                    FrmPrincipal.Show()
                 End If
             Else
                 MsgBox("Correo o clave inválida", vbOKOnly + vbCritical, "Error de login")
             End if
-            'Else
-            '    MsgBox("Correo o clave inválida", vbOKOnly + vbCritical, "Error de login")
-            'End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

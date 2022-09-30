@@ -59,9 +59,8 @@ Public Class DUsuario
         Try
             Dim Comando As New SqlCommand("usuario_insertar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("idrol", SqlDbType.Int).Value = Obj.IdRol
+            Comando.Parameters.Add("@idrol", SqlDbType.Int).Value = Obj.IdRol
             Comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Obj.Nombre
-            Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.TipoDocumento
             Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.TipoDocumento
             Comando.Parameters.Add("@num_documento", SqlDbType.VarChar).Value = Obj.NumDocumento
             Comando.Parameters.Add("@direccion", SqlDbType.VarChar).Value = Obj.Direccion
@@ -81,9 +80,8 @@ Public Class DUsuario
             Dim Comando As New SqlCommand("usuario_actualizar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
             Comando.Parameters.Add("@idusuario", SqlDbType.Int).Value = Obj.IdUsuario
-            Comando.Parameters.Add("idrol", SqlDbType.Int).Value = Obj.IdRol
+            Comando.Parameters.Add("@idrol", SqlDbType.Int).Value = Obj.IdRol
             Comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Obj.Nombre
-            Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.TipoDocumento
             Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.TipoDocumento
             Comando.Parameters.Add("@num_documento", SqlDbType.VarChar).Value = Obj.NumDocumento
             Comando.Parameters.Add("@direccion", SqlDbType.VarChar).Value = Obj.Direccion

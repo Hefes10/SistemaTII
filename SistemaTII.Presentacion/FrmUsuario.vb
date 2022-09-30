@@ -267,5 +267,4 @@ Public Class FrmUsuario
         ChkSeleccionar.CheckState = False
         Me.Limpiar()
     End Sub
-
 End Class

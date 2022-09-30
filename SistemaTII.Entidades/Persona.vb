@@ -1,5 +1,5 @@
 ﻿Public Class Persona
-    Private _IdPersona As String
+    Private _IdPersona As Integer
     Private _TipoPersona As String
     Private _Nombre As String
     Private _TipoDocumento As String
@@ -8,11 +8,11 @@
     Private _Telefono As String
     Private _Email As String
 
-    Public Property IdPersona As String
+    Public Property IdPersona As Integer
         Get
             Return _IdPersona
         End Get
-        Set(value As String)
+        Set(value As Integer)
             _IdPersona = value
         End Set
     End Property

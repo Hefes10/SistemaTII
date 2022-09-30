@@ -188,4 +188,28 @@ Public Class FrmPrincipal
         End
     End Sub
 
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        Dim frm As New FrmProveedor
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Dim frm As New FrmCliente
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub ComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem.Click
+        Dim frm As New FrmIngreso
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub VentasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem1.Click
+        Dim frm As New FrmVenta
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
 End Class

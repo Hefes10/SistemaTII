@@ -1,13 +1,44 @@
 ﻿Imports SistemaTII.Entidades
 Imports System.Data.SqlClient
-Public Class DArticulo
+Public Class DPersona
     Inherits Conexion
-
     Public Function Listar() As DataTable
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("articulo_listar", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_listar", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ListarProveedores() As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("persona_listar_proveedores", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ListarClientes() As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("persona_listar_clientes", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()
@@ -23,7 +54,7 @@ Public Class DArticulo
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("articulo_buscar", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_buscar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
             Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Valor
             MyBase.conn.Open()
@@ -36,11 +67,11 @@ Public Class DArticulo
         End Try
     End Function
 
-    Public Function BuscarVenta(Valor As String) As DataTable
+    Public Function BuscarProveedores(Valor As String) As DataTable
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("articulo_buscar_venta", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_buscar_proveedores", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
             Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Valor
             MyBase.conn.Open()
@@ -53,11 +84,11 @@ Public Class DArticulo
         End Try
     End Function
 
-    Public Function BuscarCodigo(Valor As String) As DataTable
+    Public Function BuscarClientes(Valor As String) As DataTable
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("articulo_buscar_codigo", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_buscar_clientes", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
             Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Valor
             MyBase.conn.Open()
@@ -70,33 +101,18 @@ Public Class DArticulo
         End Try
     End Function
 
-    Public Function BuscarCodigoVenta(Valor As String) As DataTable
+
+    Public Sub Insertar(Obj As Persona)
         Try
-            Dim Resultado As SqlDataReader
-            Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("articulo_buscar_codigo_venta", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_insertar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Valor
-            MyBase.conn.Open()
-            Resultado = Comando.ExecuteReader()
-            Tabla.Load(Resultado)
-            MyBase.conn.Close()
-            Return Tabla
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
-    Public Sub Insertar(Obj As Articulo)
-        Try
-            Dim Comando As New SqlCommand("articulo_insertar", MyBase.conn)
-            Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idcategoria", SqlDbType.Int).Value = Obj.IdCategoria
-            Comando.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Obj.Codigo
+            Comando.Parameters.Add("@tipo_persona", SqlDbType.VarChar).Value = Obj.TipoPersona
             Comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Obj.Nombre
-            Comando.Parameters.Add("@precio_venta", SqlDbType.Decimal).Value = Obj.PrecioVenta
-            Comando.Parameters.Add("@stock", SqlDbType.Int).Value = Obj.Stock
-            Comando.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Obj.Descripcion
-            Comando.Parameters.Add("@imagen", SqlDbType.VarChar).Value = Obj.Imagen
+            Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.TipoDocumento
+            Comando.Parameters.Add("@num_documento", SqlDbType.VarChar).Value = Obj.NumDocumento
+            Comando.Parameters.Add("@direccion", SqlDbType.VarChar).Value = Obj.Direccion
+            Comando.Parameters.Add("@telefono", SqlDbType.VarChar).Value = Obj.Telefono
+            Comando.Parameters.Add("@email", SqlDbType.VarChar).Value = Obj.Email
             MyBase.conn.Open()
             Comando.ExecuteNonQuery()
             MyBase.conn.Close()
@@ -105,18 +121,18 @@ Public Class DArticulo
         End Try
     End Sub
 
-    Public Sub Actualizar(Obj As Articulo)
+    Public Sub Actualizar(Obj As Persona)
         Try
-            Dim Comando As New SqlCommand("articulo_actualizar", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_actualizar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idarticulo", SqlDbType.Int).Value = Obj.IdArticulo
-            Comando.Parameters.Add("@idcategoria", SqlDbType.Int).Value = Obj.IdCategoria
-            Comando.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Obj.Codigo
+            Comando.Parameters.Add("@idpersona", SqlDbType.Int).Value = Obj.IdPersona
+            Comando.Parameters.Add("@tipo_persona", SqlDbType.VarChar).Value = Obj.TipoPersona
             Comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Obj.Nombre
-            Comando.Parameters.Add("@precio_venta", SqlDbType.Decimal).Value = Obj.PrecioVenta
-            Comando.Parameters.Add("@stock", SqlDbType.Int).Value = Obj.Stock
-            Comando.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Obj.Descripcion
-            Comando.Parameters.Add("@imagen", SqlDbType.VarChar).Value = Obj.Imagen
+            Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.TipoDocumento
+            Comando.Parameters.Add("@num_documento", SqlDbType.VarChar).Value = Obj.NumDocumento
+            Comando.Parameters.Add("@direccion", SqlDbType.VarChar).Value = Obj.Direccion
+            Comando.Parameters.Add("@telefono", SqlDbType.VarChar).Value = Obj.Telefono
+            Comando.Parameters.Add("@email", SqlDbType.VarChar).Value = Obj.Email
             MyBase.conn.Open()
             Comando.ExecuteNonQuery()
             MyBase.conn.Close()
@@ -127,35 +143,9 @@ Public Class DArticulo
 
     Public Sub Eliminar(Id As Integer)
         Try
-            Dim Comando As New SqlCommand("articulo_eliminar", MyBase.conn)
+            Dim Comando As New SqlCommand("persona_eliminar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idarticulo", SqlDbType.Int).Value = Id
-            MyBase.conn.Open()
-            Comando.ExecuteNonQuery()
-            MyBase.conn.Close()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-
-    Public Sub Desactivar(Id As Integer)
-        Try
-            Dim Comando As New SqlCommand("articulo_desactivar", MyBase.conn)
-            Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idarticulo", SqlDbType.Int).Value = Id
-            MyBase.conn.Open()
-            Comando.ExecuteNonQuery()
-            MyBase.conn.Close()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-
-    Public Sub Activar(Id As Integer)
-        Try
-            Dim Comando As New SqlCommand("articulo_activar", MyBase.conn)
-            Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idcarticulo", SqlDbType.Int).Value = Id
+            Comando.Parameters.Add("@idpersona", SqlDbType.Int).Value = Id
             MyBase.conn.Open()
             Comando.ExecuteNonQuery()
             MyBase.conn.Close()
