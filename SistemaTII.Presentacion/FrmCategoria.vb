@@ -202,4 +202,9 @@
         Me.Limpiar()
     End Sub
 
+    Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
+        If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

@@ -3,6 +3,6 @@ Public Class Conexion
     Public conn As SqlConnection
 
     Public Sub New()
-        Me.conn = New SqlConnection("Data Source=CROWDAR-IDEAPAD;Initial Catalog=dbsistema;User ID=sa;Password=asd123")
+        Me.conn = New SqlConnection("Data Source=LAPTOP-B2D81SEK;Initial Catalog=dbsistema;User ID=sa;Password=asd123")
     End Sub
 End Class

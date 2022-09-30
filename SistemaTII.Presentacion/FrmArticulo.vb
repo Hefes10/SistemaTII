@@ -277,4 +277,21 @@ Public Class FrmArticulo
         Me.Listar()
     End Sub
 
+    Private Sub TxtCodigo_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtCodigo.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtStock_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtStock.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtPrecioVenta_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtPrecioVenta.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
