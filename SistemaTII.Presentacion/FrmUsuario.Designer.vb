@@ -519,15 +519,6 @@ Partial Class FrmUsuario
     Friend WithEvents BtnInsertar As Button
     Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
     Friend WithEvents ErrorIcono As ErrorProvider
-    Friend WithEvents CboTipoDocumento As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TxtClave As TextBox
-    Friend WithEvents TxtEmail As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label10 As Label
 End Class

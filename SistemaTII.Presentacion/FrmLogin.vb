@@ -27,11 +27,9 @@ Public Class FrmLogin
             If (bln = True And TxtClave.Text <> "") Then
                 If (Obj Is Nothing) Then
                     MsgBox("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
+                ElseIf (Obj.Estado = False) Then
+                    MsgBox("El usuario no está activo", vbOKOnly + vbCritical, "Usuario no tiene acceso")
                 Else
-                    If (Obj.Estado = False) Then
-                        MsgBox("El usuario no está activo", vbOKOnly + vbCritical, "Usuario no tiene acceso")
-                    Else
-                        Me.Hide()
                     Me.Hide()
                     If (Email = "admin@sistema.com") Then
                         FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
@@ -39,7 +37,6 @@ Public Class FrmLogin
                         FrmPrincipal.Rol = "Administrador"
                         FrmPrincipal.Nombre = "Martin"
                         FrmPrincipal.Show()
-                    End If
                     ElseIf (Email = "vendedor@sistema.com") Then
                         FrmPrincipal.IdUsuario = 2 'Obj.IdUsuario
                         FrmPrincipal.IdRol = 2 'Obj.IdRol
