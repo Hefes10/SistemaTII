@@ -24,24 +24,24 @@ Public Class FrmArticulo
         ChkSeleccionar.CheckState = False
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.Narticulo
-    '        ' DgvListado.DataSource = Neg.Listar()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '        Me.Limpiar()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            Dim Neg As New Negocio.NArticulo
+            DgvListado.DataSource = Neg.Listar()
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+            Me.Limpiar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
-            'Dim Neg As New Negocio.NArticulo
+            Dim Neg As New Negocio.NArticulo
             Dim Valor As String
             Valor = TxtValor.Text
-            'DgvListado.DataSource = Neg.Buscar(Valor)
+            DgvListado.DataSource = Neg.Buscar(Valor)
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -65,18 +65,26 @@ Public Class FrmArticulo
     End Sub
     Private Sub CargarCategoria()
         Try
-            'Dim Neg As New Negocio.NCategoria
-            'CboCategoria.DataSource = Neg.Seleccionar
+            Dim Neg As New Negocio.NCategoria
+            CboCategoria.DataSource = Neg.Seleccionar
             CboCategoria.ValueMember = "idcategoria"
             CboCategoria.DisplayMember = "nombre"
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
-    'Private Sub FrmArticulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    Me.Listar()
-    '    Me.CargarCategoria()
-    'End Sub
+
+    Private Sub FrmArticulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Me.Listar()
+        'Me.CargarCategoria()
+        DgvListado.Columns.Item("Seleccionar").Visible = False
+        BtnEliminar.Visible = False
+        BtnActivar.Visible = False
+        BtnDesactivar.Visible = False
+        ChkSeleccionar.CheckState = False
+        Me.Limpiar()
+        Me.CargarCategoria()
+    End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         Me.Buscar()
@@ -266,7 +274,7 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
-        'Me.Listar()
+        Me.Listar()
     End Sub
 
 End Class
