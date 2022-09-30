@@ -23,10 +23,22 @@
                     MsgBox("El usuario no esta activo", vbOKOnly + vbCritical, "Usuario no tiene acceso")
                 Else
                     Me.Hide()
-                    FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
-                    FrmPrincipal.IdRol = 1 'Obj.IdRol
-                    FrmPrincipal.Rol = "Administrador"
-                    FrmPrincipal.Nombre = "Martin"
+                    If (Email = "admin@sistema.com") Then
+                        FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
+                        FrmPrincipal.IdRol = 1 'Obj.IdRol
+                        FrmPrincipal.Rol = "Administrador"
+                        FrmPrincipal.Nombre = "Martin"
+                    ElseIf (Email = "vendedor@sistema.com") Then
+                        FrmPrincipal.IdUsuario = 2 'Obj.IdUsuario
+                        FrmPrincipal.IdRol = 2 'Obj.IdRol
+                        FrmPrincipal.Rol = "Vendedor"
+                        FrmPrincipal.Nombre = "Martin"
+                    ElseIf (Email = "almacenero@sistema.com") Then
+                        FrmPrincipal.IdUsuario = 3 'Obj.IdUsuario
+                        FrmPrincipal.IdRol = 3 'Obj.IdRol
+                        FrmPrincipal.Rol = "Almacenero"
+                        FrmPrincipal.Nombre = "Luu Lezcano"
+                    End If
                     FrmPrincipal.Show()
                 End If
             End If
