@@ -43,7 +43,6 @@ Partial Class FrmPrincipal
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,6 +57,7 @@ Partial Class FrmPrincipal
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -135,13 +135,13 @@ Partial Class FrmPrincipal
         'ClientesToolStripMenuItem
         '
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
         Me.ClientesToolStripMenuItem.Text = "Clien&tes"
         '
         'VentasToolStripMenuItem1
         '
         Me.VentasToolStripMenuItem1.Name = "VentasToolStripMenuItem1"
-        Me.VentasToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.VentasToolStripMenuItem1.Size = New System.Drawing.Size(144, 26)
         Me.VentasToolStripMenuItem1.Text = "&Ventas"
         '
         'MnuAcceso
@@ -173,7 +173,7 @@ Partial Class FrmPrincipal
         'ConsultaVentasToolStripMenuItem
         '
         Me.ConsultaVentasToolStripMenuItem.Name = "ConsultaVentasToolStripMenuItem"
-        Me.ConsultaVentasToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.ConsultaVentasToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ConsultaVentasToolStripMenuItem.Text = "Consulta Ventas"
         '
         'ViewMenu
@@ -200,12 +200,6 @@ Partial Class FrmPrincipal
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
         Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(158, 26)
         Me.StatusBarToolStripMenuItem.Text = "&Status Bar"
-        '
-        'OptionsToolStripMenuItem
-        '
-        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
-        Me.OptionsToolStripMenuItem.Text = "&Options"
         '
         'WindowsMenu
         '
@@ -297,6 +291,12 @@ Partial Class FrmPrincipal
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(207, 26)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
+        'OptionsToolStripMenuItem
+        '
+        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
+        Me.OptionsToolStripMenuItem.Text = "&Options"
+        '
         'ToolStrip
         '
         Me.ToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
@@ -387,6 +387,12 @@ Partial Class FrmPrincipal
         Me.TsBarrainferior.Name = "TsBarrainferior"
         Me.TsBarrainferior.Size = New System.Drawing.Size(49, 20)
         Me.TsBarrainferior.Text = "Status"
+        '
+        'ToolStripStatusLabel
+        '
+        Me.ToolStripStatusLabel.Margin = New System.Windows.Forms.Padding(0, 3, 0, 2)
+        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(23, 23)
         '
         'FrmPrincipal
         '

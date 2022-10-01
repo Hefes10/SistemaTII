@@ -52,7 +52,7 @@ Public Class FrmLogin
                 End If
             Else
                 MsgBox("Correo o clave inválida", vbOKOnly + vbCritical, "Error de login")
-            End if
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

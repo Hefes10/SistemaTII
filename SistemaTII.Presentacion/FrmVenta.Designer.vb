@@ -75,6 +75,7 @@ Partial Class FrmVenta
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnVerComprobante = New System.Windows.Forms.Button()
         CType(Me.DgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -334,6 +335,7 @@ Partial Class FrmVenta
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnVerComprobante)
         Me.TabPage1.Controls.Add(Me.PanelMostrar)
         Me.TabPage1.Controls.Add(Me.BtnListarTodos)
         Me.TabPage1.Controls.Add(Me.BtnAnular)
@@ -452,9 +454,9 @@ Partial Class FrmVenta
         '
         'BtnListarTodos
         '
-        Me.BtnListarTodos.Location = New System.Drawing.Point(873, 19)
+        Me.BtnListarTodos.Location = New System.Drawing.Point(912, 19)
         Me.BtnListarTodos.Name = "BtnListarTodos"
-        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 23)
+        Me.BtnListarTodos.Size = New System.Drawing.Size(114, 23)
         Me.BtnListarTodos.TabIndex = 8
         Me.BtnListarTodos.Text = "Listar Todos"
         Me.BtnListarTodos.UseVisualStyleBackColor = True
@@ -480,9 +482,9 @@ Partial Class FrmVenta
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(647, 19)
+        Me.BtnBuscar.Location = New System.Drawing.Point(633, 19)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(161, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(106, 23)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -616,6 +618,15 @@ Partial Class FrmVenta
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalles"
         '
+        'BtnVerComprobante
+        '
+        Me.BtnVerComprobante.Location = New System.Drawing.Point(760, 19)
+        Me.BtnVerComprobante.Name = "BtnVerComprobante"
+        Me.BtnVerComprobante.Size = New System.Drawing.Size(128, 23)
+        Me.BtnVerComprobante.TabIndex = 10
+        Me.BtnVerComprobante.Text = "Comprobante"
+        Me.BtnVerComprobante.UseVisualStyleBackColor = True
+        '
         'FrmVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -699,4 +710,5 @@ Partial Class FrmVenta
     Friend WithEvents DgvArticulos As DataGridView
     Friend WithEvents BtnBuscarArticulosDetalles As Button
     Friend WithEvents TxtBuscarArticulos As TextBox
+    Friend WithEvents BtnVerComprobante As Button
 End Class

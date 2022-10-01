@@ -176,4 +176,5 @@
     Private Sub BtnListarProveedores_Click(sender As Object, e As EventArgs) Handles BtnListarProveedores.Click
         'Me.Listar()
     End Sub
+
 End Class

@@ -73,40 +73,40 @@
         TxtTotalImpuesto.Text = 0
         TxtTotal.Text = 0
     End Sub
-    Private Sub CrearTablaDetalle()
-        Me.DtDetalle = New DataTable("Detalle")
-        Me.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.int32"))
-        Me.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.string"))
-        Me.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.string"))
-        Me.DtDetalle.Columns.Add("stock", System.Type.GetType("System.int32"))
-        Me.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.int32"))
-        Me.DtDetalle.Columns.Add("precio", System.Type.GetType("System.decimal"))
-        Me.DtDetalle.Columns.Add("descuento", System.Type.GetType("System.decimal"))
-        Me.DtDetalle.Columns.Add("importe", System.Type.GetType("System.decimal"))
+    'Private Sub CrearTablaDetalle()
+    '    Me.DtDetalle = New DataTable("Detalle")
+    '    Me.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.int32"))
+    '    Me.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.string"))
+    '    Me.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.string"))
+    '    Me.DtDetalle.Columns.Add("stock", System.Type.GetType("System.int32"))
+    '    Me.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.int32"))
+    '    Me.DtDetalle.Columns.Add("precio", System.Type.GetType("System.decimal"))
+    '    Me.DtDetalle.Columns.Add("descuento", System.Type.GetType("System.decimal"))
+    '    Me.DtDetalle.Columns.Add("importe", System.Type.GetType("System.decimal"))
 
-        DgvDetalle.DataSource = Me.DtDetalle
-        DgvDetalle.Columns(0).Visible = False
-        DgvDetalle.Columns(1).HeaderText = "CODIGO"
-        DgvDetalle.Columns(1).Width = 100
-        DgvDetalle.Columns(2).HeaderText = "ARTICULO"
-        DgvDetalle.Columns(2).Width = 200
-        DgvDetalle.Columns(3).HeaderText = "STOCK"
-        DgvDetalle.Columns(3).Width = 100
-        DgvDetalle.Columns(4).HeaderText = "CANTIDAD"
-        DgvDetalle.Columns(4).Width = 100
-        DgvDetalle.Columns(5).HeaderText = "PRECIO"
-        DgvDetalle.Columns(5).Width = 100
-        DgvDetalle.Columns(6).HeaderText = "DESCUENTO"
-        DgvDetalle.Columns(6).Width = 100
-        DgvDetalle.Columns(7).HeaderText = "IMPORTE"
-        DgvDetalle.Columns(7).Width = 100
+    '    DgvDetalle.DataSource = Me.DtDetalle
+    '    DgvDetalle.Columns(0).Visible = False
+    '    DgvDetalle.Columns(1).HeaderText = "CODIGO"
+    '    DgvDetalle.Columns(1).Width = 100
+    '    DgvDetalle.Columns(2).HeaderText = "ARTICULO"
+    '    DgvDetalle.Columns(2).Width = 200
+    '    DgvDetalle.Columns(3).HeaderText = "STOCK"
+    '    DgvDetalle.Columns(3).Width = 100
+    '    DgvDetalle.Columns(4).HeaderText = "CANTIDAD"
+    '    DgvDetalle.Columns(4).Width = 100
+    '    DgvDetalle.Columns(5).HeaderText = "PRECIO"
+    '    DgvDetalle.Columns(5).Width = 100
+    '    DgvDetalle.Columns(6).HeaderText = "DESCUENTO"
+    '    DgvDetalle.Columns(6).Width = 100
+    '    DgvDetalle.Columns(7).HeaderText = "IMPORTE"
+    '    DgvDetalle.Columns(7).Width = 100
 
-        DgvDetalle.Columns(1).ReadOnly = True
-        DgvDetalle.Columns(2).ReadOnly = True
-        DgvDetalle.Columns(3).ReadOnly = True
-        DgvDetalle.Columns(7).ReadOnly = True
+    '    DgvDetalle.Columns(1).ReadOnly = True
+    '    DgvDetalle.Columns(2).ReadOnly = True
+    '    DgvDetalle.Columns(3).ReadOnly = True
+    '    DgvDetalle.Columns(7).ReadOnly = True
 
-    End Sub
+    'End Sub
 
     Private Sub AgregarDetalle(Fila As Entidades.Articulo)
         Dim Agregar As Boolean = True
@@ -324,12 +324,20 @@
         End If
     End Sub
 
-    Private Sub FrmVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.CrearTablaDetalle()
-    End Sub
+    'Private Sub FrmVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    Me.CrearTablaDetalle()
+    'End Sub
 
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
         'Me.Listar()
     End Sub
 
+    Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
+        Try
+            Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
+            FrmReporteComprobanteVenta.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

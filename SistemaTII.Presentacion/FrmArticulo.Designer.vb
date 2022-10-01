@@ -57,6 +57,7 @@ Partial Class FrmArticulo
         Me.BtnListarTodos = New System.Windows.Forms.Button()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
+        Me.BtnReporte = New System.Windows.Forms.Button()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PicImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -316,7 +317,7 @@ Partial Class FrmArticulo
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(647, 19)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(161, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(98, 23)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -339,6 +340,7 @@ Partial Class FrmArticulo
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnReporte)
         Me.TabPage1.Controls.Add(Me.BtnListarTodos)
         Me.TabPage1.Controls.Add(Me.BtnDesactivar)
         Me.TabPage1.Controls.Add(Me.BtnActivar)
@@ -358,7 +360,7 @@ Partial Class FrmArticulo
         '
         'BtnListarTodos
         '
-        Me.BtnListarTodos.Location = New System.Drawing.Point(873, 19)
+        Me.BtnListarTodos.Location = New System.Drawing.Point(761, 18)
         Me.BtnListarTodos.Name = "BtnListarTodos"
         Me.BtnListarTodos.Size = New System.Drawing.Size(153, 23)
         Me.BtnListarTodos.TabIndex = 8
@@ -390,6 +392,15 @@ Partial Class FrmArticulo
         Me.TabGeneral.SelectedIndex = 0
         Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
         Me.TabGeneral.TabIndex = 1
+        '
+        'BtnReporte
+        '
+        Me.BtnReporte.Location = New System.Drawing.Point(928, 18)
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(98, 23)
+        Me.BtnReporte.TabIndex = 9
+        Me.BtnReporte.Text = "Reporte"
+        Me.BtnReporte.UseVisualStyleBackColor = True
         '
         'FrmArticulo
         '
@@ -446,4 +457,5 @@ Partial Class FrmArticulo
     Friend WithEvents TxtCodigo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents BtnListarTodos As Button
+    Friend WithEvents BtnReporte As Button
 End Class

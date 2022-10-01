@@ -34,6 +34,8 @@ Partial Class FrmUsuario
         Me.Lbltotal = New System.Windows.Forms.Label()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtClave = New System.Windows.Forms.TextBox()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
@@ -58,8 +60,6 @@ Partial Class FrmUsuario
         Me.BtnInsertar = New System.Windows.Forms.Button()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,36 +68,6 @@ Partial Class FrmUsuario
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Seleccionar
-        '
-        Me.Seleccionar.HeaderText = "Seleccionar"
-        Me.Seleccionar.MinimumWidth = 6
-        Me.Seleccionar.Name = "Seleccionar"
-        Me.Seleccionar.ReadOnly = True
-        Me.Seleccionar.Width = 125
-        '
-        'TxtDirección
-        '
-        Me.TxtDirección.Location = New System.Drawing.Point(180, 326)
-        Me.TxtDirección.Name = "TxtDirección"
-        Me.TxtDirección.Size = New System.Drawing.Size(316, 22)
-        Me.TxtDirección.TabIndex = 20
-        '
-        'TxtNumDocumento
-        '
-        Me.TxtNumDocumento.Location = New System.Drawing.Point(180, 279)
-        Me.TxtNumDocumento.Name = "TxtNumDocumento"
-        Me.TxtNumDocumento.Size = New System.Drawing.Size(316, 22)
-        Me.TxtNumDocumento.TabIndex = 19
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 330)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(67, 17)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Dirección"
         'TabGeneral
         '
         Me.TabGeneral.Controls.Add(Me.TabPage1)
@@ -110,12 +80,6 @@ Partial Class FrmUsuario
         '
         'TabPage1
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 288)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(134, 17)
-        Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Número Documento"
         Me.TabPage1.Controls.Add(Me.BtnDesactivar)
         Me.TabPage1.Controls.Add(Me.BtnActivar)
         Me.TabPage1.Controls.Add(Me.BtnEliminar)
@@ -238,6 +202,23 @@ Partial Class FrmUsuario
         Me.TabPage2.Text = "Mantenimiento"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(180, 170)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
+        Me.DateTimePicker1.TabIndex = 26
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(28, 170)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(121, 17)
+        Me.Label10.TabIndex = 25
+        Me.Label10.Text = "Fecha Nacimiento"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TxtClave)
@@ -303,14 +284,14 @@ Partial Class FrmUsuario
         '
         'TxtDirección
         '
-        Me.TxtDirección.Location = New System.Drawing.Point(180, 245)
+        Me.TxtDirección.Location = New System.Drawing.Point(180, 303)
         Me.TxtDirección.Name = "TxtDirección"
         Me.TxtDirección.Size = New System.Drawing.Size(316, 22)
         Me.TxtDirección.TabIndex = 20
         '
         'TxtNumDocumento
         '
-        Me.TxtNumDocumento.Location = New System.Drawing.Point(180, 198)
+        Me.TxtNumDocumento.Location = New System.Drawing.Point(180, 204)
         Me.TxtNumDocumento.Name = "TxtNumDocumento"
         Me.TxtNumDocumento.Size = New System.Drawing.Size(316, 22)
         Me.TxtNumDocumento.TabIndex = 19
@@ -318,7 +299,7 @@ Partial Class FrmUsuario
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 249)
+        Me.Label7.Location = New System.Drawing.Point(25, 308)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(67, 17)
         Me.Label7.TabIndex = 18
@@ -352,7 +333,7 @@ Partial Class FrmUsuario
         '
         Me.CboTipoDocumento.FormattingEnabled = True
         Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "DNI"})
-        Me.CboTipoDocumento.Location = New System.Drawing.Point(180, 230)
+        Me.CboTipoDocumento.Location = New System.Drawing.Point(180, 252)
         Me.CboTipoDocumento.Name = "CboTipoDocumento"
         Me.CboTipoDocumento.Size = New System.Drawing.Size(316, 24)
         Me.CboTipoDocumento.TabIndex = 22
@@ -361,7 +342,7 @@ Partial Class FrmUsuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 243)
+        Me.Label5.Location = New System.Drawing.Point(25, 255)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 17)
         Me.Label5.TabIndex = 21
@@ -428,27 +409,6 @@ Partial Class FrmUsuario
         Me.BtnInsertar.TabIndex = 0
         Me.BtnInsertar.Text = "Insertar"
         Me.BtnInsertar.UseVisualStyleBackColor = True
-        '
-        'ErrorIcono
-        '
-        Me.ErrorIcono.ContainerControl = Me
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(28, 170)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(121, 17)
-        Me.Label10.TabIndex = 25
-        Me.Label10.Text = "Fecha Nacimiento"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(180, 170)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
-        Me.DateTimePicker1.TabIndex = 26
         '
         'Seleccionar
         '

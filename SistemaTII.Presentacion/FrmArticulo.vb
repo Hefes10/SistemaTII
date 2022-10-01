@@ -294,4 +294,8 @@ Public Class FrmArticulo
             e.Handled = True
         End If
     End Sub
+
+    Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+        FrmReporteArticulos.ShowDialog()
+    End Sub
 End Class
