@@ -50,7 +50,9 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        If TxtValor.Text <> "" Then
+            Me.Buscar()
+        End If
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -136,21 +138,28 @@
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
-            Try
-                Dim Neg As New Negocio.NCategoria
-                For Each row As DataGridViewRow In DgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
-                    If marcado Then
-                        Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        Neg.Eliminar(OneKey)
-                    End If
-                Next
-                Me.Listar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
+        For Each roww As DataGridViewRow In DgvListado.Rows
+            Dim mar As Boolean = Convert.ToBoolean(roww.Cells("Seleccionar").Value)
+            If mar Then
+                If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
+                    Try
+                        Dim Neg As New Negocio.NCategoria
+                        For Each row As DataGridViewRow In DgvListado.Rows
+                            Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
+                            If marcado Then
+                                Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
+                                Neg.Eliminar(OneKey)
+                            End If
+                        Next
+                        Me.Listar()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+
+                End If
+            End If
+        Next
+        MsgBox("Debe seleccionar una fila")
     End Sub
 
     Private Sub BtnActivar_Click(sender As Object, e As EventArgs) Handles BtnActivar.Click

@@ -54,7 +54,9 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        If TxtValor.Text <> "" Then
+            Me.Buscar()
+        End If
     End Sub
 
 
@@ -177,4 +179,28 @@
         'Me.Listar()
     End Sub
 
+    Private Sub FrmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' DgvListado.Columns.Item("Seleccionar").Visible = False
+        BtnEliminar.Visible = False
+        ChkSeleccionar.CheckState = False
+        Me.Limpiar()
+    End Sub
+
+    Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
+        If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNumDocumento.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtTelefono_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtTelefono.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

@@ -26,6 +26,8 @@ Partial Class FrmCliente
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TxtDirección = New System.Windows.Forms.TextBox()
         Me.TxtNumDocumento = New System.Windows.Forms.TextBox()
@@ -51,8 +53,6 @@ Partial Class FrmCliente
         Me.Lbltotal = New System.Windows.Forms.Label()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +98,23 @@ Partial Class FrmCliente
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mantenimiento"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(182, 235)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
+        Me.DateTimePicker1.TabIndex = 28
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(30, 235)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(121, 17)
+        Me.Label10.TabIndex = 27
+        Me.Label10.Text = "Fecha Nacimiento"
         '
         'TxtTelefono
         '
@@ -328,23 +345,6 @@ Partial Class FrmCliente
         Me.Seleccionar.Name = "Seleccionar"
         Me.Seleccionar.ReadOnly = True
         Me.Seleccionar.Width = 125
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(182, 235)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
-        Me.DateTimePicker1.TabIndex = 28
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(30, 235)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(121, 17)
-        Me.Label10.TabIndex = 27
-        Me.Label10.Text = "Fecha Nacimiento"
         '
         'FrmCliente
         '

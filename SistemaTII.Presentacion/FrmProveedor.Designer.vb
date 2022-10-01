@@ -39,6 +39,7 @@ Partial Class FrmProveedor
         Me.TxtNumDocumento = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnListarProveedores = New System.Windows.Forms.Button()
         Me.ChkSeleccionar = New System.Windows.Forms.CheckBox()
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
@@ -50,7 +51,6 @@ Partial Class FrmProveedor
         Me.BtnInsertar = New System.Windows.Forms.Button()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.BtnListarProveedores = New System.Windows.Forms.Button()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
@@ -199,6 +199,15 @@ Partial Class FrmProveedor
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnListarProveedores
+        '
+        Me.BtnListarProveedores.Location = New System.Drawing.Point(817, 17)
+        Me.BtnListarProveedores.Name = "BtnListarProveedores"
+        Me.BtnListarProveedores.Size = New System.Drawing.Size(209, 23)
+        Me.BtnListarProveedores.TabIndex = 6
+        Me.BtnListarProveedores.Text = "Listar Todos"
+        Me.BtnListarProveedores.UseVisualStyleBackColor = True
+        '
         'ChkSeleccionar
         '
         Me.ChkSeleccionar.AutoSize = True
@@ -315,15 +324,6 @@ Partial Class FrmProveedor
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
-        '
-        'BtnListarProveedores
-        '
-        Me.BtnListarProveedores.Location = New System.Drawing.Point(817, 17)
-        Me.BtnListarProveedores.Name = "BtnListarProveedores"
-        Me.BtnListarProveedores.Size = New System.Drawing.Size(209, 23)
-        Me.BtnListarProveedores.TabIndex = 6
-        Me.BtnListarProveedores.Text = "Listar Todos"
-        Me.BtnListarProveedores.UseVisualStyleBackColor = True
         '
         'FrmProveedor
         '
