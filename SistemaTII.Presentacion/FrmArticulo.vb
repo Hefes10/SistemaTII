@@ -92,7 +92,7 @@ Public Class FrmArticulo
 
     Private Sub BtnCargarImagen_Click(sender As Object, e As EventArgs) Handles BtnCargarImagen.Click
         Dim File As New OpenFileDialog()
-        File.Filter = "Image Files (*.jpg, *.jpeg,*.jpe, *.jfif, *.png) | *.jpg, *.jpeg,*.jpe, *.jfif, *.png"
+        File.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"
         If File.ShowDialog() = DialogResult.OK Then
             PicImagen.Image = Image.FromFile(File.FileName)
             RutaOrigen = File.FileName
