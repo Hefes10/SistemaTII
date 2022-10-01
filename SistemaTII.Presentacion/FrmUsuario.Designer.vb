@@ -364,6 +364,7 @@ Partial Class FrmUsuario
         Me.CboRol.Name = "CboRol"
         Me.CboRol.Size = New System.Drawing.Size(316, 24)
         Me.CboRol.TabIndex = 9
+        Me.CboRol.Text = "Vendedor"
         '
         'BtnActualizar
         '

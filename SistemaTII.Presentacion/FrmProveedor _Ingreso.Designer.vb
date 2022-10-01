@@ -24,7 +24,6 @@ Partial Class FrmProveedor__Ingreso
     Private Sub InitializeComponent()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.BtnListarProveedores = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
@@ -45,7 +44,6 @@ Partial Class FrmProveedor__Ingreso
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.BtnListarProveedores)
         Me.TabPage1.Controls.Add(Me.BtnBuscar)
         Me.TabPage1.Controls.Add(Me.TxtValor)
         Me.TabPage1.Controls.Add(Me.Lbltotal)
@@ -58,20 +56,11 @@ Partial Class FrmProveedor__Ingreso
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'BtnListarProveedores
-        '
-        Me.BtnListarProveedores.Location = New System.Drawing.Point(817, 17)
-        Me.BtnListarProveedores.Name = "BtnListarProveedores"
-        Me.BtnListarProveedores.Size = New System.Drawing.Size(209, 23)
-        Me.BtnListarProveedores.TabIndex = 6
-        Me.BtnListarProveedores.Text = "Listar Todos"
-        Me.BtnListarProveedores.UseVisualStyleBackColor = True
-        '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(601, 18)
+        Me.BtnBuscar.Location = New System.Drawing.Point(679, 18)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(165, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(264, 23)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -80,7 +69,7 @@ Partial Class FrmProveedor__Ingreso
         '
         Me.TxtValor.Location = New System.Drawing.Point(7, 19)
         Me.TxtValor.Name = "TxtValor"
-        Me.TxtValor.Size = New System.Drawing.Size(576, 22)
+        Me.TxtValor.Size = New System.Drawing.Size(646, 22)
         Me.TxtValor.TabIndex = 2
         '
         'Lbltotal
@@ -128,7 +117,6 @@ Partial Class FrmProveedor__Ingreso
 
     Friend WithEvents TabGeneral As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents BtnListarProveedores As Button
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents TxtValor As TextBox
     Friend WithEvents Lbltotal As Label

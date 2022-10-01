@@ -51,6 +51,7 @@ Partial Class FrmVenta
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.LblTotalArticulos = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnVerComprobante = New System.Windows.Forms.Button()
         Me.PanelMostrar = New System.Windows.Forms.Panel()
         Me.BtnCerrarM = New System.Windows.Forms.Button()
         Me.LblTotalM = New System.Windows.Forms.Label()
@@ -75,7 +76,6 @@ Partial Class FrmVenta
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnVerComprobante = New System.Windows.Forms.Button()
         CType(Me.DgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -352,6 +352,15 @@ Partial Class FrmVenta
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnVerComprobante
+        '
+        Me.BtnVerComprobante.Location = New System.Drawing.Point(760, 19)
+        Me.BtnVerComprobante.Name = "BtnVerComprobante"
+        Me.BtnVerComprobante.Size = New System.Drawing.Size(128, 23)
+        Me.BtnVerComprobante.TabIndex = 10
+        Me.BtnVerComprobante.Text = "Comprobante"
+        Me.BtnVerComprobante.UseVisualStyleBackColor = True
+        '
         'PanelMostrar
         '
         Me.PanelMostrar.BackColor = System.Drawing.Color.DarkTurquoise
@@ -617,15 +626,6 @@ Partial Class FrmVenta
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalles"
-        '
-        'BtnVerComprobante
-        '
-        Me.BtnVerComprobante.Location = New System.Drawing.Point(760, 19)
-        Me.BtnVerComprobante.Name = "BtnVerComprobante"
-        Me.BtnVerComprobante.Size = New System.Drawing.Size(128, 23)
-        Me.BtnVerComprobante.TabIndex = 10
-        Me.BtnVerComprobante.Text = "Comprobante"
-        Me.BtnVerComprobante.UseVisualStyleBackColor = True
         '
         'FrmVenta
         '
