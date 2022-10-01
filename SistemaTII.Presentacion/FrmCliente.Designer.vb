@@ -51,6 +51,8 @@ Partial Class FrmCliente
         Me.Lbltotal = New System.Windows.Forms.Label()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,13 +66,15 @@ Partial Class FrmCliente
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(180, 305)
+        Me.TxtEmail.Location = New System.Drawing.Point(695, 179)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(316, 22)
         Me.TxtEmail.TabIndex = 3
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.DateTimePicker1)
+        Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.TxtEmail)
         Me.TabPage2.Controls.Add(Me.TxtTelefono)
         Me.TabPage2.Controls.Add(Me.TxtDirección)
@@ -97,21 +101,21 @@ Partial Class FrmCliente
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(180, 252)
+        Me.TxtTelefono.Location = New System.Drawing.Point(695, 126)
         Me.TxtTelefono.Name = "TxtTelefono"
         Me.TxtTelefono.Size = New System.Drawing.Size(316, 22)
         Me.TxtTelefono.TabIndex = 23
         '
         'TxtDirección
         '
-        Me.TxtDirección.Location = New System.Drawing.Point(180, 207)
+        Me.TxtDirección.Location = New System.Drawing.Point(695, 81)
         Me.TxtDirección.Name = "TxtDirección"
         Me.TxtDirección.Size = New System.Drawing.Size(316, 22)
         Me.TxtDirección.TabIndex = 20
         '
         'TxtNumDocumento
         '
-        Me.TxtNumDocumento.Location = New System.Drawing.Point(180, 160)
+        Me.TxtNumDocumento.Location = New System.Drawing.Point(182, 177)
         Me.TxtNumDocumento.Name = "TxtNumDocumento"
         Me.TxtNumDocumento.Size = New System.Drawing.Size(316, 22)
         Me.TxtNumDocumento.TabIndex = 19
@@ -119,7 +123,7 @@ Partial Class FrmCliente
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 308)
+        Me.Label4.Location = New System.Drawing.Point(587, 182)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(46, 17)
         Me.Label4.TabIndex = 0
@@ -128,7 +132,7 @@ Partial Class FrmCliente
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 211)
+        Me.Label7.Location = New System.Drawing.Point(584, 85)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(67, 17)
         Me.Label7.TabIndex = 18
@@ -137,7 +141,7 @@ Partial Class FrmCliente
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 169)
+        Me.Label6.Location = New System.Drawing.Point(27, 186)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(134, 17)
         Me.Label6.TabIndex = 17
@@ -153,7 +157,7 @@ Partial Class FrmCliente
         '
         'TxtNombre
         '
-        Me.TxtNombre.Location = New System.Drawing.Point(180, 65)
+        Me.TxtNombre.Location = New System.Drawing.Point(182, 82)
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.Size = New System.Drawing.Size(316, 22)
         Me.TxtNombre.TabIndex = 4
@@ -161,8 +165,8 @@ Partial Class FrmCliente
         'CboTipoDocumento
         '
         Me.CboTipoDocumento.FormattingEnabled = True
-        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "PASAPORTE", "CRANET", "RUC", "DNI"})
-        Me.CboTipoDocumento.Location = New System.Drawing.Point(180, 111)
+        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "DNI"})
+        Me.CboTipoDocumento.Location = New System.Drawing.Point(182, 128)
         Me.CboTipoDocumento.Name = "CboTipoDocumento"
         Me.CboTipoDocumento.Size = New System.Drawing.Size(316, 24)
         Me.CboTipoDocumento.TabIndex = 22
@@ -171,7 +175,7 @@ Partial Class FrmCliente
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 124)
+        Me.Label5.Location = New System.Drawing.Point(27, 141)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 17)
         Me.Label5.TabIndex = 21
@@ -179,7 +183,7 @@ Partial Class FrmCliente
         '
         'BtnActualizar
         '
-        Me.BtnActualizar.Location = New System.Drawing.Point(180, 365)
+        Me.BtnActualizar.Location = New System.Drawing.Point(695, 239)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(143, 23)
         Me.BtnActualizar.TabIndex = 7
@@ -189,7 +193,7 @@ Partial Class FrmCliente
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 252)
+        Me.Label2.Location = New System.Drawing.Point(584, 126)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 17)
         Me.Label2.TabIndex = 3
@@ -198,7 +202,7 @@ Partial Class FrmCliente
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 69)
+        Me.Label1.Location = New System.Drawing.Point(27, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 2
@@ -206,7 +210,7 @@ Partial Class FrmCliente
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(351, 365)
+        Me.BtnCancelar.Location = New System.Drawing.Point(866, 239)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(145, 23)
         Me.BtnCancelar.TabIndex = 1
@@ -215,7 +219,7 @@ Partial Class FrmCliente
         '
         'BtnInsertar
         '
-        Me.BtnInsertar.Location = New System.Drawing.Point(180, 365)
+        Me.BtnInsertar.Location = New System.Drawing.Point(695, 239)
         Me.BtnInsertar.Name = "BtnInsertar"
         Me.BtnInsertar.Size = New System.Drawing.Size(143, 23)
         Me.BtnInsertar.TabIndex = 0
@@ -325,6 +329,23 @@ Partial Class FrmCliente
         Me.Seleccionar.ReadOnly = True
         Me.Seleccionar.Width = 125
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(182, 235)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
+        Me.DateTimePicker1.TabIndex = 28
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(30, 235)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(121, 17)
+        Me.Label10.TabIndex = 27
+        Me.Label10.Text = "Fecha Nacimiento"
+        '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -373,4 +394,6 @@ Partial Class FrmCliente
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnInsertar As Button
     Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label10 As Label
 End Class

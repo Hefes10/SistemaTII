@@ -1,5 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-Public Class FrmUsuario
+﻿Public Class FrmUsuario
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False
         DgvListado.Columns(2).Visible = False
@@ -74,17 +73,9 @@ Public Class FrmUsuario
         End Try
     End Sub
 
-    Public Function IsValidEmail(ByVal email As String) As Boolean
-        If email = String.Empty Then Return False
-        ' Compruebo si el formato de la dirección es correcto.
-        Dim re As Regex = New Regex("^[\w._%-]+@[\w.-]+\.[a-zA-Z]{2,4}$")
-        Dim m As Match = re.Match(email)
-        Return (m.Captures.Count <> 0)
-    End Function
     Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
-        Dim bln As Boolean = IsValidEmail(TxtEmail.Text)
         'Try
-        '    If Me.ValidateChildren = True And CboRol.Text <> "" And TxtNombre.Text <> "" And bln = True And TxtClave.Text <> "" Then
+        '    If Me.ValidateChildren = True And CboRol.Text <> "" And TxtNombre.Text <> "" And TxtEmail.Text <> "" And TxtClave.Text <> "" Then
         '        Dim Obj As New Entidades.Usuario
         '        Dim Neg As New Negocio.NUsuario
 
@@ -241,30 +232,9 @@ Public Class FrmUsuario
         End If
     End Sub
 
-    Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
-        If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
 
-    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNumDocumento.KeyPress
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TxtTelefono_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtTelefono.KeyPress
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DgvListado.Columns.Item("Seleccionar").Visible = False
-        BtnEliminar.Visible = False
-        BtnActivar.Visible = False
-        BtnDesactivar.Visible = False
-        ChkSeleccionar.CheckState = False
-        Me.Limpiar()
-    End Sub
+    'Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    Me.Listar()
+    '    Me.CargarRol()
+    'End Sub
 End Class

@@ -52,6 +52,7 @@
             Dim Valor As String
             Valor = TxtValor.Text
             'DgvListado.DataSource = Neg.Buscar(Valor)
+
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -73,33 +74,33 @@
         TxtTotalImpuesto.Text = 0
         TxtTotal.Text = 0
     End Sub
-    Private Sub CrearTablaDetalle()
-        Me.DtDetalle = New DataTable("Detalle")
-        Me.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.int32"))
-        Me.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.string"))
-        Me.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.string"))
-        Me.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.int32"))
-        Me.DtDetalle.Columns.Add("precio", System.Type.GetType("System.decimal"))
-        Me.DtDetalle.Columns.Add("importe", System.Type.GetType("System.decimal"))
+    'Private Sub CrearTablaDetalle()
+    '    Me.DtDetalle = New DataTable("Detalle")
+    '    Me.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.int32"))
+    '    Me.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.string"))
+    '    Me.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.string"))
+    '    Me.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.int32"))
+    '    Me.DtDetalle.Columns.Add("precio", System.Type.GetType("System.decimal"))
+    '    Me.DtDetalle.Columns.Add("importe", System.Type.GetType("System.decimal"))
 
-        DgvDetalle.DataSource = Me.DtDetalle
-        DgvDetalle.Columns(0).Visible = False
-        DgvDetalle.Columns(1).HeaderText = "CODIGO"
-        DgvDetalle.Columns(1).Width = 100
-        DgvDetalle.Columns(2).HeaderText = "ARTICULO"
-        DgvDetalle.Columns(2).Width = 200
-        DgvDetalle.Columns(3).HeaderText = "CANTIDAD"
-        DgvDetalle.Columns(3).Width = 100
-        DgvDetalle.Columns(4).HeaderText = "PRECIO"
-        DgvDetalle.Columns(4).Width = 100
-        DgvDetalle.Columns(5).HeaderText = "IMPORTE"
-        DgvDetalle.Columns(5).Width = 100
+    '    DgvDetalle.DataSource = Me.DtDetalle
+    '    DgvDetalle.Columns(0).Visible = False
+    '    DgvDetalle.Columns(1).HeaderText = "CODIGO"
+    '    DgvDetalle.Columns(1).Width = 100
+    '    DgvDetalle.Columns(2).HeaderText = "ARTICULO"
+    '    DgvDetalle.Columns(2).Width = 200
+    '    DgvDetalle.Columns(3).HeaderText = "CANTIDAD"
+    '    DgvDetalle.Columns(3).Width = 100
+    '    DgvDetalle.Columns(4).HeaderText = "PRECIO"
+    '    DgvDetalle.Columns(4).Width = 100
+    '    DgvDetalle.Columns(5).HeaderText = "IMPORTE"
+    '    DgvDetalle.Columns(5).Width = 100
 
-        DgvDetalle.Columns(1).ReadOnly = True
-        DgvDetalle.Columns(2).ReadOnly = True
-        DgvDetalle.Columns(5).ReadOnly = True
+    '    DgvDetalle.Columns(1).ReadOnly = True
+    '    DgvDetalle.Columns(2).ReadOnly = True
+    '    DgvDetalle.Columns(5).ReadOnly = True
 
-    End Sub
+    'End Sub
 
     Private Sub AgregarDetalle(Fila As Entidades.Articulo)
         Dim Agregar As Boolean = True
@@ -138,7 +139,7 @@
     End Sub
 
     Private Sub FrmIngreso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.CrearTablaDetalle()
+        'Me.CrearTablaDetalle()
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click

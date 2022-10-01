@@ -212,4 +212,9 @@ Public Class FrmPrincipal
         frm.Show()
     End Sub
 
+    Private Sub ConsultaVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaVentasToolStripMenuItem.Click
+        Dim frm As New FrmConsultaVentas
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class
