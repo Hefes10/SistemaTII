@@ -1,8 +1,9 @@
 ﻿Imports System.IO
+
 Public Class FrmArticulo
     Private RutaOrigen As String
     Private RutaDestino As String
-    Private Directorio As String = "D:\sistema\"
+    Private Directorio As String = "C:\taller2\"
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False
         DgvListado.Columns(2).Visible = False
@@ -101,35 +102,53 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
-        'Try
-        '    If Me.ValidateChildren = True And CboCategoria.Text <> "" And TxtNombre.Text <> "" And TxtPrecioVenta.Text <> "" And TxtStock.Text <> "" Then
-        '        Dim Obj As New Entidades.Articulo
-        '        Dim Neg As New Negocio.NArticulo
+        Try
+            If Me.ValidateChildren = True And CboCategoria.Text <> "" And TxtNombre.Text <> "" And TxtPrecioVenta.Text <> "" And TxtStock.Text <> "" Then
+                Dim Obj As New Entidades.Articulo
+                Dim Neg As New Negocio.NArticulo
 
-        '        Obj.IdCategoria = CboCategoria.SelectedValue
-        '        Obj.Codigo = TxtCodigo.Text
-        '        Obj.Nombre = TxtNombre.Text
-        '        Obj.PrecioVenta = TxtPrecioVenta.Text
-        '        Obj.Stock = TxtStock.Text
-        '        Obj.Imagen = TxtImagen.Text
-        '        Obj.Descripcion = Txtdescripcion.Text
+                Obj.IdCategoria = CboCategoria.SelectedValue
+                Obj.Codigo = TxtCodigo.Text
+                Obj.Nombre = TxtNombre.Text
+                Obj.PrecioVenta = TxtPrecioVenta.Text
+                Obj.Stock = TxtStock.Text
+                Obj.Imagen = TxtImagen.Text
+                Obj.Descripcion = Txtdescripcion.Text
 
-        '        If (Neg.Insertar(Obj)) Then
-        '            MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
-        '            If (TxtImagen.Text <> "") Then
-        '                RutaDestino = Directorio & TxtImagen.Text
-        '                File.Copy(RutaOrigen, RutaDestino)
-        '            End If
-        '            Me.Listar()
-        '        Else
-        '            MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
-        '        End If
-        '    Else
-        '        MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-        '    End If
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
+                If (Neg.Insertar(Obj)) Then
+                    MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                    If (TxtImagen.Text <> "") Then
+                        RutaDestino = Directorio & TxtImagen.Text
+                        CopyImg(RutaOrigen, RutaDestino)
+                    End If
+                    Me.Limpiar()
+                Else
+                    MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
+                End If
+            Else
+                MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub CopyImg(RutaOrigen As String, RutaDestino As String)
+        Dim Path As String
+        Path = Dir(Directorio)
+
+        If RutaDestino = vbNullString Then Exit Sub
+
+        If Path = "" Then
+            Call MkDir(Directorio)
+        End If
+
+        Try
+            File.Copy(RutaOrigen, RutaDestino)
+        Catch ex As Exception
+            MsgBox("La imagen ya existe.", vbOKOnly, "Atención")
+        End Try
+
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -137,63 +156,37 @@ Public Class FrmArticulo
         TabGeneral.SelectedIndex = 0
     End Sub
 
-    Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         Try
-            TxtId.Text = DgvListado.SelectedCells.Item(1).Value
-            CboCategoria.SelectedValue = DgvListado.SelectedCells.Item(2).Value
-            TxtCodigo.Text = DgvListado.SelectedCells.Item(4).Value
-            TxtNombre.Text = DgvListado.SelectedCells.Item(5).Value
-            TxtPrecioVenta.Text = DgvListado.SelectedCells.Item(6).Value
-            TxtStock.Text = DgvListado.SelectedCells.Item(7).Value
-            Txtdescripcion.Text = DgvListado.SelectedCells.Item(8).Value
-            Dim Imagen As String
-            Imagen = DgvListado.SelectedCells.Item(9).Value
-            If (Imagen <> "") Then
-                PicImagen.Image = Image.FromFile(Directorio & Imagen)
-                TxtImagen.Text = Imagen
+            If Me.ValidateChildren = True And CboCategoria.Text <> "" And TxtNombre.Text <> "" And TxtPrecioVenta.Text <> "" And TxtStock.Text <> "" And TxtId.Text <> "" Then
+                Dim Obj As New Entidades.Articulo
+                Dim Neg As New Negocio.NArticulo
+
+                Obj.IdArticulo = TxtId.Text
+                Obj.IdCategoria = CboCategoria.SelectedValue
+                Obj.Codigo = TxtCodigo.Text
+                Obj.Nombre = TxtNombre.Text
+                Obj.PrecioVenta = TxtPrecioVenta.Text
+                Obj.Stock = TxtStock.Text
+                Obj.Imagen = TxtImagen.Text
+                Obj.Descripcion = Txtdescripcion.Text
+
+                If (Neg.Actualizar(Obj)) Then
+                    MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
+                    If (TxtImagen.Text <> "" And RutaOrigen <> "") Then
+                        RutaDestino = Directorio & TxtImagen.Text
+                        CopyImg(RutaOrigen, RutaDestino)
+                    End If
+                    Me.Listar()
+                Else
+                    MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
+                End If
             Else
-                PicImagen.Image = Nothing
-                TxtImagen.Text = ""
+                MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
             End If
-            BtnInsertar.Visible = False
-            BtnActualizar.Visible = True
-            TabGeneral.SelectedIndex = 1
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-    End Sub
-
-    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
-        'Try
-        '    If Me.ValidateChildren = True And CboCategoria.Text <> "" And TxtNombre.Text <> "" And TxtPrecioVenta.Text <> "" And TxtStock.Text <> "" And TxtId.Text <> "" Then
-        '        Dim Obj As New Entidades.Articulo
-        '        Dim Neg As New Negocio.NArticulo
-
-        '        Obj.IdArticulo = TxtId.Text
-        '        Obj.IdCategoria = CboCategoria.SelectedValue
-        '        Obj.Codigo = TxtCodigo.Text
-        '        Obj.Nombre = TxtNombre.Text
-        '        Obj.PrecioVenta = TxtPrecioVenta.Text
-        '        Obj.Stock = TxtStock.Text
-        '        Obj.Imagen = TxtImagen.Text
-        '        Obj.Descripcion = Txtdescripcion.Text
-
-        '        If (Neg.Actualizar(Obj)) Then
-        '            MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
-        '            If (TxtImagen.Text <> "" And RutaOrigen <> "") Then
-        '                RutaDestino = Directorio & TxtImagen.Text
-        '                File.Copy(RutaOrigen, RutaDestino)
-        '            End If
-        '            Me.Listar()
-        '        Else
-        '            MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
-        '        End If
-        '    Else
-        '        MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-        '    End If
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
     End Sub
 
     Private Sub DgvListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellContentClick
@@ -220,17 +213,17 @@ Public Class FrmArticulo
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NArticulo
+                Dim Neg As New Negocio.NArticulo
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
                         Dim Imagen As String = Convert.ToString(row.Cells("Imagen").Value)
-                        'Neg.Eliminar(OneKey)
+                        Neg.Eliminar(OneKey)
                         File.Delete(Directorio & Imagen)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -240,15 +233,15 @@ Public Class FrmArticulo
     Private Sub BtnActivar_Click(sender As Object, e As EventArgs) Handles BtnActivar.Click
         If (MsgBox("Está seguro de activar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NArticulo
+                Dim Neg As New Negocio.NArticulo
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        'Neg.Activar(OneKey)
+                        Neg.Activar(OneKey)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -258,15 +251,15 @@ Public Class FrmArticulo
     Private Sub BtnDesactivar_Click(sender As Object, e As EventArgs) Handles BtnDesactivar.Click
         If (MsgBox("Está seguro de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NArticulo
+                Dim Neg As New Negocio.NArticulo
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        'Neg.Desactivar(OneKey)
+                        Neg.Desactivar(OneKey)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -297,5 +290,31 @@ Public Class FrmArticulo
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
         FrmReporteArticulos.ShowDialog()
+    End Sub
+
+    Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
+        Try
+            TxtId.Text = DgvListado.SelectedCells.Item(1).Value
+            CboCategoria.SelectedValue = DgvListado.SelectedCells.Item(2).Value
+            TxtCodigo.Text = DgvListado.SelectedCells.Item(4).Value
+            TxtNombre.Text = DgvListado.SelectedCells.Item(5).Value
+            TxtPrecioVenta.Text = DgvListado.SelectedCells.Item(6).Value
+            TxtStock.Text = DgvListado.SelectedCells.Item(7).Value
+            Txtdescripcion.Text = DgvListado.SelectedCells.Item(8).Value
+            Dim Imagen As String
+            Imagen = DgvListado.SelectedCells.Item(9).Value
+            If (Imagen <> "") Then
+                PicImagen.Image = Image.FromFile(Directorio & Imagen)
+                TxtImagen.Text = Imagen
+            Else
+                PicImagen.Image = Nothing
+                TxtImagen.Text = ""
+            End If
+            BtnInsertar.Visible = False
+            BtnActualizar.Visible = True
+            TabGeneral.SelectedIndex = 1
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

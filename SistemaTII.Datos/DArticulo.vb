@@ -155,7 +155,7 @@ Public Class DArticulo
         Try
             Dim Comando As New SqlCommand("articulo_activar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idcarticulo", SqlDbType.Int).Value = Id
+            Comando.Parameters.Add("@idarticulo", SqlDbType.Int).Value = Id
             MyBase.conn.Open()
             Comando.ExecuteNonQuery()
             MyBase.conn.Close()

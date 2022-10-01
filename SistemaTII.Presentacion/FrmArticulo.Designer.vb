@@ -54,10 +54,10 @@ Partial Class FrmArticulo
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnReporte = New System.Windows.Forms.Button()
         Me.BtnListarTodos = New System.Windows.Forms.Button()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
-        Me.BtnReporte = New System.Windows.Forms.Button()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PicImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -358,6 +358,15 @@ Partial Class FrmArticulo
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnReporte
+        '
+        Me.BtnReporte.Location = New System.Drawing.Point(928, 18)
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(98, 23)
+        Me.BtnReporte.TabIndex = 9
+        Me.BtnReporte.Text = "Reporte"
+        Me.BtnReporte.UseVisualStyleBackColor = True
+        '
         'BtnListarTodos
         '
         Me.BtnListarTodos.Location = New System.Drawing.Point(761, 18)
@@ -392,15 +401,6 @@ Partial Class FrmArticulo
         Me.TabGeneral.SelectedIndex = 0
         Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
         Me.TabGeneral.TabIndex = 1
-        '
-        'BtnReporte
-        '
-        Me.BtnReporte.Location = New System.Drawing.Point(928, 18)
-        Me.BtnReporte.Name = "BtnReporte"
-        Me.BtnReporte.Size = New System.Drawing.Size(98, 23)
-        Me.BtnReporte.TabIndex = 9
-        Me.BtnReporte.Text = "Reporte"
-        Me.BtnReporte.UseVisualStyleBackColor = True
         '
         'FrmArticulo
         '
