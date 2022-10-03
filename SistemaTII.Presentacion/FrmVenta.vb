@@ -147,7 +147,7 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        'Me.Buscar()
     End Sub
     Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs) Handles BtnBuscarCliente.Click
         FrmCliente_Venta.ShowDialog()
@@ -324,27 +324,28 @@
         End If
     End Sub
 
-    'Private Sub FrmVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    Me.CrearTablaDetalle()
-    'End Sub
-
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
         'Me.Listar()
     End Sub
 
     Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
-        Try
-            Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
-            FrmReporteComprobanteVenta.ShowDialog()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        'Try
+        '    Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
+        '    FrmReporteComprobanteVenta.ShowDialog()
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
     End Sub
 
     Private Sub FrmVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Visible = False
+        ChkSeleccionar.Visible = False
         BtnAnular.Visible = False
         ChkSeleccionar.CheckState = False
+        If (FrmPrincipal.IdRol <> 1) Then
+            ChkSeleccionar.Visible = False
+        End If
         Me.Limpiar()
     End Sub
 

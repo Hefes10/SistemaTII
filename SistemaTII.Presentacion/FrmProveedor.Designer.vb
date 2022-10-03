@@ -86,7 +86,7 @@ Partial Class FrmProveedor
         'CboTipoDocumento
         '
         Me.CboTipoDocumento.FormattingEnabled = True
-        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "PASAPORTE", "CRANET", "RUC", "DNI"})
+        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "DNI"})
         Me.CboTipoDocumento.Location = New System.Drawing.Point(180, 111)
         Me.CboTipoDocumento.Name = "CboTipoDocumento"
         Me.CboTipoDocumento.Size = New System.Drawing.Size(316, 24)
@@ -231,13 +231,13 @@ Partial Class FrmProveedor
         Me.DgvListado.AllowUserToDeleteRows = False
         Me.DgvListado.AllowUserToOrderColumns = True
         Me.DgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvListado.Location = New System.Drawing.Point(6, 61)
+        Me.DgvListado.Location = New System.Drawing.Point(7, 61)
         Me.DgvListado.Name = "DgvListado"
         Me.DgvListado.ReadOnly = True
         Me.DgvListado.RowHeadersWidth = 51
         Me.DgvListado.RowTemplate.Height = 24
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(1020, 351)
+        Me.DgvListado.Size = New System.Drawing.Size(1019, 351)
         Me.DgvListado.TabIndex = 0
         '
         'TabPage2

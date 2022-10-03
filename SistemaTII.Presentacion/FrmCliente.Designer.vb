@@ -101,11 +101,12 @@ Partial Class FrmCliente
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(182, 235)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
         Me.DateTimePicker1.TabIndex = 28
+        Me.DateTimePicker1.TabStop = False
         '
         'Label10
         '
@@ -118,14 +119,14 @@ Partial Class FrmCliente
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(695, 126)
+        Me.TxtTelefono.Location = New System.Drawing.Point(695, 130)
         Me.TxtTelefono.Name = "TxtTelefono"
         Me.TxtTelefono.Size = New System.Drawing.Size(316, 22)
         Me.TxtTelefono.TabIndex = 23
         '
         'TxtDirección
         '
-        Me.TxtDirección.Location = New System.Drawing.Point(695, 81)
+        Me.TxtDirección.Location = New System.Drawing.Point(695, 86)
         Me.TxtDirección.Name = "TxtDirección"
         Me.TxtDirección.Size = New System.Drawing.Size(316, 22)
         Me.TxtDirección.TabIndex = 20
@@ -160,9 +161,9 @@ Partial Class FrmCliente
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(27, 186)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(134, 17)
+        Me.Label6.Size = New System.Drawing.Size(153, 17)
         Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Número Documento"
+        Me.Label6.Text = "Número Documento (*)"
         '
         'TxtId
         '
@@ -210,7 +211,7 @@ Partial Class FrmCliente
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(584, 126)
+        Me.Label2.Location = New System.Drawing.Point(584, 130)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 17)
         Me.Label2.TabIndex = 3
@@ -394,6 +395,6 @@ Partial Class FrmCliente
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnInsertar As Button
     Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label10 As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

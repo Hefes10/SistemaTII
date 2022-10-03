@@ -33,11 +33,18 @@
 
 
     Private Sub FrmConsultaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PanelMostrar.Visible = False
+        If (FrmPrincipal.IdRol = 1) Then
+            CboVendedor.Enabled = True
+        ElseIf (FrmPrincipal.IdRol = 2) Then
+            'aca se va a seleccionar el id del vendedor
+            CboVendedor.Enabled = False
+        End If
+        DgvListado.Visible = False
     End Sub
 
     Private Sub BtnFiltrar_Click(sender As Object, e As EventArgs) Handles BtnFiltrar.Click
-        Me.Filtrar()
+        '
+        'Me.Filtrar()
     End Sub
 
     Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
@@ -62,17 +69,9 @@
             SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
             TotalImpuesto = Total - SubTotal
 
-            LblSubTotalM.Text = Total
-            LblTotalImpuestoM.Text = TotalImpuesto
-            LblSubTotalM.Text = SubTotal
-
-            PanelMostrar.Visible = True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Private Sub BtnCerrarM_Click(sender As Object, e As EventArgs) Handles BtnCerrarM.Click
-        PanelMostrar.Visible = False
-    End Sub
 End Class

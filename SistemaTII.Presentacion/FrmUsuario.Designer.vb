@@ -254,8 +254,8 @@ Partial Class FrmUsuario
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(486, 34)
         Me.Label9.TabIndex = 2
-        Me.Label9.Text = "A: Para insertar un usuario la clave ess obligatoria." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Para actualizar deje en bl" &
-    "anco el campo clave y el campo no se actualizará." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label9.Text = "A: Para insertar un usuario la clave es obligatoria." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Para actualizar deje en bla" &
+    "nco el campo clave y el campo no se actualizará." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label8
         '

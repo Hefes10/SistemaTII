@@ -26,9 +26,14 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub Listar()
+
         Try
             Dim Neg As New Negocio.NArticulo
             DgvListado.DataSource = Neg.Listar()
+            DgvListado.Visible = True
+            If (FrmPrincipal.IdRol = 1) Then
+                ChkSeleccionar.Visible = True
+            End If
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
             Me.Limpiar()
@@ -43,6 +48,10 @@ Public Class FrmArticulo
             Dim Valor As String
             Valor = TxtValor.Text
             DgvListado.DataSource = Neg.Buscar(Valor)
+            DgvListado.Visible = True
+            If (FrmPrincipal.IdRol = 1) Then
+                ChkSeleccionar.Visible = True
+            End If
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -51,6 +60,9 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub Limpiar()
+        ErrorIcono.SetError(TxtNombre, "")
+        ErrorIcono.SetError(TxtStock, "")
+        ErrorIcono.SetError(TxtPrecioVenta, "")
         BtnInsertar.Visible = True
         BtnActualizar.Visible = False
         TxtValor.Text = ""
@@ -76,19 +88,20 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub FrmArticulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Me.Listar()
-        'Me.CargarCategoria()
         DgvListado.Columns.Item("Seleccionar").Visible = False
         BtnEliminar.Visible = False
         BtnActivar.Visible = False
         BtnDesactivar.Visible = False
         ChkSeleccionar.CheckState = False
+        ChkSeleccionar.Visible = False
         Me.Limpiar()
         Me.CargarCategoria()
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click, TxtValor.Enter
+        If TxtValor.Text <> "" Then
+            Me.Buscar()
+        End If
     End Sub
 
     Private Sub BtnCargarImagen_Click(sender As Object, e As EventArgs) Handles BtnCargarImagen.Click
@@ -211,59 +224,74 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
-            Try
-                Dim Neg As New Negocio.NArticulo
-                For Each row As DataGridViewRow In DgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
-                    If marcado Then
-                        Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        Dim Imagen As String = Convert.ToString(row.Cells("Imagen").Value)
-                        Neg.Eliminar(OneKey)
-                        File.Delete(Directorio & Imagen)
-                    End If
-                Next
-                Me.Listar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
+        For Each roww As DataGridViewRow In DgvListado.Rows
+            Dim mar As Boolean = Convert.ToBoolean(roww.Cells("Seleccionar").Value)
+            If mar Then
+                If (MsgBox("Está seguro de eliminar los registros seleccionados?", vbYesNo + vbQuestion, "Eliminar Registros") = vbYes) Then
+                    Try
+                        Dim Neg As New Negocio.NArticulo
+                        For Each row As DataGridViewRow In DgvListado.Rows
+                            Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
+                            If marcado Then
+                                Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
+                                Dim Imagen As String = Convert.ToString(row.Cells("Imagen").Value)
+                                Neg.Eliminar(OneKey)
+                                File.Delete(Directorio & Imagen)
+                            End If
+                        Next
+                        Me.Listar()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
+            End If
+        Next
     End Sub
 
     Private Sub BtnActivar_Click(sender As Object, e As EventArgs) Handles BtnActivar.Click
-        If (MsgBox("Está seguro de activar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
-            Try
-                Dim Neg As New Negocio.NArticulo
-                For Each row As DataGridViewRow In DgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
-                    If marcado Then
-                        Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        Neg.Activar(OneKey)
-                    End If
-                Next
-                Me.Listar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
+        For Each roww As DataGridViewRow In DgvListado.Rows
+            Dim mar As Boolean = Convert.ToBoolean(roww.Cells("Seleccionar").Value)
+            If mar Then
+                If (MsgBox("Está seguro de activar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
+                    Try
+                        Dim Neg As New Negocio.NArticulo
+                        For Each row As DataGridViewRow In DgvListado.Rows
+                            Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
+                            If marcado Then
+                                Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
+                                Neg.Activar(OneKey)
+                            End If
+                        Next
+                        Me.Listar()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
+            End If
+        Next
     End Sub
 
     Private Sub BtnDesactivar_Click(sender As Object, e As EventArgs) Handles BtnDesactivar.Click
-        If (MsgBox("Está seguro de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
-            Try
-                Dim Neg As New Negocio.NArticulo
-                For Each row As DataGridViewRow In DgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
-                    If marcado Then
-                        Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        Neg.Desactivar(OneKey)
-                    End If
-                Next
-                Me.Listar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
+        For Each roww As DataGridViewRow In DgvListado.Rows
+            Dim mar As Boolean = Convert.ToBoolean(roww.Cells("Seleccionar").Value)
+            If mar Then
+                If (MsgBox("Está seguro de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Activar Registros") = vbYes) Then
+                    Try
+                        Dim Neg As New Negocio.NArticulo
+                        For Each row As DataGridViewRow In DgvListado.Rows
+                            Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
+                            If marcado Then
+                                Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
+                                Neg.Desactivar(OneKey)
+                            End If
+                        Next
+                        Me.Listar()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
+            End If
+        Next
     End Sub
 
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
@@ -316,5 +344,37 @@ Public Class FrmArticulo
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub CboCategoria_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles CboCategoria.Validating
+        If DirectCast(sender, ComboBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el nombre de la categoría, este dato es obligatorio")
+        End If
+    End Sub
+
+    Private Sub TxtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el nombre del artículo, este campo es obligatorio")
+        End If
+    End Sub
+
+    Private Sub TxtStock_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtStock.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el stock del artículo, este dato es obligatorio")
+        End If
+    End Sub
+
+    Private Sub TxtPrecioVenta_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtPrecioVenta.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el precio de venta del artículo, este dato es obligatorio")
+        End If
     End Sub
 End Class

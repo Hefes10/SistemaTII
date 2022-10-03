@@ -1,4 +1,6 @@
-﻿Public Class FrmCliente
+﻿Imports System.ComponentModel
+Imports System.Text.RegularExpressions
+Public Class FrmCliente
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False
         DgvListado.Columns(0).Width = 100
@@ -149,10 +151,10 @@
 
     Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
         If ChkSeleccionar.CheckState = CheckState.Checked Then
-            DgvListado.Columns.Item("Seleccionar").Visible = True
+            'DgvListado.Columns.Item("Seleccionar").Visible = True
             BtnEliminar.Visible = True
         Else
-            DgvListado.Columns.Item("Seleccionar").Visible = False
+            'DgvListado.Columns.Item("Seleccionar").Visible = False
             BtnEliminar.Visible = False
         End If
     End Sub
@@ -181,8 +183,13 @@
 
     Private Sub FrmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Visible = False
+        ChkSeleccionar.Visible = False
         BtnEliminar.Visible = False
         ChkSeleccionar.CheckState = False
+        If (FrmPrincipal.IdRol <> 1) Then
+            ChkSeleccionar.Visible = False
+        End If
         Me.Limpiar()
     End Sub
 
@@ -203,4 +210,23 @@
             e.Handled = True
         End If
     End Sub
+
+
+    Private Sub TxtEmail_Validating(sender As Object, e As CancelEventArgs) Handles TxtEmail.Validating
+        Dim bln As Boolean = IsValidEmail(TxtEmail.Text)
+        If bln = True Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el nombre del artículo, este campo es obligatorio")
+        End If
+    End Sub
+
+    Private Function IsValidEmail(ByVal email As String) As Boolean
+        If email = String.Empty Then Return False
+        ' Compruebo si el formato de la dirección es correcto.
+        Dim re As Regex = New Regex("^[\w._%-]+@[\w.-]+\.[a-zA-Z]{2,4}$")
+        Dim m As Match = re.Match(email)
+        Return (m.Captures.Count <> 0)
+    End Function
+
 End Class

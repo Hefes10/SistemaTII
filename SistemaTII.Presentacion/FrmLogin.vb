@@ -41,18 +41,25 @@ Public Class FrmLogin
                         FrmPrincipal.IdUsuario = 2 'Obj.IdUsuario
                         FrmPrincipal.IdRol = 2 'Obj.IdRol
                         FrmPrincipal.Rol = "Vendedor"
-                        FrmPrincipal.Nombre = "Martin"
+                        FrmPrincipal.Nombre = "Lourdes"
+                        FrmPrincipal.Show()
                     ElseIf (Email = "almacenero@sistema.com") Then
                         FrmPrincipal.IdUsuario = 3 'Obj.IdUsuario
                         FrmPrincipal.IdRol = 3 'Obj.IdRol
                         FrmPrincipal.Rol = "Almacenero"
-                        FrmPrincipal.Nombre = "Luu Lezcano"
+                        FrmPrincipal.Nombre = "Jose"
+                        FrmPrincipal.Show()
+                    Else
+                        MsgBox("El usuario no está registrado", vbOKOnly + vbInformation, "Usuario incorrecto")
+                        Me.Show()
+                        TxtEmail.Clear()
+                        TxtClave.Clear()
+                        TxtEmail.Focus()
                     End If
-                    FrmPrincipal.Show()
                 End If
             Else
                 MsgBox("Correo o clave inválida", vbOKOnly + vbCritical, "Error de login")
-            End If
+            End if
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

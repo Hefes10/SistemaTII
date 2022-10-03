@@ -32,7 +32,7 @@
             Dim Valor As String
             Valor = TxtValor.Text
             'DgvListado.DataSource = Neg.BuscarProveedores(Valor)
-            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            'Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
             MsgBox(ex.Message)

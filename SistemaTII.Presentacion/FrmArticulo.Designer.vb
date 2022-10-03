@@ -317,7 +317,7 @@ Partial Class FrmArticulo
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(647, 19)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(98, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(98, 29)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -362,7 +362,7 @@ Partial Class FrmArticulo
         '
         Me.BtnReporte.Location = New System.Drawing.Point(928, 18)
         Me.BtnReporte.Name = "BtnReporte"
-        Me.BtnReporte.Size = New System.Drawing.Size(98, 23)
+        Me.BtnReporte.Size = New System.Drawing.Size(98, 30)
         Me.BtnReporte.TabIndex = 9
         Me.BtnReporte.Text = "Reporte"
         Me.BtnReporte.UseVisualStyleBackColor = True
@@ -371,7 +371,7 @@ Partial Class FrmArticulo
         '
         Me.BtnListarTodos.Location = New System.Drawing.Point(761, 18)
         Me.BtnListarTodos.Name = "BtnListarTodos"
-        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 23)
+        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 30)
         Me.BtnListarTodos.TabIndex = 8
         Me.BtnListarTodos.Text = "Listar Todos"
         Me.BtnListarTodos.UseVisualStyleBackColor = True
@@ -391,6 +391,7 @@ Partial Class FrmArticulo
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvListado.Size = New System.Drawing.Size(1020, 339)
         Me.DgvListado.TabIndex = 0
+        Me.DgvListado.Visible = False
         '
         'TabGeneral
         '

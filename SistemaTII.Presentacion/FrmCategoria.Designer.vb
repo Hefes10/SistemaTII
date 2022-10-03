@@ -167,6 +167,7 @@ Partial Class FrmCategoria
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvListado.Size = New System.Drawing.Size(893, 351)
         Me.DgvListado.TabIndex = 0
+        Me.DgvListado.Visible = False
         '
         'Seleccionar
         '

@@ -139,15 +139,20 @@
     End Sub
 
     Private Sub FrmIngreso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Visible = False
+        ChkSeleccionar.Visible = False
+        DgvListado.Columns.Item("Seleccionar").Visible = False
         BtnAnular.Visible = False
         ChkSeleccionar.CheckState = False
+        If (FrmPrincipal.IdRol <> 1) Then
+            ChkSeleccionar.Visible = False
+        End If
         Me.Limpiar()
         'Me.CrearTablaDetalle()
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        'Me.Buscar()
     End Sub
     Private Sub BtnBuscarProveedor_Click(sender As Object, e As EventArgs) Handles BtnBuscarProveedor.Click
         FrmProveedor__Ingreso.ShowDialog()

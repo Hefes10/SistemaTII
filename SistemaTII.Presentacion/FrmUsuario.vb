@@ -60,7 +60,7 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        'Me.Buscar()
     End Sub
 
     Private Sub CargarRol()
@@ -175,12 +175,12 @@ Public Class FrmUsuario
 
     Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
         If ChkSeleccionar.CheckState = CheckState.Checked Then
-            DgvListado.Columns.Item("Seleccionar").Visible = True
+            'DgvListado.Columns.Item("Seleccionar").Visible = True
             BtnEliminar.Visible = True
             BtnActivar.Visible = True
             BtnDesactivar.Visible = True
         Else
-            DgvListado.Columns.Item("Seleccionar").Visible = False
+            'DgvListado.Columns.Item("Seleccionar").Visible = False
             BtnEliminar.Visible = False
             BtnActivar.Visible = False
             BtnDesactivar.Visible = False
@@ -266,5 +266,18 @@ Public Class FrmUsuario
         BtnDesactivar.Visible = False
         ChkSeleccionar.CheckState = False
         Me.Limpiar()
+    End Sub
+
+    Private Sub TxtEmail_TextChanged(sender As Object, e As EventArgs) Handles TxtEmail.TextChanged
+
+    End Sub
+
+    Private Sub TxtEmail_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtEmail.Validating
+        Dim bln As Boolean = IsValidEmail(TxtEmail.Text)
+        If bln = True Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el nombre del artículo, este campo es obligatorio")
+        End If
     End Sub
 End Class

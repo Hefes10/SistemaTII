@@ -55,7 +55,7 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        'Me.Buscar()
     End Sub
 
     Private Sub BtnListarProveedores_Click(sender As Object, e As EventArgs) Handles BtnListarProveedores.Click
@@ -151,10 +151,10 @@
 
     Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
         If ChkSeleccionar.CheckState = CheckState.Checked Then
-            DgvListado.Columns.Item("Seleccionar").Visible = True
+            'DgvListado.Columns.Item("Seleccionar").Visible = True
             BtnEliminar.Visible = True
         Else
-            DgvListado.Columns.Item("Seleccionar").Visible = False
+            'DgvListado.Columns.Item("Seleccionar").Visible = False
             BtnEliminar.Visible = False
         End If
     End Sub
@@ -197,8 +197,13 @@
 
     Private Sub FrmProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Visible = False
+        ChkSeleccionar.Visible = False
         BtnEliminar.Visible = False
         ChkSeleccionar.CheckState = False
+        If (FrmPrincipal.IdRol <> 1) Then
+            ChkSeleccionar.Visible = False
+        End If
         Me.Limpiar()
     End Sub
 End Class
