@@ -3,7 +3,7 @@
 Public Class FrmArticulo
     Private RutaOrigen As String
     Private RutaDestino As String
-    Private Directorio As String = "C:\taller2\"
+    Private Directorio As String = "D:\taller2\"
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False
         DgvListado.Columns(2).Visible = False
