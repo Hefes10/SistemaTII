@@ -26,7 +26,23 @@ Public Class DCategoria
             Dim Tabla As New DataTable
             Dim Comando As New SqlCommand("categoria_buscar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = Valor 'aca envio el parametro del SP
+            Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Valor
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function Seleccionar() As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("categoria_seleccionar", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()
             Tabla.Load(Resultado)
