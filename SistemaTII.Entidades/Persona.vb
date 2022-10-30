@@ -4,6 +4,7 @@
     Private _Nombre As String
     Private _TipoDocumento As String
     Private _NumDocumento As String
+    Private _FechaNacimiento As DateTime
     Private _Direccion As String
     Private _Telefono As String
     Private _Email As String
@@ -50,6 +51,15 @@
         End Get
         Set(value As String)
             _NumDocumento = value
+        End Set
+    End Property
+
+    Public Property FechaNacimiento As DateTime
+        Get
+            Return _FechaNacimiento
+        End Get
+        Set(value As DateTime)
+            _FechaNacimiento = value
         End Set
     End Property
 
