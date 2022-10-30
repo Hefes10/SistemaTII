@@ -19,7 +19,7 @@ Public Class FrmLogin
             Dim bln As Boolean = IsValidEmail(TxtEmail.Text)
             Dim Email As String, Clave As String
             Dim Obj As New Entidades.Usuario
-            'Dim Neg As New Negocio.NUsuario
+            Dim Neg As New Negocio.NUsuario
             Email = TxtEmail.Text.Trim()
             Clave = TxtClave.Text.Trim()
             'Obj = Neg.Login(Email, Clave)

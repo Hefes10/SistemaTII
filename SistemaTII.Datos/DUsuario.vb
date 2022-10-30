@@ -1,4 +1,4 @@
-﻿Imports SistemaTII.Entidades 'Sistema.Entidades
+﻿Imports SistemaTII.Entidades
 Imports System.Data.SqlClient
 Public Class DUsuario
     Inherits Conexion
