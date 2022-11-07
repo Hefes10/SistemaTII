@@ -260,7 +260,7 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DgvListado.Columns.Item("Seleccionar").Visible = False
+        'DgvListado.Columns.Item("Seleccionar").Visible = False
         BtnEliminar.Visible = False
         BtnActivar.Visible = False
         BtnDesactivar.Visible = False

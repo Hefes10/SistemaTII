@@ -1,5 +1,6 @@
-﻿Imports Sistema.Entidades
-Imports Sistema.Datos
+﻿Imports SistemaTII.Entidades
+Imports SistemaTII.Datos
+
 Public Class NPersona
     Public Function Listar() As DataTable
         Try
@@ -12,6 +13,7 @@ Public Class NPersona
             Return Nothing
         End Try
     End Function
+
     Public Function ListarProveedores() As DataTable
         Try
             Dim Datos As New DPersona
@@ -23,6 +25,7 @@ Public Class NPersona
             Return Nothing
         End Try
     End Function
+
     Public Function ListarClientes() As DataTable
         Try
             Dim Datos As New DPersona
@@ -46,6 +49,7 @@ Public Class NPersona
             Return Nothing
         End Try
     End Function
+
     Public Function BuscarProveedores(Valor As String) As DataTable
         Try
             Dim Datos As New DPersona
@@ -57,6 +61,7 @@ Public Class NPersona
             Return Nothing
         End Try
     End Function
+
     Public Function BuscarClientes(Valor As String) As DataTable
         Try
             Dim Datos As New DPersona
@@ -101,4 +106,5 @@ Public Class NPersona
             Return False
         End Try
     End Function
+
 End Class
