@@ -23,8 +23,11 @@ Partial Class FrmUsuario
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TabGeneral = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.TxtDireccion = New System.Windows.Forms.TextBox()
+        Me.TxtNumDocumento = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnDesactivar = New System.Windows.Forms.Button()
         Me.BtnActivar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
@@ -32,10 +35,11 @@ Partial Class FrmUsuario
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnListarTodos = New System.Windows.Forms.Button()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
+        Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtClave = New System.Windows.Forms.TextBox()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
@@ -43,58 +47,65 @@ Partial Class FrmUsuario
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
-        Me.TxtDirección = New System.Windows.Forms.TextBox()
-        Me.TxtNumDocumento = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtId = New System.Windows.Forms.TextBox()
-        Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.CboTipoDocumento = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CboRol = New System.Windows.Forms.ComboBox()
         Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.TxtId = New System.Windows.Forms.TextBox()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnInsertar = New System.Windows.Forms.Button()
-        Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabGeneral.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TabGeneral
+        'Seleccionar
         '
-        Me.TabGeneral.Controls.Add(Me.TabPage1)
-        Me.TabGeneral.Controls.Add(Me.TabPage2)
-        Me.TabGeneral.Location = New System.Drawing.Point(13, 37)
-        Me.TabGeneral.Name = "TabGeneral"
-        Me.TabGeneral.SelectedIndex = 0
-        Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
-        Me.TabGeneral.TabIndex = 2
+        Me.Seleccionar.HeaderText = "Seleccionar"
+        Me.Seleccionar.MinimumWidth = 6
+        Me.Seleccionar.Name = "Seleccionar"
+        Me.Seleccionar.ReadOnly = True
+        Me.Seleccionar.Width = 125
         '
-        'TabPage1
+        'TxtDireccion
         '
-        Me.TabPage1.Controls.Add(Me.BtnDesactivar)
-        Me.TabPage1.Controls.Add(Me.BtnActivar)
-        Me.TabPage1.Controls.Add(Me.BtnEliminar)
-        Me.TabPage1.Controls.Add(Me.ChkSeleccionar)
-        Me.TabPage1.Controls.Add(Me.BtnBuscar)
-        Me.TabPage1.Controls.Add(Me.TxtValor)
-        Me.TabPage1.Controls.Add(Me.Lbltotal)
-        Me.TabPage1.Controls.Add(Me.DgvListado)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1052, 497)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Listado"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.TxtDireccion.Location = New System.Drawing.Point(181, 254)
+        Me.TxtDireccion.Name = "TxtDireccion"
+        Me.TxtDireccion.Size = New System.Drawing.Size(316, 22)
+        Me.TxtDireccion.TabIndex = 20
+        '
+        'TxtNumDocumento
+        '
+        Me.TxtNumDocumento.Location = New System.Drawing.Point(181, 207)
+        Me.TxtNumDocumento.Name = "TxtNumDocumento"
+        Me.TxtNumDocumento.Size = New System.Drawing.Size(316, 22)
+        Me.TxtNumDocumento.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(46, 254)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(67, 17)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Dirección"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(43, 207)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(134, 17)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Número Documento"
         '
         'BtnDesactivar
         '
@@ -135,9 +146,9 @@ Partial Class FrmUsuario
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(792, 19)
+        Me.BtnBuscar.Location = New System.Drawing.Point(655, 19)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(234, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(140, 29)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -146,7 +157,7 @@ Partial Class FrmUsuario
         '
         Me.TxtValor.Location = New System.Drawing.Point(7, 19)
         Me.TxtValor.Name = "TxtValor"
-        Me.TxtValor.Size = New System.Drawing.Size(721, 22)
+        Me.TxtValor.Size = New System.Drawing.Size(614, 22)
         Me.TxtValor.TabIndex = 2
         '
         'Lbltotal
@@ -158,38 +169,76 @@ Partial Class FrmUsuario
         Me.Lbltotal.TabIndex = 1
         Me.Lbltotal.Text = "Total"
         '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.BtnListarTodos)
+        Me.TabPage1.Controls.Add(Me.BtnDesactivar)
+        Me.TabPage1.Controls.Add(Me.BtnActivar)
+        Me.TabPage1.Controls.Add(Me.BtnEliminar)
+        Me.TabPage1.Controls.Add(Me.ChkSeleccionar)
+        Me.TabPage1.Controls.Add(Me.BtnBuscar)
+        Me.TabPage1.Controls.Add(Me.TxtValor)
+        Me.TabPage1.Controls.Add(Me.Lbltotal)
+        Me.TabPage1.Controls.Add(Me.DgvListado)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1052, 497)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Listado"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnListarTodos
+        '
+        Me.BtnListarTodos.Location = New System.Drawing.Point(834, 19)
+        Me.BtnListarTodos.Name = "BtnListarTodos"
+        Me.BtnListarTodos.Size = New System.Drawing.Size(153, 30)
+        Me.BtnListarTodos.TabIndex = 8
+        Me.BtnListarTodos.Text = "Listar Todos"
+        Me.BtnListarTodos.UseVisualStyleBackColor = True
+        '
         'DgvListado
         '
         Me.DgvListado.AllowUserToAddRows = False
         Me.DgvListado.AllowUserToDeleteRows = False
         Me.DgvListado.AllowUserToOrderColumns = True
         Me.DgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvListado.Location = New System.Drawing.Point(6, 61)
+        Me.DgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seleccionar})
+        Me.DgvListado.Location = New System.Drawing.Point(6, 73)
         Me.DgvListado.Name = "DgvListado"
         Me.DgvListado.ReadOnly = True
         Me.DgvListado.RowHeadersWidth = 51
         Me.DgvListado.RowTemplate.Height = 24
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(1020, 351)
+        Me.DgvListado.Size = New System.Drawing.Size(1020, 339)
         Me.DgvListado.TabIndex = 0
+        Me.DgvListado.Visible = False
+        '
+        'TabGeneral
+        '
+        Me.TabGeneral.Controls.Add(Me.TabPage1)
+        Me.TabGeneral.Controls.Add(Me.TabPage2)
+        Me.TabGeneral.Location = New System.Drawing.Point(14, 37)
+        Me.TabGeneral.Name = "TabGeneral"
+        Me.TabGeneral.SelectedIndex = 0
+        Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
+        Me.TabGeneral.TabIndex = 2
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.DateTimePicker1)
-        Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.TxtTelefono)
-        Me.TabPage2.Controls.Add(Me.TxtDirección)
+        Me.TabPage2.Controls.Add(Me.CboTipoDocumento)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.TxtDireccion)
         Me.TabPage2.Controls.Add(Me.TxtNumDocumento)
         Me.TabPage2.Controls.Add(Me.Label7)
         Me.TabPage2.Controls.Add(Me.Label6)
-        Me.TabPage2.Controls.Add(Me.TxtId)
-        Me.TabPage2.Controls.Add(Me.TxtNombre)
-        Me.TabPage2.Controls.Add(Me.CboTipoDocumento)
-        Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.CboRol)
         Me.TabPage2.Controls.Add(Me.BtnActualizar)
+        Me.TabPage2.Controls.Add(Me.TxtId)
+        Me.TabPage2.Controls.Add(Me.TxtNombre)
         Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Controls.Add(Me.BtnCancelar)
@@ -202,23 +251,6 @@ Partial Class FrmUsuario
         Me.TabPage2.Text = "Mantenimiento"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(180, 170)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(316, 22)
-        Me.DateTimePicker1.TabIndex = 26
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(28, 170)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(121, 17)
-        Me.Label10.TabIndex = 25
-        Me.Label10.Text = "Fecha Nacimiento"
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TxtClave)
@@ -226,41 +258,41 @@ Partial Class FrmUsuario
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(519, 55)
+        Me.GroupBox1.Location = New System.Drawing.Point(537, 59)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(518, 257)
+        Me.GroupBox1.Size = New System.Drawing.Size(509, 269)
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Acceso"
         '
         'TxtClave
         '
-        Me.TxtClave.Location = New System.Drawing.Point(136, 90)
+        Me.TxtClave.Location = New System.Drawing.Point(121, 129)
         Me.TxtClave.Name = "TxtClave"
-        Me.TxtClave.Size = New System.Drawing.Size(281, 22)
+        Me.TxtClave.Size = New System.Drawing.Size(269, 22)
         Me.TxtClave.TabIndex = 4
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(136, 42)
+        Me.TxtEmail.Location = New System.Drawing.Point(121, 57)
         Me.TxtEmail.Name = "TxtEmail"
-        Me.TxtEmail.Size = New System.Drawing.Size(281, 22)
+        Me.TxtEmail.Size = New System.Drawing.Size(269, 22)
         Me.TxtEmail.TabIndex = 3
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(22, 171)
+        Me.Label9.Location = New System.Drawing.Point(23, 193)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(486, 34)
+        Me.Label9.Size = New System.Drawing.Size(484, 34)
         Me.Label9.TabIndex = 2
         Me.Label9.Text = "A: Para insertar un usuario la clave es obligatoria." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Para actualizar deje en bla" &
-    "nco el campo clave y el campo no se actualizará." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+    "nco el campo clave y la clave no se actuaclizará."
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(19, 102)
+        Me.Label8.Location = New System.Drawing.Point(20, 129)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 17)
         Me.Label8.TabIndex = 1
@@ -269,7 +301,7 @@ Partial Class FrmUsuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 47)
+        Me.Label4.Location = New System.Drawing.Point(20, 57)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(61, 17)
         Me.Label4.TabIndex = 0
@@ -277,72 +309,25 @@ Partial Class FrmUsuario
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(180, 371)
+        Me.TxtTelefono.Location = New System.Drawing.Point(181, 306)
         Me.TxtTelefono.Name = "TxtTelefono"
         Me.TxtTelefono.Size = New System.Drawing.Size(316, 22)
         Me.TxtTelefono.TabIndex = 23
         '
-        'TxtDirección
-        '
-        Me.TxtDirección.Location = New System.Drawing.Point(180, 303)
-        Me.TxtDirección.Name = "TxtDirección"
-        Me.TxtDirección.Size = New System.Drawing.Size(316, 22)
-        Me.TxtDirección.TabIndex = 20
-        '
-        'TxtNumDocumento
-        '
-        Me.TxtNumDocumento.Location = New System.Drawing.Point(180, 204)
-        Me.TxtNumDocumento.Name = "TxtNumDocumento"
-        Me.TxtNumDocumento.Size = New System.Drawing.Size(316, 22)
-        Me.TxtNumDocumento.TabIndex = 19
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 308)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(67, 17)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Dirección"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 207)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(134, 17)
-        Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Número Documento"
-        '
-        'TxtId
-        '
-        Me.TxtId.Location = New System.Drawing.Point(389, 16)
-        Me.TxtId.Name = "TxtId"
-        Me.TxtId.Size = New System.Drawing.Size(100, 22)
-        Me.TxtId.TabIndex = 6
-        Me.TxtId.Visible = False
-        '
-        'TxtNombre
-        '
-        Me.TxtNombre.Location = New System.Drawing.Point(180, 103)
-        Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(316, 22)
-        Me.TxtNombre.TabIndex = 4
-        '
         'CboTipoDocumento
         '
         Me.CboTipoDocumento.FormattingEnabled = True
-        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "DNI"})
-        Me.CboTipoDocumento.Location = New System.Drawing.Point(180, 252)
+        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "PASAPORTE", "CARNET", "RUC", "DNI"})
+        Me.CboTipoDocumento.Location = New System.Drawing.Point(181, 162)
         Me.CboTipoDocumento.Name = "CboTipoDocumento"
-        Me.CboTipoDocumento.Size = New System.Drawing.Size(316, 24)
+        Me.CboTipoDocumento.Size = New System.Drawing.Size(170, 24)
         Me.CboTipoDocumento.TabIndex = 22
         Me.CboTipoDocumento.Text = "DNI"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 255)
+        Me.Label5.Location = New System.Drawing.Point(43, 162)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 17)
         Me.Label5.TabIndex = 21
@@ -351,34 +336,48 @@ Partial Class FrmUsuario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 59)
+        Me.Label3.Location = New System.Drawing.Point(43, 59)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 17)
+        Me.Label3.Size = New System.Drawing.Size(48, 17)
         Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Rol(*)"
+        Me.Label3.Text = "Rol (*)"
         '
         'CboRol
         '
         Me.CboRol.FormattingEnabled = True
-        Me.CboRol.Location = New System.Drawing.Point(180, 55)
+        Me.CboRol.Location = New System.Drawing.Point(181, 60)
         Me.CboRol.Name = "CboRol"
         Me.CboRol.Size = New System.Drawing.Size(316, 24)
         Me.CboRol.TabIndex = 9
-        Me.CboRol.Text = "Vendedor"
         '
         'BtnActualizar
         '
-        Me.BtnActualizar.Location = New System.Drawing.Point(180, 446)
+        Me.BtnActualizar.Location = New System.Drawing.Point(159, 410)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(143, 23)
         Me.BtnActualizar.TabIndex = 7
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
         '
+        'TxtId
+        '
+        Me.TxtId.Location = New System.Drawing.Point(390, 21)
+        Me.TxtId.Name = "TxtId"
+        Me.TxtId.Size = New System.Drawing.Size(100, 22)
+        Me.TxtId.TabIndex = 6
+        Me.TxtId.Visible = False
+        '
+        'TxtNombre
+        '
+        Me.TxtNombre.Location = New System.Drawing.Point(181, 118)
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.Size = New System.Drawing.Size(316, 22)
+        Me.TxtNombre.TabIndex = 4
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 371)
+        Me.Label2.Location = New System.Drawing.Point(46, 306)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 17)
         Me.Label2.TabIndex = 3
@@ -387,7 +386,7 @@ Partial Class FrmUsuario
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 107)
+        Me.Label1.Location = New System.Drawing.Point(43, 117)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 2
@@ -395,7 +394,7 @@ Partial Class FrmUsuario
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(351, 446)
+        Me.BtnCancelar.Location = New System.Drawing.Point(330, 410)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(145, 23)
         Me.BtnCancelar.TabIndex = 1
@@ -404,20 +403,12 @@ Partial Class FrmUsuario
         '
         'BtnInsertar
         '
-        Me.BtnInsertar.Location = New System.Drawing.Point(180, 446)
+        Me.BtnInsertar.Location = New System.Drawing.Point(159, 410)
         Me.BtnInsertar.Name = "BtnInsertar"
         Me.BtnInsertar.Size = New System.Drawing.Size(143, 23)
         Me.BtnInsertar.TabIndex = 0
         Me.BtnInsertar.Text = "Insertar"
         Me.BtnInsertar.UseVisualStyleBackColor = True
-        '
-        'Seleccionar
-        '
-        Me.Seleccionar.HeaderText = "Seleccionar"
-        Me.Seleccionar.MinimumWidth = 6
-        Me.Seleccionar.Name = "Seleccionar"
-        Me.Seleccionar.ReadOnly = True
-        Me.Seleccionar.Width = 125
         '
         'ErrorIcono
         '
@@ -432,10 +423,10 @@ Partial Class FrmUsuario
         Me.Controls.Add(Me.TabGeneral)
         Me.Name = "FrmUsuario"
         Me.Text = "Usuarios"
-        Me.TabGeneral.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabGeneral.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -445,8 +436,11 @@ Partial Class FrmUsuario
 
     End Sub
 
-    Friend WithEvents TabGeneral As TabControl
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
+    Friend WithEvents TxtDireccion As TextBox
+    Friend WithEvents TxtNumDocumento As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
     Friend WithEvents BtnDesactivar As Button
     Friend WithEvents BtnActivar As Button
     Friend WithEvents BtnEliminar As Button
@@ -454,8 +448,23 @@ Partial Class FrmUsuario
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents TxtValor As TextBox
     Friend WithEvents Lbltotal As Label
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents BtnListarTodos As Button
     Friend WithEvents DgvListado As DataGridView
+    Friend WithEvents TabGeneral As TabControl
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CboRol As ComboBox
+    Friend WithEvents BtnActualizar As Button
+    Friend WithEvents TxtId As TextBox
+    Friend WithEvents TxtNombre As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents BtnInsertar As Button
+    Friend WithEvents ErrorIcono As ErrorProvider
+    Friend WithEvents CboTipoDocumento As ComboBox
+    Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TxtClave As TextBox
     Friend WithEvents TxtEmail As TextBox
@@ -463,23 +472,4 @@ Partial Class FrmUsuario
     Friend WithEvents Label8 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtTelefono As TextBox
-    Friend WithEvents TxtDirección As TextBox
-    Friend WithEvents TxtNumDocumento As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TxtId As TextBox
-    Friend WithEvents TxtNombre As TextBox
-    Friend WithEvents CboTipoDocumento As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents CboRol As ComboBox
-    Friend WithEvents BtnActualizar As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnInsertar As Button
-    Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
-    Friend WithEvents ErrorIcono As ErrorProvider
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents Label10 As Label
 End Class

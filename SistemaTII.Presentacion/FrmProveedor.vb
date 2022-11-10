@@ -21,6 +21,7 @@
         Try
             Dim Neg As New Negocio.NPersona
             DgvListado.DataSource = Neg.ListarProveedores()
+            DgvListado.Visible = True
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
             Me.Limpiar()
@@ -49,51 +50,11 @@
         TxtId.Text = ""
         TxtNombre.Text = ""
         TxtNumDocumento.Text = ""
-        TxtDirección.Text = ""
+        TxtDireccion.Text = ""
         TxtTelefono.Text = ""
         TxtEmail.Text = ""
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
-    End Sub
-
-    Private Sub BtnListarProveedores_Click(sender As Object, e As EventArgs) Handles BtnListarProveedores.Click
-        Me.Listar()
-    End Sub
-
-    Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
-        Try
-            If Me.ValidateChildren = True And TxtNombre.Text <> "" Then
-                Dim Obj As New Entidades.Persona
-                Dim Neg As New Negocio.NPersona
-
-                Obj.TipoPersona = "Proveedor"
-                Obj.Nombre = TxtNombre.Text
-                Obj.TipoDocumento = CboTipoDocumento.Text
-                Obj.NumDocumento = TxtNumDocumento.Text
-                Obj.Direccion = TxtDirección.Text
-                Obj.Telefono = TxtTelefono.Text
-                Obj.Email = TxtEmail.Text
-
-                If (Neg.Insertar(Obj)) Then
-                    MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
-                    Me.Listar()
-                Else
-                    MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
-                End If
-            Else
-                MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
-        Me.Limpiar()
-        TabGeneral.SelectedIndex = 0
-    End Sub
 
     Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
         Try
@@ -101,7 +62,7 @@
             TxtNombre.Text = DgvListado.SelectedCells.Item(3).Value
             CboTipoDocumento.Text = DgvListado.SelectedCells.Item(4).Value
             TxtNumDocumento.Text = DgvListado.SelectedCells.Item(5).Value
-            TxtDirección.Text = DgvListado.SelectedCells.Item(6).Value
+            TxtDireccion.Text = DgvListado.SelectedCells.Item(6).Value
             TxtTelefono.Text = DgvListado.SelectedCells.Item(7).Value
             TxtEmail.Text = DgvListado.SelectedCells.Item(8).Value
 
@@ -113,7 +74,7 @@
         End Try
     End Sub
 
-    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs)
         Try
             If Me.ValidateChildren = True And TxtNombre.Text <> "" And TxtId.Text <> "" Then
                 Dim Obj As New Entidades.Persona
@@ -124,7 +85,7 @@
                 Obj.Nombre = TxtNombre.Text
                 Obj.TipoDocumento = CboTipoDocumento.Text
                 Obj.NumDocumento = TxtNumDocumento.Text
-                Obj.Direccion = TxtDirección.Text
+                Obj.Direccion = TxtDireccion.Text
                 Obj.Telefono = TxtTelefono.Text
                 Obj.Email = TxtEmail.Text
 
@@ -147,6 +108,77 @@
             Dim chkcell As DataGridViewCheckBoxCell = DgvListado.Rows(e.RowIndex).Cells("Seleccionar")
             chkcell.Value = Not chkcell.Value
         End If
+    End Sub
+
+    Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs)
+        If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs)
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtTelefono_TextChanged(sender As Object, e As KeyPressEventArgs)
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub FrmProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Visible = False
+        'ChkSeleccionar.Visible = False
+        BtnEliminar.Visible = False
+        ChkSeleccionar.CheckState = False
+        If (FrmPrincipal.IdRol <> 1) Then
+            ChkSeleccionar.Visible = False
+        End If
+        Me.Limpiar()
+    End Sub
+
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        Me.Buscar()
+    End Sub
+
+    Private Sub BtnListarProveedores_Click(sender As Object, e As EventArgs) Handles BtnListarProveedores.Click
+        Me.Listar()
+    End Sub
+
+    Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
+        Try
+            If Me.ValidateChildren = True And TxtNombre.Text <> "" Then
+                Dim Obj As New Entidades.Persona
+                Dim Neg As New Negocio.NPersona
+
+                Obj.TipoPersona = "Proveedor"
+                Obj.Nombre = TxtNombre.Text
+                Obj.TipoDocumento = CboTipoDocumento.Text
+                Obj.NumDocumento = TxtNumDocumento.Text
+                Obj.Direccion = TxtDireccion.Text
+                Obj.Telefono = TxtTelefono.Text
+                Obj.Email = TxtEmail.Text
+
+                If (Neg.Insertar(Obj)) Then
+                    MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                    Me.Listar()
+                Else
+                    MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
+                End If
+            Else
+                MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        Me.Limpiar()
+        TabGeneral.SelectedIndex = 0
     End Sub
 
     Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
@@ -175,35 +207,5 @@
                 MsgBox(ex.Message)
             End Try
         End If
-    End Sub
-
-    Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
-        If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNumDocumento.KeyPress
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TxtTelefono_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtTelefono.KeyPress
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub FrmProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DgvListado.Columns.Item("Seleccionar").Visible = False
-        DgvListado.Visible = False
-        ChkSeleccionar.Visible = False
-        BtnEliminar.Visible = False
-        ChkSeleccionar.CheckState = False
-        If (FrmPrincipal.IdRol <> 1) Then
-            ChkSeleccionar.Visible = False
-        End If
-        Me.Limpiar()
     End Sub
 End Class

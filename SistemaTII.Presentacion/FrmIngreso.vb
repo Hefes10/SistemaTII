@@ -34,17 +34,17 @@
 
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.NIngreso
-    '        ' DgvListado.DataSource = Neg.Listar()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '        Me.Limpiar()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            'Dim Neg As New Negocio.NIngreso
+            'DgvListado.DataSource = Neg.Listar()
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+            Me.Limpiar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
@@ -321,7 +321,7 @@
     End Sub
 
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
-        'Me.Listar()
+        Me.Listar()
     End Sub
 
     Private Sub TxtSerieComprobante_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtSerieComprobante.KeyPress, TxtSerieComprobante.TextChanged
