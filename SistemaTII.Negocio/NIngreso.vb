@@ -1,5 +1,5 @@
-﻿Imports Sistema.Entidades
-Imports Sistema.Datos
+﻿Imports SistemaTII.Entidades
+Imports SistemaTII.Datos
 Public Class NIngreso
     Public Function Listar() As DataTable
         Try

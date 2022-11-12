@@ -36,8 +36,8 @@
 
     Private Sub Listar()
         Try
-            'Dim Neg As New Negocio.NIngreso
-            'DgvListado.DataSource = Neg.Listar()
+            Dim Neg As New Negocio.NIngreso
+            DgvListado.DataSource = Neg.Listar()
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
             Me.Limpiar()
@@ -48,10 +48,10 @@
 
     Private Sub Buscar()
         Try
-            'Dim Neg As New Negocio.NIngreso
+            Dim Neg As New Negocio.NIngreso
             Dim Valor As String
             Valor = TxtValor.Text
-            'DgvListado.DataSource = Neg.Buscar(Valor)
+            DgvListado.DataSource = Neg.Buscar(Valor)
 
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
