@@ -1,9 +1,10 @@
 ﻿Imports SistemaTII.Entidades
 Imports SistemaTII.Datos
-Public Class NIngreso
+
+Public Class NVenta
     Public Function Listar() As DataTable
         Try
-            Dim Datos As New DIngreso
+            Dim Datos As New DVenta
             Dim Tabla As New DataTable
             Tabla = Datos.Listar()
             Return Tabla
@@ -15,7 +16,7 @@ Public Class NIngreso
 
     Public Function Buscar(Valor As String) As DataTable
         Try
-            Dim Datos As New DIngreso
+            Dim Datos As New DVenta
             Dim Tabla As New DataTable
             Tabla = Datos.Buscar(Valor)
             Return Tabla
@@ -27,7 +28,7 @@ Public Class NIngreso
 
     Public Function ListarDetalle(Id As Integer) As DataTable
         Try
-            Dim Datos As New DIngreso
+            Dim Datos As New DVenta
             Dim Tabla As New DataTable
             Tabla = Datos.ListarDetalle(Id)
             Return Tabla
@@ -39,7 +40,7 @@ Public Class NIngreso
 
     Public Function Anular(Id As Integer) As Boolean
         Try
-            Dim Datos As New DIngreso
+            Dim Datos As New DVenta
             Datos.Anular(Id)
             Return True
         Catch ex As Exception
@@ -48,9 +49,9 @@ Public Class NIngreso
         End Try
     End Function
 
-    Public Function Insertar(Obj As Ingreso, Det As DataTable) As Boolean
+    Public Function Insertar(Obj As Venta, Det As DataTable) As Boolean
         Try
-            Dim Datos As New DIngreso
+            Dim Datos As New DVenta
             Datos.Insertar(Obj, Det)
             Return True
         Catch ex As Exception
