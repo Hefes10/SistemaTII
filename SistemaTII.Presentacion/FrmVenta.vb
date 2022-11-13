@@ -34,24 +34,25 @@
 
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.NVenta
-    '        ' DgvListado.DataSource = Neg.Listar()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '        Me.Limpiar()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            Dim Neg As New Negocio.NVenta
+            DgvListado.DataSource = Neg.Listar()
+            DgvListado.Visible = True
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+            Me.Limpiar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
-            'Dim Neg As New Negocio.NVenta
+            Dim Neg As New Negocio.NVenta
             Dim Valor As String
             Valor = TxtValor.Text
-            'DgvListado.DataSource = Neg.Buscar(Valor)
+            DgvListado.DataSource = Neg.Buscar(Valor)
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -73,40 +74,40 @@
         TxtTotalImpuesto.Text = 0
         TxtTotal.Text = 0
     End Sub
-    'Private Sub CrearTablaDetalle()
-    '    Me.DtDetalle = New DataTable("Detalle")
-    '    Me.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.int32"))
-    '    Me.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.string"))
-    '    Me.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.string"))
-    '    Me.DtDetalle.Columns.Add("stock", System.Type.GetType("System.int32"))
-    '    Me.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.int32"))
-    '    Me.DtDetalle.Columns.Add("precio", System.Type.GetType("System.decimal"))
-    '    Me.DtDetalle.Columns.Add("descuento", System.Type.GetType("System.decimal"))
-    '    Me.DtDetalle.Columns.Add("importe", System.Type.GetType("System.decimal"))
+    Private Sub CrearTablaDetalle()
+        Me.DtDetalle = New DataTable("Detalle")
+        Me.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.Int32"))
+        Me.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.String"))
+        Me.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.String"))
+        Me.DtDetalle.Columns.Add("stock", System.Type.GetType("System.Int32"))
+        Me.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.Int32"))
+        Me.DtDetalle.Columns.Add("precio", System.Type.GetType("System.Decimal"))
+        Me.DtDetalle.Columns.Add("descuento", System.Type.GetType("System.Decimal"))
+        Me.DtDetalle.Columns.Add("importe", System.Type.GetType("System.Decimal"))
 
-    '    DgvDetalle.DataSource = Me.DtDetalle
-    '    DgvDetalle.Columns(0).Visible = False
-    '    DgvDetalle.Columns(1).HeaderText = "CODIGO"
-    '    DgvDetalle.Columns(1).Width = 100
-    '    DgvDetalle.Columns(2).HeaderText = "ARTICULO"
-    '    DgvDetalle.Columns(2).Width = 200
-    '    DgvDetalle.Columns(3).HeaderText = "STOCK"
-    '    DgvDetalle.Columns(3).Width = 100
-    '    DgvDetalle.Columns(4).HeaderText = "CANTIDAD"
-    '    DgvDetalle.Columns(4).Width = 100
-    '    DgvDetalle.Columns(5).HeaderText = "PRECIO"
-    '    DgvDetalle.Columns(5).Width = 100
-    '    DgvDetalle.Columns(6).HeaderText = "DESCUENTO"
-    '    DgvDetalle.Columns(6).Width = 100
-    '    DgvDetalle.Columns(7).HeaderText = "IMPORTE"
-    '    DgvDetalle.Columns(7).Width = 100
+        DgvDetalle.DataSource = Me.DtDetalle
+        DgvDetalle.Columns(0).Visible = False
+        DgvDetalle.Columns(1).HeaderText = "CODIGO"
+        DgvDetalle.Columns(1).Width = 100
+        DgvDetalle.Columns(2).HeaderText = "ARTICULO"
+        DgvDetalle.Columns(2).Width = 200
+        DgvDetalle.Columns(3).HeaderText = "STOCK"
+        DgvDetalle.Columns(3).Width = 100
+        DgvDetalle.Columns(4).HeaderText = "CANTIDAD"
+        DgvDetalle.Columns(4).Width = 100
+        DgvDetalle.Columns(5).HeaderText = "PRECIO"
+        DgvDetalle.Columns(5).Width = 100
+        DgvDetalle.Columns(6).HeaderText = "DESCUENTO"
+        DgvDetalle.Columns(6).Width = 100
+        DgvDetalle.Columns(7).HeaderText = "IMPORTE"
+        DgvDetalle.Columns(7).Width = 100
 
-    '    DgvDetalle.Columns(1).ReadOnly = True
-    '    DgvDetalle.Columns(2).ReadOnly = True
-    '    DgvDetalle.Columns(3).ReadOnly = True
-    '    DgvDetalle.Columns(7).ReadOnly = True
+        DgvDetalle.Columns(1).ReadOnly = True
+        DgvDetalle.Columns(2).ReadOnly = True
+        DgvDetalle.Columns(3).ReadOnly = True
+        DgvDetalle.Columns(7).ReadOnly = True
 
-    'End Sub
+    End Sub
 
     Private Sub AgregarDetalle(Fila As Entidades.Articulo)
         Dim Agregar As Boolean = True
@@ -147,7 +148,7 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        'Me.Buscar()
+        Me.Buscar()
     End Sub
     Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs) Handles BtnBuscarCliente.Click
         FrmCliente_Venta.ShowDialog()
@@ -158,9 +159,9 @@
     Private Sub TxtCodigo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodigo.KeyDown
         If (e.KeyCode = Keys.Enter) Then
             Try
-                ' Dim Neg As New Negocio.NArticulo
+                Dim Neg As New Negocio.NArticulo
                 Dim Obj As New Entidades.Articulo
-                ' Obj = Neg.BuscarCodigoVenta(TxtCodigo.Text)
+                Obj = Neg.BuscarCodigoVenta(TxtCodigo.Text)
                 If (Obj Is Nothing) Then
                     MsgBox("No existe artículo con ese código de barras", vbOKOnly + vbCritical, "No existe artículo")
                 Else
@@ -182,10 +183,10 @@
 
     Private Sub BtnBuscarArticulosDetalles_Click(sender As Object, e As EventArgs) Handles BtnBuscarArticulosDetalles.Click
         Try
-            'Dim Neg As New Negocio.NArticulo
+            Dim Neg As New Negocio.NArticulo
             Dim Valor As String
             Valor = TxtBuscarArticulos.Text
-            'DgvArticulos.DataSource = Neg.BuscarVenta(Valor)
+            DgvArticulos.DataSource = Neg.BuscarVenta(Valor)
             LblTotalArticulos.Text = "Total Artículos: " & DgvArticulos.DataSource.Rows.Count
             Me.FormatoArticulos()
         Catch ex As Exception
@@ -229,33 +230,33 @@
     End Sub
 
     Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
-        'Try
-        '    If (TxtIdProveedor.Text <> "" And CboTipoComprobante.Text <> "" And TxtNumComprobante.Text <> "" And DtDetalle.Rows.Count > 0) Then
-        '        Dim Obj As New Entidades.Venta
-        '        Dim Neg As New Negocio.NVenta
+        Try
+            If (TxtIdCliente.Text <> "" And CboTipoComprobante.Text <> "" And TxtNumComprobante.Text <> "" And DtDetalle.Rows.Count > 0) Then
+                Dim Obj As New Entidades.Venta
+                Dim Neg As New Negocio.NVenta
 
-        '        Obj.IdUsuario = Variables.IdUsuario
-        '        Obj.IdCliente = TxtIdCliente.Text
-        '        Obj.TipoComprobante = CboTipoComprobante.Text
-        '        Obj.SerieComprobante = TxtSerieComprobante.Text
-        '        Obj.NumComprobante = TxtNumComprobante.Text
-        '        Obj.Impuesto = TxtImpuesto.Text
-        '        Obj.Total = TxtTotal.Text
+                Obj.IdUsuario = Variables.IdUsuario
+                Obj.IdCliente = TxtIdCliente.Text
+                Obj.TipoComprobante = CboTipoComprobante.Text
+                Obj.SerieComprobante = TxtSerieComprobante.Text
+                Obj.NumComprobante = TxtNumComprobante.Text
+                Obj.Impuesto = TxtImpuesto.Text
+                Obj.Total = TxtTotal.Text
 
-        '        If (Neg.Insertar(Obj, DtDetalle)) Then
-        '            MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
-        '            Me.Listar()
-        '        Else
-        '            MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro incorrecto")
-        '        End If
-        '    Else
-        '        MsgBox("Rellene todos los campos obligatorios, agregue al menos un detalle", vbOKOnly + vbCritical, "Faltan ingresar datos")
-        '    End If
+                If (Neg.Insertar(Obj, DtDetalle)) Then
+                    MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
+                    Me.Listar()
+                Else
+                    MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro incorrecto")
+                End If
+            Else
+                MsgBox("Rellene todos los campos obligatorios, agregue al menos un detalle", vbOKOnly + vbCritical, "Faltan ingresar datos")
+            End If
 
 
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub BtnCerrarM_Click(sender As Object, e As EventArgs) Handles BtnCerrarM.Click
@@ -264,8 +265,8 @@
 
     Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
         Try
-            'Dim Neg As New Negocio.NVenta
-            'DgvMostrarDetalle.DataSource = Neg.ListarDetalle(DgvListado.SelectedCells.Item(1).Value)
+            Dim Neg As New Negocio.NVenta
+            DgvMostrarDetalle.DataSource = Neg.ListarDetalle(DgvListado.SelectedCells.Item(1).Value)
 
             Dim Total As Decimal = 0
             Dim SubTotal As Decimal = 0
@@ -275,7 +276,7 @@
             SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
             TotalImpuesto = Total - SubTotal
 
-            LblSubTotalM.Text = Total
+            LblTotalM.Text = Total
             LblTotalImpuestoM.Text = TotalImpuesto
             LblSubTotalM.Text = SubTotal
 
@@ -293,15 +294,15 @@
     Private Sub BtnAnular_Click(sender As Object, e As EventArgs) Handles BtnAnular.Click
         If (MsgBox("Está seguro de anular las ventas seleccionadas?", vbYesNo + vbQuestion, "Anular Ventas") = vbYes) Then
             Try
-                'Dim Neg As New Negocio.NVentas
+                Dim Neg As New Negocio.NVenta
                 For Each row As DataGridViewRow In DgvListado.Rows
                     Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                        'Neg.Anular(OneKey)
+                        Neg.Anular(OneKey)
                     End If
                 Next
-                'Me.Listar()
+                Me.Listar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -325,20 +326,21 @@
     End Sub
 
     Private Sub BtnListarTodos_Click(sender As Object, e As EventArgs) Handles BtnListarTodos.Click
-        'Me.Listar()
+        Me.Listar()
+        ChkSeleccionar.Visible = True
     End Sub
 
     Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
-        'Try
-        '    Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
-        '    FrmReporteComprobanteVenta.ShowDialog()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
+        Try
+            Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
+            FrmReporteComprobanteVenta.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub FrmVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Columns.Item("Seleccionar").Visible = False
         DgvListado.Visible = False
         ChkSeleccionar.Visible = False
         BtnAnular.Visible = False
@@ -347,6 +349,7 @@
             ChkSeleccionar.Visible = False
         End If
         Me.Limpiar()
+        Me.CrearTablaDetalle()
     End Sub
 
     Private Sub TxtSerieComprobante_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtSerieComprobante.KeyPress
@@ -366,4 +369,5 @@
             e.Handled = True
         End If
     End Sub
+
 End Class

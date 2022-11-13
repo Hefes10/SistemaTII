@@ -26,6 +26,18 @@ Public Class NVenta
         End Try
     End Function
 
+    Public Function ConsultaFecha(FechaInicio As Date, FechaFin As Date) As DataTable
+        Try
+            Dim Datos As New DVenta
+            Dim Tabla As New DataTable
+            Tabla = Datos.ConsultaFechas(FechaInicio, FechaFin)
+            Return Tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function ListarDetalle(Id As Integer) As DataTable
         Try
             Dim Datos As New DVenta

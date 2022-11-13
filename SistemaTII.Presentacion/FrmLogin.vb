@@ -33,6 +33,7 @@ Public Class FrmLogin
                     Me.Hide()
                     If (Email = "admin@sistema.com") Then
                         FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
+                        Variables.IdUsuario = 1
                         FrmPrincipal.IdRol = 1 'Obj.IdRol
                         FrmPrincipal.Rol = "Administrador"
                         FrmPrincipal.Nombre = "Martin"

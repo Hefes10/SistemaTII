@@ -129,9 +129,9 @@
     End Sub
 
     Private Sub FrmProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Columns.Item("Seleccionar").Visible = False
         DgvListado.Visible = False
-        'ChkSeleccionar.Visible = False
+        ChkSeleccionar.Visible = False
         BtnEliminar.Visible = False
         ChkSeleccionar.CheckState = False
         If (FrmPrincipal.IdRol <> 1) Then

@@ -1,5 +1,5 @@
 ﻿Public Class Ingreso
-    Private _Idingreso As Integer
+    Private _IdIngreso As Integer
     Private _IdProveedor As Integer
     Private _IdUsuario As Integer
     Private _TipoComprobante As String
@@ -10,12 +10,12 @@
     Private _Total As Decimal
     Private _Estado As Boolean
 
-    Public Property Idingreso As Integer
+    Public Property IdIngreso As Integer
         Get
-            Return _Idingreso
+            Return _IdIngreso
         End Get
         Set(value As Integer)
-            _Idingreso = value
+            _IdIngreso = value
         End Set
     End Property
 

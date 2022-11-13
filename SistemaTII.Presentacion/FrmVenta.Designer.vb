@@ -374,7 +374,7 @@ Partial Class FrmVenta
         Me.PanelMostrar.Controls.Add(Me.DgvMostrarDetalle)
         Me.PanelMostrar.Location = New System.Drawing.Point(152, 112)
         Me.PanelMostrar.Name = "PanelMostrar"
-        Me.PanelMostrar.Size = New System.Drawing.Size(921, 460)
+        Me.PanelMostrar.Size = New System.Drawing.Size(921, 476)
         Me.PanelMostrar.TabIndex = 9
         Me.PanelMostrar.Visible = False
         '

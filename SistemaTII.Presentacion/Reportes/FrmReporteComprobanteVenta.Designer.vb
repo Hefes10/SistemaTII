@@ -22,16 +22,59 @@ Partial Class FrmReporteComprobanteVenta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DsSistema = New SistemaTII.Presentacion.DsSistema()
+        Me.venta_comprobanteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.venta_comprobanteTableAdapter = New SistemaTII.Presentacion.DsSistemaTableAdapters.venta_comprobanteTableAdapter()
+        CType(Me.DsSistema, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.venta_comprobanteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "DsComprobanteVenta"
+        ReportDataSource1.Value = Me.venta_comprobanteBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SistemaTII.Presentacion.RptComprobanteVenta.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(1059, 777)
+        Me.ReportViewer1.TabIndex = 0
+        '
+        'DsSistema
+        '
+        Me.DsSistema.DataSetName = "DsSistema"
+        Me.DsSistema.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'venta_comprobanteBindingSource
+        '
+        Me.venta_comprobanteBindingSource.DataMember = "venta_comprobante"
+        Me.venta_comprobanteBindingSource.DataSource = Me.DsSistema
+        '
+        'venta_comprobanteTableAdapter
+        '
+        Me.venta_comprobanteTableAdapter.ClearBeforeFill = True
         '
         'FrmReporteComprobanteVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1059, 777)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FrmReporteComprobanteVenta"
         Me.Text = "Comprobante de Venta"
+        CType(Me.DsSistema, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.venta_comprobanteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents venta_comprobanteBindingSource As BindingSource
+    Friend WithEvents DsSistema As DsSistema
+    Friend WithEvents venta_comprobanteTableAdapter As DsSistemaTableAdapters.venta_comprobanteTableAdapter
 End Class

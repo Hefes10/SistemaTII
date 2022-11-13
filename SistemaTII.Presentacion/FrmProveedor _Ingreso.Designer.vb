@@ -28,6 +28,7 @@ Partial Class FrmProveedor__Ingreso
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
+        Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -36,10 +37,10 @@ Partial Class FrmProveedor__Ingreso
         'TabGeneral
         '
         Me.TabGeneral.Controls.Add(Me.TabPage1)
-        Me.TabGeneral.Location = New System.Drawing.Point(12, 22)
+        Me.TabGeneral.Location = New System.Drawing.Point(29, 24)
         Me.TabGeneral.Name = "TabGeneral"
         Me.TabGeneral.SelectedIndex = 0
-        Me.TabGeneral.Size = New System.Drawing.Size(1060, 526)
+        Me.TabGeneral.Size = New System.Drawing.Size(1041, 517)
         Me.TabGeneral.TabIndex = 4
         '
         'TabPage1
@@ -51,16 +52,16 @@ Partial Class FrmProveedor__Ingreso
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1052, 497)
+        Me.TabPage1.Size = New System.Drawing.Size(1033, 488)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(679, 18)
+        Me.BtnBuscar.Location = New System.Drawing.Point(753, 16)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(264, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(255, 29)
         Me.BtnBuscar.TabIndex = 3
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -69,7 +70,7 @@ Partial Class FrmProveedor__Ingreso
         '
         Me.TxtValor.Location = New System.Drawing.Point(7, 19)
         Me.TxtValor.Name = "TxtValor"
-        Me.TxtValor.Size = New System.Drawing.Size(646, 22)
+        Me.TxtValor.Size = New System.Drawing.Size(669, 22)
         Me.TxtValor.TabIndex = 2
         '
         'Lbltotal
@@ -87,14 +88,24 @@ Partial Class FrmProveedor__Ingreso
         Me.DgvListado.AllowUserToDeleteRows = False
         Me.DgvListado.AllowUserToOrderColumns = True
         Me.DgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvListado.Location = New System.Drawing.Point(6, 61)
+        Me.DgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seleccionar})
+        Me.DgvListado.Location = New System.Drawing.Point(7, 70)
         Me.DgvListado.Name = "DgvListado"
         Me.DgvListado.ReadOnly = True
         Me.DgvListado.RowHeadersWidth = 51
         Me.DgvListado.RowTemplate.Height = 24
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(1020, 351)
+        Me.DgvListado.Size = New System.Drawing.Size(1020, 339)
         Me.DgvListado.TabIndex = 0
+        Me.DgvListado.Visible = False
+        '
+        'Seleccionar
+        '
+        Me.Seleccionar.HeaderText = "Seleccionar"
+        Me.Seleccionar.MinimumWidth = 6
+        Me.Seleccionar.Name = "Seleccionar"
+        Me.Seleccionar.ReadOnly = True
+        Me.Seleccionar.Width = 125
         '
         'FrmProveedor__Ingreso
         '
@@ -121,4 +132,5 @@ Partial Class FrmProveedor__Ingreso
     Friend WithEvents TxtValor As TextBox
     Friend WithEvents Lbltotal As Label
     Friend WithEvents DgvListado As DataGridView
+    Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
 End Class

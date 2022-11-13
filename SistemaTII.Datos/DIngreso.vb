@@ -70,7 +70,7 @@ Public Class DIngreso
         Try
             Dim Comando As New SqlCommand("ingreso_insertar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@idingreso", SqlDbType.Int).Value = Obj.Idingreso
+            Comando.Parameters.Add("@idingreso", SqlDbType.Int).Value = Obj.IdIngreso
             Comando.Parameters("@idingreso").Direction = ParameterDirection.Output
             Comando.Parameters.Add("@idusuario", SqlDbType.VarChar).Value = Obj.IdUsuario
             Comando.Parameters.Add("@idproveedor", SqlDbType.VarChar).Value = Obj.IdProveedor

@@ -109,23 +109,23 @@ Public Class FrmUsuario
         End If
     End Sub
 
-    'Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress, TxtNombre.TextChanged
-    '    If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-    '        e.Handled = True
-    '    End If
-    'End Sub
+    Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
+        If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 
-    'Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs)
-    '    If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-    '        e.Handled = True
-    '    End If
-    'End Sub
+    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs)
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 
-    'Private Sub TxtTelefono_TextChanged(sender As Object, e As KeyPressEventArgs)
-    '    If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-    '        e.Handled = True
-    '    End If
-    'End Sub
+    Private Sub TxtTelefono_TextChanged(sender As Object, e As KeyPressEventArgs)
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
 
     Private Sub BtnDesactivar_Click(sender As Object, e As EventArgs) Handles BtnDesactivar.Click
         If (MsgBox("Está seguro de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Desactivar Registros") = vbYes) Then
@@ -146,7 +146,7 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DgvListado.Columns.Item("Seleccionar").Visible = False
+        DgvListado.Columns.Item("Seleccionar").Visible = False
         BtnEliminar.Visible = False
         BtnActivar.Visible = False
         BtnDesactivar.Visible = False

@@ -14,23 +14,24 @@
         DgvListado.Columns.Item("Seleccionar").Visible = False
     End Sub
 
-    'Private Sub Listar()
-    '    Try
-    '        'Dim Neg As New Negocio.NPersona
-    '        ' DgvListado.DataSource = Neg.ListarClientes()
-    '        Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
-    '        Me.Formato()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+    Private Sub Listar()
+        Try
+            Dim Neg As New Negocio.NPersona
+            DgvListado.DataSource = Neg.ListarClientes()
+            DgvListado.Visible = True
+            Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
+            Me.Formato()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub Buscar()
         Try
-            'Dim Neg As New Negocio.NPersona
+            Dim Neg As New Negocio.NPersona
             Dim Valor As String
             Valor = TxtValor.Text
-            'DgvListado.DataSource = Neg.BuscarClientes(Valor)
+            DgvListado.DataSource = Neg.BuscarClientes(Valor)
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -39,16 +40,16 @@
     End Sub
 
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs)
         Me.Buscar()
     End Sub
 
     Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
         Variables.IdCliente = DgvListado.SelectedCells.Item(1).Value
         Variables.NombreCliente = DgvListado.SelectedCells.Item(3).Value
+        Me.Close()
     End Sub
-
-    Private Sub BtnListarClientes_Click(sender As Object, e As EventArgs) Handles BtnListarClientes.Click
-        'Me.Listar()
+    Private Sub FrmCliente_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Listar()
     End Sub
 End Class
