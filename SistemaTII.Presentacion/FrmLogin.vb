@@ -22,8 +22,8 @@ Public Class FrmLogin
             Dim Neg As New Negocio.NUsuario
             Email = TxtEmail.Text.Trim()
             Clave = TxtClave.Text.Trim()
-            'Obj = Neg.Login(Email, Clave)
-            Obj.Estado = True
+            Obj = Neg.Login(Email, Clave)
+            'Obj.Estado = True
             If (bln = True And TxtClave.Text <> "") Then
                 If (Obj Is Nothing) Then
                     MsgBox("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
@@ -32,30 +32,20 @@ Public Class FrmLogin
                 Else
                     Me.Hide()
                     If (Email = "admin@sistema.com") Then
-                        FrmPrincipal.IdUsuario = 1 'Obj.IdUsuario
+                        FrmPrincipal.IdUsuario = 1
                         Variables.IdUsuario = 1
-                        FrmPrincipal.IdRol = 1 'Obj.IdRol
+                        FrmPrincipal.IdRol = 1
                         FrmPrincipal.Rol = "Administrador"
                         FrmPrincipal.Nombre = "Martin"
                         FrmPrincipal.Show()
-                    ElseIf (Email = "vendedor@sistema.com") Then
-                        FrmPrincipal.IdUsuario = 2 'Obj.IdUsuario
-                        FrmPrincipal.IdRol = 2 'Obj.IdRol
-                        FrmPrincipal.Rol = "Vendedor"
-                        FrmPrincipal.Nombre = "Lourdes"
-                        FrmPrincipal.Show()
-                    ElseIf (Email = "almacenero@sistema.com") Then
-                        FrmPrincipal.IdUsuario = 3 'Obj.IdUsuario
-                        FrmPrincipal.IdRol = 3 'Obj.IdRol
-                        FrmPrincipal.Rol = "Almacenero"
-                        FrmPrincipal.Nombre = "Jose"
-                        FrmPrincipal.Show()
                     Else
-                        MsgBox("El usuario no está registrado", vbOKOnly + vbInformation, "Usuario incorrecto")
-                        Me.Show()
-                        TxtEmail.Clear()
-                        TxtClave.Clear()
-                        TxtEmail.Focus()
+                        Me.Hide()
+                        FrmPrincipal.IdUsuario = Obj.IdUsuario
+                        Variables.IdUsuario = Obj.IdUsuario
+                        FrmPrincipal.IdRol = Obj.IdRol
+                        FrmPrincipal.Rol = Obj.Rol
+                        FrmPrincipal.Nombre = Obj.Nombre
+                        FrmPrincipal.Show()
                     End If
                 End If
             Else
