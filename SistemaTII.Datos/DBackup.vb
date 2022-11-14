@@ -32,4 +32,19 @@ Public Class DBackup
             Throw ex
         End Try
     End Sub
+
+    Public Sub Restore(nameDB As String, ruta As String)
+        Try
+            MyBase.conn.Open()
+
+            Dim Script As String
+            Script = "USE [master] RESTORE DATABASE [" & nameDB & "] FROM  DISK = N'" & ruta & "' WITH  FILE = 1,  NOUNLOAD,  STATS = 5"
+            Dim Comando As New SqlCommand(Script, MyBase.conn)
+            Comando.ExecuteNonQuery()
+
+            MyBase.conn.Close()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

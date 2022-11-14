@@ -43,4 +43,26 @@ Public Class FrmBackup
             MessageBox.Show(Err.Description)
         End Try
     End Sub
+
+    Private Sub BtnRutaRestaurar_Click(sender As Object, e As EventArgs) Handles BtnRutaRestaurar.Click
+        OpenFileDialog1.Filter = "SQL Backup Files | *.bak"
+        OpenFileDialog1.FileName = ""
+
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            TxtRutaRestaurar.Text = OpenFileDialog1.FileName
+            Dim NameArray() As String = Split(TxtRutaRestaurar.Text.Substring(TxtRutaRestaurar.Text.LastIndexOf("\") + 1), "-")
+            TxtBaseRestaurar.Text = NameArray(0)
+        End If
+    End Sub
+
+    Private Sub BtnRestaurar_Click(sender As Object, e As EventArgs) Handles BtnRestaurar.Click
+        Try
+            Dim Neg As New Negocio.NBackup
+            Neg.Restore(TxtBaseRestaurar.Text, TxtRutaRestaurar.Text)
+
+            MsgBox("Se ha realizado el restore correctamente.", vbOKOnly + vbInformation, "Restore Backup Correcto")
+        Catch ex As Exception
+            MessageBox.Show(Err.Description)
+        End Try
+    End Sub
 End Class
