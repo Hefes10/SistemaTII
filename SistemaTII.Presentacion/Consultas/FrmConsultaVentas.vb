@@ -44,6 +44,21 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+    Private Sub FiltrarFecha()
+        Try
+            Dim Neg As New Negocio.NVenta
+            Dim FechaInicio As Date
+            Dim FechaFin As Date
+            FechaInicio = DtFechaInicio.Value
+            FechaFin = DtFechaFin.Value
+            DgvListadoFecha.DataSource = Neg.ConsultaSoloFechas(FechaInicio, FechaFin)
+            DgvListadoFecha.Visible = True
+            LblTotalReg.Text = "Total Registros: " & DgvListadoFecha.DataSource.Rows.Count
+            Me.Formato()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
 
     Private Sub FrmConsultaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -63,7 +78,9 @@
             End Try
         End If
         PanelMostrar.Visible = False
+        PanelMostrarD.Visible = False
         DgvListado.Visible = False
+        DgvListadoFecha.Visible = False
     End Sub
 
     Private Sub BtnFiltrar_Click(sender As Object, e As EventArgs) Handles BtnFiltrar.Click
@@ -92,6 +109,11 @@
             SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
             TotalImpuesto = Total - SubTotal
 
+            LblTotalM.Text = Total
+            LblTotalImpuestoM.Text = TotalImpuesto
+            LblSubTotalM.Text = SubTotal
+
+            PanelMostrar.Visible = True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -100,4 +122,45 @@
     Private Sub BtnCerrarM_Click(sender As Object, e As EventArgs) Handles BtnCerrarM.Click
         PanelMostrar.Visible = False
     End Sub
+
+    Private Sub BtnFiltrar2_Click(sender As Object, e As EventArgs) Handles BtnFiltrar2.Click
+        Me.FiltrarFecha()
+    End Sub
+
+    Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+        Try
+            Variables.IdVenta = DgvListadoFecha.SelectedCells.Item(1).Value
+            FrmReporteComprobanteVenta.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DgvListadoFecha_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListadoFecha.CellDoubleClick
+        Try
+            Dim Neg As New Negocio.NVenta
+            DgvMostrarD.DataSource = Neg.ListarDetalle(DgvListadoFecha.SelectedCells.Item(1).Value)
+
+            Dim Total As Decimal = 0
+            Dim SubTotal As Decimal = 0
+            Dim TotalImpuesto As Decimal = 0
+
+            Total = DgvListadoFecha.SelectedCells.Item(10).Value
+            SubTotal = Math.Round(Total / (1 + DgvListadoFecha.SelectedCells.Item(9).Value), 2)
+            TotalImpuesto = Total - SubTotal
+
+            LblTot.Text = Total
+            LblImpuesto.Text = TotalImpuesto
+            LblSub.Text = SubTotal
+
+            PanelMostrarD.Visible = True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnCerrarPanel_Click(sender As Object, e As EventArgs) Handles BtnCerrarPanel.Click
+        PanelMostrarD.Visible = False
+    End Sub
+
 End Class

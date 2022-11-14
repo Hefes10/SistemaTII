@@ -25,8 +25,26 @@ Partial Class FrmConsultaVentas
         Me.components = New System.ComponentModel.Container()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.LblVendedor = New System.Windows.Forms.Label()
+        Me.PanelMostrarD = New System.Windows.Forms.Panel()
+        Me.BtnCerrarPanel = New System.Windows.Forms.Button()
+        Me.LblTot = New System.Windows.Forms.Label()
+        Me.LblImpuesto = New System.Windows.Forms.Label()
+        Me.LblSub = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.DgvMostrarD = New System.Windows.Forms.DataGridView()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.CboVendedor = New System.Windows.Forms.ComboBox()
+        Me.PanelMostrar = New System.Windows.Forms.Panel()
+        Me.BtnCerrarM = New System.Windows.Forms.Button()
+        Me.LblTotalM = New System.Windows.Forms.Label()
+        Me.LblTotalImpuestoM = New System.Windows.Forms.Label()
+        Me.LblSubTotalM = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.DgvMostrarDetalle = New System.Windows.Forms.DataGridView()
         Me.BtnFiltrar = New System.Windows.Forms.Button()
         Me.DtFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.DtFechaInicio = New System.Windows.Forms.DateTimePicker()
@@ -37,21 +55,51 @@ Partial Class FrmConsultaVentas
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
-        Me.PanelMostrar = New System.Windows.Forms.Panel()
-        Me.BtnCerrarM = New System.Windows.Forms.Button()
-        Me.LblTotalM = New System.Windows.Forms.Label()
-        Me.LblTotalImpuestoM = New System.Windows.Forms.Label()
-        Me.LblSubTotalM = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.DgvMostrarDetalle = New System.Windows.Forms.DataGridView()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.LblTotalReg = New System.Windows.Forms.Label()
+        Me.BtnFiltrar2 = New System.Windows.Forms.Button()
+        Me.DtFechaFi = New System.Windows.Forms.DateTimePicker()
+        Me.DtFechaIni = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.BtnReporte = New System.Windows.Forms.Button()
+        Me.DgvListadoFecha = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
-        CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabGeneral.SuspendLayout()
+        Me.PanelMostrarD.SuspendLayout()
+        CType(Me.DgvMostrarD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMostrar.SuspendLayout()
         CType(Me.DgvMostrarDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabGeneral.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.DgvListadoFecha, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ErrorIcono
@@ -60,9 +108,9 @@ Partial Class FrmConsultaVentas
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.PanelMostrar)
-        Me.TabPage1.Controls.Add(Me.LblVendedor)
+        Me.TabPage1.Controls.Add(Me.Label15)
         Me.TabPage1.Controls.Add(Me.CboVendedor)
+        Me.TabPage1.Controls.Add(Me.PanelMostrar)
         Me.TabPage1.Controls.Add(Me.BtnFiltrar)
         Me.TabPage1.Controls.Add(Me.DtFechaFin)
         Me.TabPage1.Controls.Add(Me.DtFechaInicio)
@@ -76,119 +124,125 @@ Partial Class FrmConsultaVentas
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1073, 566)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Listado"
+        Me.TabPage1.Text = "Listado por vendedor"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'LblVendedor
+        'PanelMostrarD
         '
-        Me.LblVendedor.AutoSize = True
-        Me.LblVendedor.Location = New System.Drawing.Point(445, 30)
-        Me.LblVendedor.Name = "LblVendedor"
-        Me.LblVendedor.Size = New System.Drawing.Size(78, 17)
-        Me.LblVendedor.TabIndex = 17
-        Me.LblVendedor.Text = "Vendedor: "
+        Me.PanelMostrarD.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.PanelMostrarD.Controls.Add(Me.BtnCerrarPanel)
+        Me.PanelMostrarD.Controls.Add(Me.LblTot)
+        Me.PanelMostrarD.Controls.Add(Me.LblImpuesto)
+        Me.PanelMostrarD.Controls.Add(Me.LblSub)
+        Me.PanelMostrarD.Controls.Add(Me.Label12)
+        Me.PanelMostrarD.Controls.Add(Me.Label13)
+        Me.PanelMostrarD.Controls.Add(Me.Label14)
+        Me.PanelMostrarD.Controls.Add(Me.DgvMostrarD)
+        Me.PanelMostrarD.Location = New System.Drawing.Point(148, 61)
+        Me.PanelMostrarD.Name = "PanelMostrarD"
+        Me.PanelMostrarD.Size = New System.Drawing.Size(919, 477)
+        Me.PanelMostrarD.TabIndex = 27
+        Me.PanelMostrarD.Visible = False
+        '
+        'BtnCerrarPanel
+        '
+        Me.BtnCerrarPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrarPanel.ForeColor = System.Drawing.Color.Red
+        Me.BtnCerrarPanel.Location = New System.Drawing.Point(838, 12)
+        Me.BtnCerrarPanel.Name = "BtnCerrarPanel"
+        Me.BtnCerrarPanel.Size = New System.Drawing.Size(37, 31)
+        Me.BtnCerrarPanel.TabIndex = 7
+        Me.BtnCerrarPanel.Text = "X"
+        Me.BtnCerrarPanel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCerrarPanel.UseVisualStyleBackColor = True
+        '
+        'LblTot
+        '
+        Me.LblTot.AutoSize = True
+        Me.LblTot.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTot.Location = New System.Drawing.Point(771, 429)
+        Me.LblTot.Name = "LblTot"
+        Me.LblTot.Size = New System.Drawing.Size(19, 20)
+        Me.LblTot.TabIndex = 6
+        Me.LblTot.Text = "0"
+        '
+        'LblImpuesto
+        '
+        Me.LblImpuesto.AutoSize = True
+        Me.LblImpuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblImpuesto.Location = New System.Drawing.Point(771, 398)
+        Me.LblImpuesto.Name = "LblImpuesto"
+        Me.LblImpuesto.Size = New System.Drawing.Size(19, 20)
+        Me.LblImpuesto.TabIndex = 5
+        Me.LblImpuesto.Text = "0"
+        '
+        'LblSub
+        '
+        Me.LblSub.AutoSize = True
+        Me.LblSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblSub.Location = New System.Drawing.Point(771, 365)
+        Me.LblSub.Name = "LblSub"
+        Me.LblSub.Size = New System.Drawing.Size(19, 20)
+        Me.LblSub.TabIndex = 4
+        Me.LblSub.Text = "0"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(588, 429)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(40, 17)
+        Me.Label12.TabIndex = 3
+        Me.Label12.Text = "Total"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(588, 398)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(101, 17)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "Total Impuesto"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(588, 365)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(69, 17)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "Sub Total"
+        '
+        'DgvMostrarD
+        '
+        Me.DgvMostrarD.AllowUserToAddRows = False
+        Me.DgvMostrarD.AllowUserToDeleteRows = False
+        Me.DgvMostrarD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvMostrarD.Location = New System.Drawing.Point(40, 49)
+        Me.DgvMostrarD.Name = "DgvMostrarD"
+        Me.DgvMostrarD.ReadOnly = True
+        Me.DgvMostrarD.RowHeadersWidth = 51
+        Me.DgvMostrarD.RowTemplate.Height = 24
+        Me.DgvMostrarD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvMostrarD.Size = New System.Drawing.Size(835, 309)
+        Me.DgvMostrarD.TabIndex = 0
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(452, 27)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(78, 17)
+        Me.Label15.TabIndex = 28
+        Me.Label15.Text = "Vendedor: "
         '
         'CboVendedor
         '
         Me.CboVendedor.FormattingEnabled = True
-        Me.CboVendedor.Location = New System.Drawing.Point(538, 27)
+        Me.CboVendedor.Location = New System.Drawing.Point(545, 24)
         Me.CboVendedor.Name = "CboVendedor"
         Me.CboVendedor.Size = New System.Drawing.Size(124, 24)
-        Me.CboVendedor.TabIndex = 16
-        '
-        'BtnFiltrar
-        '
-        Me.BtnFiltrar.Location = New System.Drawing.Point(691, 17)
-        Me.BtnFiltrar.Name = "BtnFiltrar"
-        Me.BtnFiltrar.Size = New System.Drawing.Size(151, 37)
-        Me.BtnFiltrar.TabIndex = 15
-        Me.BtnFiltrar.Text = "Filtrar"
-        Me.BtnFiltrar.UseVisualStyleBackColor = True
-        '
-        'DtFechaFin
-        '
-        Me.DtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtFechaFin.Location = New System.Drawing.Point(297, 27)
-        Me.DtFechaFin.Name = "DtFechaFin"
-        Me.DtFechaFin.Size = New System.Drawing.Size(125, 22)
-        Me.DtFechaFin.TabIndex = 14
-        '
-        'DtFechaInicio
-        '
-        Me.DtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtFechaInicio.Location = New System.Drawing.Point(86, 27)
-        Me.DtFechaInicio.Name = "DtFechaInicio"
-        Me.DtFechaInicio.Size = New System.Drawing.Size(125, 22)
-        Me.DtFechaInicio.TabIndex = 13
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(229, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 17)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Hasta"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 17)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Desde"
-        '
-        'BtnVerComprobante
-        '
-        Me.BtnVerComprobante.Location = New System.Drawing.Point(868, 16)
-        Me.BtnVerComprobante.Name = "BtnVerComprobante"
-        Me.BtnVerComprobante.Size = New System.Drawing.Size(152, 38)
-        Me.BtnVerComprobante.TabIndex = 10
-        Me.BtnVerComprobante.Text = "Reporte"
-        Me.BtnVerComprobante.UseVisualStyleBackColor = True
-        '
-        'Lbltotal
-        '
-        Me.Lbltotal.AutoSize = True
-        Me.Lbltotal.Location = New System.Drawing.Point(688, 514)
-        Me.Lbltotal.Name = "Lbltotal"
-        Me.Lbltotal.Size = New System.Drawing.Size(40, 17)
-        Me.Lbltotal.TabIndex = 1
-        Me.Lbltotal.Text = "Total"
-        '
-        'DgvListado
-        '
-        Me.DgvListado.AllowUserToAddRows = False
-        Me.DgvListado.AllowUserToDeleteRows = False
-        Me.DgvListado.AllowUserToOrderColumns = True
-        Me.DgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seleccionar})
-        Me.DgvListado.Location = New System.Drawing.Point(6, 83)
-        Me.DgvListado.Name = "DgvListado"
-        Me.DgvListado.ReadOnly = True
-        Me.DgvListado.RowHeadersWidth = 51
-        Me.DgvListado.RowTemplate.Height = 24
-        Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(1020, 410)
-        Me.DgvListado.TabIndex = 0
-        '
-        'Seleccionar
-        '
-        Me.Seleccionar.HeaderText = "Seleccionar"
-        Me.Seleccionar.MinimumWidth = 6
-        Me.Seleccionar.Name = "Seleccionar"
-        Me.Seleccionar.ReadOnly = True
-        Me.Seleccionar.Width = 125
-        '
-        'TabGeneral
-        '
-        Me.TabGeneral.Controls.Add(Me.TabPage1)
-        Me.TabGeneral.Location = New System.Drawing.Point(12, 23)
-        Me.TabGeneral.Name = "TabGeneral"
-        Me.TabGeneral.SelectedIndex = 0
-        Me.TabGeneral.Size = New System.Drawing.Size(1081, 595)
-        Me.TabGeneral.TabIndex = 4
+        Me.CboVendedor.TabIndex = 27
         '
         'PanelMostrar
         '
@@ -201,9 +255,9 @@ Partial Class FrmConsultaVentas
         Me.PanelMostrar.Controls.Add(Me.Label9)
         Me.PanelMostrar.Controls.Add(Me.Label8)
         Me.PanelMostrar.Controls.Add(Me.DgvMostrarDetalle)
-        Me.PanelMostrar.Location = New System.Drawing.Point(165, 107)
+        Me.PanelMostrar.Location = New System.Drawing.Point(150, 107)
         Me.PanelMostrar.Name = "PanelMostrar"
-        Me.PanelMostrar.Size = New System.Drawing.Size(921, 476)
+        Me.PanelMostrar.Size = New System.Drawing.Size(936, 463)
         Me.PanelMostrar.TabIndex = 18
         Me.PanelMostrar.Visible = False
         '
@@ -290,6 +344,428 @@ Partial Class FrmConsultaVentas
         Me.DgvMostrarDetalle.Size = New System.Drawing.Size(835, 309)
         Me.DgvMostrarDetalle.TabIndex = 0
         '
+        'BtnFiltrar
+        '
+        Me.BtnFiltrar.Location = New System.Drawing.Point(703, 18)
+        Me.BtnFiltrar.Name = "BtnFiltrar"
+        Me.BtnFiltrar.Size = New System.Drawing.Size(151, 37)
+        Me.BtnFiltrar.TabIndex = 15
+        Me.BtnFiltrar.Text = "Filtrar"
+        Me.BtnFiltrar.UseVisualStyleBackColor = True
+        '
+        'DtFechaFin
+        '
+        Me.DtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaFin.Location = New System.Drawing.Point(292, 26)
+        Me.DtFechaFin.Name = "DtFechaFin"
+        Me.DtFechaFin.Size = New System.Drawing.Size(125, 22)
+        Me.DtFechaFin.TabIndex = 14
+        '
+        'DtFechaInicio
+        '
+        Me.DtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaInicio.Location = New System.Drawing.Point(81, 26)
+        Me.DtFechaInicio.Name = "DtFechaInicio"
+        Me.DtFechaInicio.Size = New System.Drawing.Size(125, 22)
+        Me.DtFechaInicio.TabIndex = 13
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(224, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 17)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Hasta"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(49, 17)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Desde"
+        '
+        'BtnVerComprobante
+        '
+        Me.BtnVerComprobante.Location = New System.Drawing.Point(880, 17)
+        Me.BtnVerComprobante.Name = "BtnVerComprobante"
+        Me.BtnVerComprobante.Size = New System.Drawing.Size(152, 38)
+        Me.BtnVerComprobante.TabIndex = 10
+        Me.BtnVerComprobante.Text = "Reporte"
+        Me.BtnVerComprobante.UseVisualStyleBackColor = True
+        '
+        'Lbltotal
+        '
+        Me.Lbltotal.AutoSize = True
+        Me.Lbltotal.Location = New System.Drawing.Point(688, 514)
+        Me.Lbltotal.Name = "Lbltotal"
+        Me.Lbltotal.Size = New System.Drawing.Size(40, 17)
+        Me.Lbltotal.TabIndex = 1
+        Me.Lbltotal.Text = "Total"
+        '
+        'DgvListado
+        '
+        Me.DgvListado.AllowUserToAddRows = False
+        Me.DgvListado.AllowUserToDeleteRows = False
+        Me.DgvListado.AllowUserToOrderColumns = True
+        Me.DgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seleccionar})
+        Me.DgvListado.Location = New System.Drawing.Point(6, 83)
+        Me.DgvListado.Name = "DgvListado"
+        Me.DgvListado.ReadOnly = True
+        Me.DgvListado.RowHeadersWidth = 51
+        Me.DgvListado.RowTemplate.Height = 24
+        Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvListado.Size = New System.Drawing.Size(1020, 410)
+        Me.DgvListado.TabIndex = 0
+        '
+        'Seleccionar
+        '
+        Me.Seleccionar.HeaderText = "Seleccionar"
+        Me.Seleccionar.MinimumWidth = 6
+        Me.Seleccionar.Name = "Seleccionar"
+        Me.Seleccionar.ReadOnly = True
+        Me.Seleccionar.Width = 125
+        '
+        'TabGeneral
+        '
+        Me.TabGeneral.Controls.Add(Me.TabPage1)
+        Me.TabGeneral.Controls.Add(Me.TabPage2)
+        Me.TabGeneral.Controls.Add(Me.TabPage3)
+        Me.TabGeneral.Controls.Add(Me.TabPage4)
+        Me.TabGeneral.Location = New System.Drawing.Point(12, 23)
+        Me.TabGeneral.Name = "TabGeneral"
+        Me.TabGeneral.SelectedIndex = 0
+        Me.TabGeneral.Size = New System.Drawing.Size(1081, 595)
+        Me.TabGeneral.TabIndex = 4
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.PanelMostrarD)
+        Me.TabPage2.Controls.Add(Me.LblTotalReg)
+        Me.TabPage2.Controls.Add(Me.BtnFiltrar2)
+        Me.TabPage2.Controls.Add(Me.DtFechaFi)
+        Me.TabPage2.Controls.Add(Me.DtFechaIni)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.BtnReporte)
+        Me.TabPage2.Controls.Add(Me.DgvListadoFecha)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1073, 566)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Listado entre fechas"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'LblTotalReg
+        '
+        Me.LblTotalReg.AutoSize = True
+        Me.LblTotalReg.Location = New System.Drawing.Point(840, 521)
+        Me.LblTotalReg.Name = "LblTotalReg"
+        Me.LblTotalReg.Size = New System.Drawing.Size(40, 17)
+        Me.LblTotalReg.TabIndex = 25
+        Me.LblTotalReg.Text = "Total"
+        '
+        'BtnFiltrar2
+        '
+        Me.BtnFiltrar2.Location = New System.Drawing.Point(632, 18)
+        Me.BtnFiltrar2.Name = "BtnFiltrar2"
+        Me.BtnFiltrar2.Size = New System.Drawing.Size(151, 37)
+        Me.BtnFiltrar2.TabIndex = 24
+        Me.BtnFiltrar2.Text = "Filtrar"
+        Me.BtnFiltrar2.UseVisualStyleBackColor = True
+        '
+        'DtFechaFi
+        '
+        Me.DtFechaFi.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaFi.Location = New System.Drawing.Point(381, 25)
+        Me.DtFechaFi.Name = "DtFechaFi"
+        Me.DtFechaFi.Size = New System.Drawing.Size(125, 22)
+        Me.DtFechaFi.TabIndex = 23
+        '
+        'DtFechaIni
+        '
+        Me.DtFechaIni.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaIni.Location = New System.Drawing.Point(170, 25)
+        Me.DtFechaIni.Name = "DtFechaIni"
+        Me.DtFechaIni.Size = New System.Drawing.Size(125, 22)
+        Me.DtFechaIni.TabIndex = 22
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(313, 27)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 17)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Hasta"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(95, 28)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 17)
+        Me.Label5.TabIndex = 20
+        Me.Label5.Text = "Desde"
+        '
+        'BtnReporte
+        '
+        Me.BtnReporte.Location = New System.Drawing.Point(809, 17)
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(152, 38)
+        Me.BtnReporte.TabIndex = 19
+        Me.BtnReporte.Text = "Reporte"
+        Me.BtnReporte.UseVisualStyleBackColor = True
+        '
+        'DgvListadoFecha
+        '
+        Me.DgvListadoFecha.AllowUserToAddRows = False
+        Me.DgvListadoFecha.AllowUserToDeleteRows = False
+        Me.DgvListadoFecha.AllowUserToOrderColumns = True
+        Me.DgvListadoFecha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvListadoFecha.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn1})
+        Me.DgvListadoFecha.Location = New System.Drawing.Point(19, 79)
+        Me.DgvListadoFecha.Name = "DgvListadoFecha"
+        Me.DgvListadoFecha.ReadOnly = True
+        Me.DgvListadoFecha.RowHeadersWidth = 51
+        Me.DgvListadoFecha.RowTemplate.Height = 24
+        Me.DgvListadoFecha.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvListadoFecha.Size = New System.Drawing.Size(1020, 410)
+        Me.DgvListadoFecha.TabIndex = 18
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Seleccionar"
+        Me.DataGridViewCheckBoxColumn1.MinimumWidth = 6
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 125
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Label3)
+        Me.TabPage3.Controls.Add(Me.ComboBox1)
+        Me.TabPage3.Controls.Add(Me.Panel1)
+        Me.TabPage3.Controls.Add(Me.Button2)
+        Me.TabPage3.Controls.Add(Me.DateTimePicker1)
+        Me.TabPage3.Controls.Add(Me.DateTimePicker2)
+        Me.TabPage3.Controls.Add(Me.Label19)
+        Me.TabPage3.Controls.Add(Me.Label20)
+        Me.TabPage3.Controls.Add(Me.Button3)
+        Me.TabPage3.Controls.Add(Me.DataGridView2)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(1073, 566)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Listado por producto"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(1073, 566)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Listado más vendidos"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(442, 17)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(78, 17)
+        Me.Label3.TabIndex = 38
+        Me.Label3.Text = "Vendedor: "
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(535, 14)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(124, 24)
+        Me.ComboBox1.TabIndex = 37
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.Label18)
+        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Location = New System.Drawing.Point(140, 97)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(936, 463)
+        Me.Panel1.TabIndex = 36
+        Me.Panel1.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Red
+        Me.Button1.Location = New System.Drawing.Point(838, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(37, 31)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "X"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(771, 429)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(19, 20)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(771, 398)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(19, 20)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "0"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(771, 365)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(19, 20)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "0"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(588, 429)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(40, 17)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "Total"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(588, 398)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(101, 17)
+        Me.Label17.TabIndex = 2
+        Me.Label17.Text = "Total Impuesto"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(588, 365)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(69, 17)
+        Me.Label18.TabIndex = 1
+        Me.Label18.Text = "Sub Total"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(40, 49)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(835, 309)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(693, 8)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(151, 37)
+        Me.Button2.TabIndex = 35
+        Me.Button2.Text = "Filtrar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(282, 16)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(125, 22)
+        Me.DateTimePicker1.TabIndex = 34
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker2.Location = New System.Drawing.Point(71, 16)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(125, 22)
+        Me.DateTimePicker2.TabIndex = 33
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(214, 18)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(45, 17)
+        Me.Label19.TabIndex = 32
+        Me.Label19.Text = "Hasta"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(3, 18)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(49, 17)
+        Me.Label20.TabIndex = 31
+        Me.Label20.Text = "Desde"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(870, 7)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(152, 38)
+        Me.Button3.TabIndex = 30
+        Me.Button3.Text = "Reporte"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.AllowUserToOrderColumns = True
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn2})
+        Me.DataGridView2.Location = New System.Drawing.Point(-4, 73)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.RowHeadersWidth = 51
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView2.Size = New System.Drawing.Size(1020, 410)
+        Me.DataGridView2.TabIndex = 29
+        '
+        'DataGridViewCheckBoxColumn2
+        '
+        Me.DataGridViewCheckBoxColumn2.HeaderText = "Seleccionar"
+        Me.DataGridViewCheckBoxColumn2.MinimumWidth = 6
+        Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
+        Me.DataGridViewCheckBoxColumn2.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn2.Width = 125
+        '
         'FrmConsultaVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -302,11 +778,23 @@ Partial Class FrmConsultaVentas
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabGeneral.ResumeLayout(False)
+        Me.PanelMostrarD.ResumeLayout(False)
+        Me.PanelMostrarD.PerformLayout()
+        CType(Me.DgvMostrarD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelMostrar.ResumeLayout(False)
         Me.PanelMostrar.PerformLayout()
         CType(Me.DgvMostrarDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabGeneral.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.DgvListadoFecha, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -323,8 +811,6 @@ Partial Class FrmConsultaVentas
     Friend WithEvents DtFechaInicio As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents LblVendedor As Label
-    Friend WithEvents CboVendedor As ComboBox
     Friend WithEvents PanelMostrar As Panel
     Friend WithEvents BtnCerrarM As Button
     Friend WithEvents LblTotalM As Label
@@ -334,4 +820,46 @@ Partial Class FrmConsultaVentas
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents DgvMostrarDetalle As DataGridView
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents BtnFiltrar2 As Button
+    Friend WithEvents DtFechaFi As DateTimePicker
+    Friend WithEvents DtFechaIni As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents BtnReporte As Button
+    Friend WithEvents DgvListadoFecha As DataGridView
+    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
+    Friend WithEvents PanelMostrarD As Panel
+    Friend WithEvents BtnCerrarPanel As Button
+    Friend WithEvents LblTot As Label
+    Friend WithEvents LblImpuesto As Label
+    Friend WithEvents LblSub As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents DgvMostrarD As DataGridView
+    Friend WithEvents Label15 As Label
+    Friend WithEvents CboVendedor As ComboBox
+    Friend WithEvents LblTotalReg As Label
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents Label3 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button2 As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DataGridViewCheckBoxColumn2 As DataGridViewCheckBoxColumn
+    Friend WithEvents TabPage4 As TabPage
 End Class
