@@ -223,4 +223,10 @@ Public Class FrmPrincipal
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub BackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupToolStripMenuItem.Click
+        Dim frm As New FrmBackup
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class

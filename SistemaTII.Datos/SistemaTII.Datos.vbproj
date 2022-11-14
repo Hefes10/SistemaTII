@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Conexion.vb" />
     <Compile Include="DArticulo.vb" />
+    <Compile Include="DBackup.vb" />
     <Compile Include="DCategoria.vb" />
     <Compile Include="DIngreso.vb" />
     <Compile Include="DPersona.vb" />

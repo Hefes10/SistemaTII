@@ -80,6 +80,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NArticulo.vb" />
+    <Compile Include="NBackup.vb" />
     <Compile Include="NCategoria.vb" />
     <Compile Include="NIngreso.vb" />
     <Compile Include="NPersona.vb" />
