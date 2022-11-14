@@ -26,11 +26,11 @@ Public Class NVenta
         End Try
     End Function
 
-    Public Function ConsultaFecha(FechaInicio As Date, FechaFin As Date) As DataTable
+    Public Function ConsultaFechas(FechaInicio As Date, FechaFin As Date, IdUsuario As Integer) As DataTable
         Try
             Dim Datos As New DVenta
             Dim Tabla As New DataTable
-            Tabla = Datos.ConsultaFechas(FechaInicio, FechaFin)
+            Tabla = Datos.ConsultaFechas(FechaInicio, FechaFin, IdUsuario)
             Return Tabla
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -69,6 +69,16 @@ Public Class NVenta
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
+        End Try
+    End Function
+
+    Public Function UltimoIdVenta() As Integer
+        Try
+            Dim Datos As New DVenta
+            Return Datos.UltimoIdVenta.Rows(0).Item(0).ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
         End Try
     End Function
 End Class

@@ -153,7 +153,9 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        If TxtValor.Text <> "" Then
+            Me.Buscar()
+        End If
         ChkSeleccionar.Visible = True
     End Sub
     Private Sub BtnBuscarProveedor_Click(sender As Object, e As EventArgs) Handles BtnBuscarProveedor.Click
@@ -273,7 +275,7 @@
             SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
             TotalImpuesto = Total - SubTotal
 
-            LblSubTotalM.Text = Total
+            LblTotalM.Text = Total
             LblTotalImpuestoM.Text = TotalImpuesto
             LblSubTotalM.Text = SubTotal
 

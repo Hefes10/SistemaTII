@@ -16,14 +16,28 @@
         DgvListado.Columns(11).Width = 100
     End Sub
 
+    Private Sub CargarVendedor()
+        Try
+            Dim Neg As New Negocio.NUsuario
+            CboVendedor.DataSource = Neg.ListarVendedores()
+            CboVendedor.ValueMember = "idusuario"
+            CboVendedor.DisplayMember = "nombre"
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub Filtrar()
         Try
-            'Dim Neg As New Negocio.NVenta
+            Dim Obj As New Entidades.Usuario
+            Dim Neg As New Negocio.NVenta
             Dim FechaInicio As Date
             Dim FechaFin As Date
             FechaInicio = DtFechaInicio.Value
+            Obj.IdUsuario = CboVendedor.SelectedValue
             FechaFin = DtFechaFin.Value
-            'DgvListado.DataSource = Neg.ConsultaFechas(FechaInicio, FechaFin)
+            DgvListado.DataSource = Neg.ConsultaFechas(FechaInicio, FechaFin, Obj.IdUsuario)
+            DgvListado.Visible = True
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -35,16 +49,25 @@
     Private Sub FrmConsultaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If (FrmPrincipal.IdRol = 1) Then
             CboVendedor.Enabled = True
+            Me.CargarVendedor()
         ElseIf (FrmPrincipal.IdRol = 2) Then
             'aca se va a seleccionar el id del vendedor
             CboVendedor.Enabled = False
+            Try
+                Dim Neg As New Negocio.NUsuario
+                CboVendedor.DataSource = Neg.Buscar(Variables.Nombre)
+                CboVendedor.ValueMember = "ID"
+                CboVendedor.DisplayMember = "Nombre"
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         End If
+        PanelMostrar.Visible = False
         DgvListado.Visible = False
     End Sub
 
     Private Sub BtnFiltrar_Click(sender As Object, e As EventArgs) Handles BtnFiltrar.Click
-        '
-        'Me.Filtrar()
+        Me.Filtrar()
     End Sub
 
     Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
@@ -58,8 +81,8 @@
 
     Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
         Try
-            'Dim Neg As New Negocio.NVenta
-            'DgvMostrarDetalle.DataSource = Neg.ListarDetalle(DgvListado.SelectedCells.Item(1).Value)
+            Dim Neg As New Negocio.NVenta
+            DgvMostrarDetalle.DataSource = Neg.ListarDetalle(DgvListado.SelectedCells.Item(1).Value)
 
             Dim Total As Decimal = 0
             Dim SubTotal As Decimal = 0
@@ -74,4 +97,7 @@
         End Try
     End Sub
 
+    Private Sub BtnCerrarM_Click(sender As Object, e As EventArgs) Handles BtnCerrarM.Click
+        PanelMostrar.Visible = False
+    End Sub
 End Class

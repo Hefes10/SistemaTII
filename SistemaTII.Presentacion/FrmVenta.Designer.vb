@@ -546,9 +546,9 @@ Partial Class FrmVenta
         Me.PanelArticulos.Controls.Add(Me.DgvArticulos)
         Me.PanelArticulos.Controls.Add(Me.BtnBuscarArticulosDetalles)
         Me.PanelArticulos.Controls.Add(Me.TxtBuscarArticulos)
-        Me.PanelArticulos.Location = New System.Drawing.Point(106, 64)
+        Me.PanelArticulos.Location = New System.Drawing.Point(100, 16)
         Me.PanelArticulos.Name = "PanelArticulos"
-        Me.PanelArticulos.Size = New System.Drawing.Size(897, 247)
+        Me.PanelArticulos.Size = New System.Drawing.Size(897, 353)
         Me.PanelArticulos.TabIndex = 10
         Me.PanelArticulos.Visible = False
         '

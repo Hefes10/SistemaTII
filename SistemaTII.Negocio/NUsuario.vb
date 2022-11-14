@@ -15,6 +15,18 @@ Public Class NUsuario
         End Try
     End Function
 
+    Public Function ListarVendedores() As DataTable
+        Try
+            Dim Datos As New DUsuario
+            Dim Tabla As New DataTable
+            Tabla = Datos.ListarVendedores()
+            Return Tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function Buscar(Valor As String) As DataTable
         Try
             Dim Datos As New DUsuario

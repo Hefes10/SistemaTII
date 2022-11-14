@@ -42,6 +42,7 @@ Public Class FrmLogin
                         Me.Hide()
                         FrmPrincipal.IdUsuario = Obj.IdUsuario
                         Variables.IdUsuario = Obj.IdUsuario
+                        Variables.Nombre = Obj.Nombre
                         FrmPrincipal.IdRol = Obj.IdRol
                         FrmPrincipal.Rol = Obj.Rol
                         FrmPrincipal.Nombre = Obj.Nombre

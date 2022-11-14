@@ -36,7 +36,7 @@ Public Class DVenta
         End Try
     End Function
 
-    Public Function ConsultaFechas(FechaInicio As Date, FechaFin As Date) As DataTable
+    Public Function ConsultaFechas(FechaInicio As Date, FechaFin As Date, IdUsuario As Integer) As DataTable
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
@@ -44,6 +44,7 @@ Public Class DVenta
             Comando.CommandType = CommandType.StoredProcedure
             Comando.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = FechaInicio
             Comando.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = FechaFin
+            Comando.Parameters.Add("@idusuario", SqlDbType.Int).Value = IdUsuario
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()
             Tabla.Load(Resultado)
@@ -107,4 +108,20 @@ Public Class DVenta
             Throw ex
         End Try
     End Sub
+
+    Public Function UltimoIdVenta() As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("venta_ultimo_id", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

@@ -25,6 +25,8 @@ Partial Class FrmConsultaVentas
         Me.components = New System.ComponentModel.Container()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.LblVendedor = New System.Windows.Forms.Label()
+        Me.CboVendedor = New System.Windows.Forms.ComboBox()
         Me.BtnFiltrar = New System.Windows.Forms.Button()
         Me.DtFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.DtFechaInicio = New System.Windows.Forms.DateTimePicker()
@@ -35,12 +37,21 @@ Partial Class FrmConsultaVentas
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
-        Me.CboVendedor = New System.Windows.Forms.ComboBox()
-        Me.LblVendedor = New System.Windows.Forms.Label()
+        Me.PanelMostrar = New System.Windows.Forms.Panel()
+        Me.BtnCerrarM = New System.Windows.Forms.Button()
+        Me.LblTotalM = New System.Windows.Forms.Label()
+        Me.LblTotalImpuestoM = New System.Windows.Forms.Label()
+        Me.LblSubTotalM = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.DgvMostrarDetalle = New System.Windows.Forms.DataGridView()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabGeneral.SuspendLayout()
+        Me.PanelMostrar.SuspendLayout()
+        CType(Me.DgvMostrarDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ErrorIcono
@@ -49,6 +60,7 @@ Partial Class FrmConsultaVentas
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.PanelMostrar)
         Me.TabPage1.Controls.Add(Me.LblVendedor)
         Me.TabPage1.Controls.Add(Me.CboVendedor)
         Me.TabPage1.Controls.Add(Me.BtnFiltrar)
@@ -66,6 +78,23 @@ Partial Class FrmConsultaVentas
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'LblVendedor
+        '
+        Me.LblVendedor.AutoSize = True
+        Me.LblVendedor.Location = New System.Drawing.Point(445, 30)
+        Me.LblVendedor.Name = "LblVendedor"
+        Me.LblVendedor.Size = New System.Drawing.Size(78, 17)
+        Me.LblVendedor.TabIndex = 17
+        Me.LblVendedor.Text = "Vendedor: "
+        '
+        'CboVendedor
+        '
+        Me.CboVendedor.FormattingEnabled = True
+        Me.CboVendedor.Location = New System.Drawing.Point(538, 27)
+        Me.CboVendedor.Name = "CboVendedor"
+        Me.CboVendedor.Size = New System.Drawing.Size(124, 24)
+        Me.CboVendedor.TabIndex = 16
         '
         'BtnFiltrar
         '
@@ -161,23 +190,105 @@ Partial Class FrmConsultaVentas
         Me.TabGeneral.Size = New System.Drawing.Size(1081, 595)
         Me.TabGeneral.TabIndex = 4
         '
-        'CboVendedor
+        'PanelMostrar
         '
-        Me.CboVendedor.FormattingEnabled = True
-        Me.CboVendedor.Items.AddRange(New Object() {"Martin", "Lourdes"})
-        Me.CboVendedor.Location = New System.Drawing.Point(538, 27)
-        Me.CboVendedor.Name = "CboVendedor"
-        Me.CboVendedor.Size = New System.Drawing.Size(124, 24)
-        Me.CboVendedor.TabIndex = 16
+        Me.PanelMostrar.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.PanelMostrar.Controls.Add(Me.BtnCerrarM)
+        Me.PanelMostrar.Controls.Add(Me.LblTotalM)
+        Me.PanelMostrar.Controls.Add(Me.LblTotalImpuestoM)
+        Me.PanelMostrar.Controls.Add(Me.LblSubTotalM)
+        Me.PanelMostrar.Controls.Add(Me.Label10)
+        Me.PanelMostrar.Controls.Add(Me.Label9)
+        Me.PanelMostrar.Controls.Add(Me.Label8)
+        Me.PanelMostrar.Controls.Add(Me.DgvMostrarDetalle)
+        Me.PanelMostrar.Location = New System.Drawing.Point(165, 107)
+        Me.PanelMostrar.Name = "PanelMostrar"
+        Me.PanelMostrar.Size = New System.Drawing.Size(921, 476)
+        Me.PanelMostrar.TabIndex = 18
+        Me.PanelMostrar.Visible = False
         '
-        'LblVendedor
+        'BtnCerrarM
         '
-        Me.LblVendedor.AutoSize = True
-        Me.LblVendedor.Location = New System.Drawing.Point(445, 30)
-        Me.LblVendedor.Name = "LblVendedor"
-        Me.LblVendedor.Size = New System.Drawing.Size(78, 17)
-        Me.LblVendedor.TabIndex = 17
-        Me.LblVendedor.Text = "Vendedor: "
+        Me.BtnCerrarM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrarM.ForeColor = System.Drawing.Color.Red
+        Me.BtnCerrarM.Location = New System.Drawing.Point(838, 12)
+        Me.BtnCerrarM.Name = "BtnCerrarM"
+        Me.BtnCerrarM.Size = New System.Drawing.Size(37, 31)
+        Me.BtnCerrarM.TabIndex = 7
+        Me.BtnCerrarM.Text = "X"
+        Me.BtnCerrarM.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCerrarM.UseVisualStyleBackColor = True
+        '
+        'LblTotalM
+        '
+        Me.LblTotalM.AutoSize = True
+        Me.LblTotalM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTotalM.Location = New System.Drawing.Point(771, 429)
+        Me.LblTotalM.Name = "LblTotalM"
+        Me.LblTotalM.Size = New System.Drawing.Size(19, 20)
+        Me.LblTotalM.TabIndex = 6
+        Me.LblTotalM.Text = "0"
+        '
+        'LblTotalImpuestoM
+        '
+        Me.LblTotalImpuestoM.AutoSize = True
+        Me.LblTotalImpuestoM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTotalImpuestoM.Location = New System.Drawing.Point(771, 398)
+        Me.LblTotalImpuestoM.Name = "LblTotalImpuestoM"
+        Me.LblTotalImpuestoM.Size = New System.Drawing.Size(19, 20)
+        Me.LblTotalImpuestoM.TabIndex = 5
+        Me.LblTotalImpuestoM.Text = "0"
+        '
+        'LblSubTotalM
+        '
+        Me.LblSubTotalM.AutoSize = True
+        Me.LblSubTotalM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblSubTotalM.Location = New System.Drawing.Point(771, 365)
+        Me.LblSubTotalM.Name = "LblSubTotalM"
+        Me.LblSubTotalM.Size = New System.Drawing.Size(19, 20)
+        Me.LblSubTotalM.TabIndex = 4
+        Me.LblSubTotalM.Text = "0"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(588, 429)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 17)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Total"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(588, 398)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(101, 17)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Total Impuesto"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(588, 365)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(69, 17)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Sub Total"
+        '
+        'DgvMostrarDetalle
+        '
+        Me.DgvMostrarDetalle.AllowUserToAddRows = False
+        Me.DgvMostrarDetalle.AllowUserToDeleteRows = False
+        Me.DgvMostrarDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvMostrarDetalle.Location = New System.Drawing.Point(40, 49)
+        Me.DgvMostrarDetalle.Name = "DgvMostrarDetalle"
+        Me.DgvMostrarDetalle.ReadOnly = True
+        Me.DgvMostrarDetalle.RowHeadersWidth = 51
+        Me.DgvMostrarDetalle.RowTemplate.Height = 24
+        Me.DgvMostrarDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvMostrarDetalle.Size = New System.Drawing.Size(835, 309)
+        Me.DgvMostrarDetalle.TabIndex = 0
         '
         'FrmConsultaVentas
         '
@@ -193,6 +304,9 @@ Partial Class FrmConsultaVentas
         Me.TabPage1.PerformLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabGeneral.ResumeLayout(False)
+        Me.PanelMostrar.ResumeLayout(False)
+        Me.PanelMostrar.PerformLayout()
+        CType(Me.DgvMostrarDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -211,4 +325,13 @@ Partial Class FrmConsultaVentas
     Friend WithEvents Label1 As Label
     Friend WithEvents LblVendedor As Label
     Friend WithEvents CboVendedor As ComboBox
+    Friend WithEvents PanelMostrar As Panel
+    Friend WithEvents BtnCerrarM As Button
+    Friend WithEvents LblTotalM As Label
+    Friend WithEvents LblTotalImpuestoM As Label
+    Friend WithEvents LblSubTotalM As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents DgvMostrarDetalle As DataGridView
 End Class

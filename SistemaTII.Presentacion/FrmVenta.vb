@@ -148,7 +148,9 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        If TxtValor.Text <> "" Then
+            Me.Buscar()
+        End If
     End Sub
     Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs) Handles BtnBuscarCliente.Click
         FrmCliente_Venta.ShowDialog()
@@ -245,6 +247,8 @@
 
                 If (Neg.Insertar(Obj, DtDetalle)) Then
                     MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
+                    Variables.IdVenta = Neg.UltimoIdVenta
+                    FrmReporteComprobanteVenta.ShowDialog()
                     Me.Listar()
                 Else
                     MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro incorrecto")
