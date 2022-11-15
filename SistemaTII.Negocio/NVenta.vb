@@ -105,4 +105,14 @@ Public Class NVenta
             Return Nothing
         End Try
     End Function
+
+    Public Function CargarComprobante(name As String) As DataTable
+        Try
+            Dim Datos As New DVenta
+            Return Datos.UltimoComprobante(name)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

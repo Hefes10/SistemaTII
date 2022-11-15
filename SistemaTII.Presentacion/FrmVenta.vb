@@ -374,4 +374,9 @@
         End If
     End Sub
 
+    Private Sub CboTipoComprobante_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboTipoComprobante.SelectedIndexChanged
+        Dim Neg As New Negocio.NVenta
+        TxtSerieComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(0).ToString
+        TxtNumComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(1).ToString + 1
+    End Sub
 End Class

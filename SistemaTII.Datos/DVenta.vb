@@ -91,6 +91,22 @@ Public Class DVenta
         End Try
     End Function
 
+    Public Function UltimoComprobante(name As String) As Object
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("venta_ultimo_comprobante", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            Comando.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar).Value = name
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
     Public Function ListarDetalle(Id As Integer) As DataTable
         Try
