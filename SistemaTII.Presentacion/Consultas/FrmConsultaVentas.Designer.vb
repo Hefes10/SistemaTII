@@ -87,6 +87,14 @@ Partial Class FrmConsultaVentas
         Me.DgvListadoProducto = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.BtnFiltrarM = New System.Windows.Forms.Button()
+        Me.DtFechaFinM = New System.Windows.Forms.DateTimePicker()
+        Me.DtFechaInicioM = New System.Windows.Forms.DateTimePicker()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.BtnReporteM = New System.Windows.Forms.Button()
+        Me.DgvListadoM = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.PanelMostrar.SuspendLayout()
@@ -101,6 +109,8 @@ Partial Class FrmConsultaVentas
         Me.PanelMostrarProducto.SuspendLayout()
         CType(Me.DgvDetalleProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvListadoProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.DgvListadoM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ErrorIcono
@@ -773,12 +783,96 @@ Partial Class FrmConsultaVentas
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.BtnFiltrarM)
+        Me.TabPage4.Controls.Add(Me.DtFechaFinM)
+        Me.TabPage4.Controls.Add(Me.DtFechaInicioM)
+        Me.TabPage4.Controls.Add(Me.Label24)
+        Me.TabPage4.Controls.Add(Me.Label25)
+        Me.TabPage4.Controls.Add(Me.BtnReporteM)
+        Me.TabPage4.Controls.Add(Me.DgvListadoM)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Size = New System.Drawing.Size(1073, 566)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Listado más vendidos"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'BtnFiltrarM
+        '
+        Me.BtnFiltrarM.Location = New System.Drawing.Point(625, 24)
+        Me.BtnFiltrarM.Name = "BtnFiltrarM"
+        Me.BtnFiltrarM.Size = New System.Drawing.Size(151, 37)
+        Me.BtnFiltrarM.TabIndex = 34
+        Me.BtnFiltrarM.Text = "Filtrar"
+        Me.BtnFiltrarM.UseVisualStyleBackColor = True
+        '
+        'DtFechaFinM
+        '
+        Me.DtFechaFinM.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaFinM.Location = New System.Drawing.Point(374, 31)
+        Me.DtFechaFinM.Name = "DtFechaFinM"
+        Me.DtFechaFinM.Size = New System.Drawing.Size(125, 22)
+        Me.DtFechaFinM.TabIndex = 33
+        '
+        'DtFechaInicioM
+        '
+        Me.DtFechaInicioM.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaInicioM.Location = New System.Drawing.Point(163, 31)
+        Me.DtFechaInicioM.Name = "DtFechaInicioM"
+        Me.DtFechaInicioM.Size = New System.Drawing.Size(125, 22)
+        Me.DtFechaInicioM.TabIndex = 32
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(306, 33)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(45, 17)
+        Me.Label24.TabIndex = 31
+        Me.Label24.Text = "Hasta"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(88, 34)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(49, 17)
+        Me.Label25.TabIndex = 30
+        Me.Label25.Text = "Desde"
+        '
+        'BtnReporteM
+        '
+        Me.BtnReporteM.Location = New System.Drawing.Point(802, 23)
+        Me.BtnReporteM.Name = "BtnReporteM"
+        Me.BtnReporteM.Size = New System.Drawing.Size(152, 38)
+        Me.BtnReporteM.TabIndex = 29
+        Me.BtnReporteM.Text = "Reporte"
+        Me.BtnReporteM.UseVisualStyleBackColor = True
+        '
+        'DgvListadoM
+        '
+        Me.DgvListadoM.AllowUserToAddRows = False
+        Me.DgvListadoM.AllowUserToDeleteRows = False
+        Me.DgvListadoM.AllowUserToOrderColumns = True
+        Me.DgvListadoM.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DgvListadoM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvListadoM.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn3})
+        Me.DgvListadoM.Location = New System.Drawing.Point(12, 85)
+        Me.DgvListadoM.Name = "DgvListadoM"
+        Me.DgvListadoM.ReadOnly = True
+        Me.DgvListadoM.RowHeadersWidth = 51
+        Me.DgvListadoM.RowTemplate.Height = 24
+        Me.DgvListadoM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvListadoM.Size = New System.Drawing.Size(1020, 410)
+        Me.DgvListadoM.TabIndex = 28
+        '
+        'DataGridViewCheckBoxColumn3
+        '
+        Me.DataGridViewCheckBoxColumn3.HeaderText = "Seleccionar"
+        Me.DataGridViewCheckBoxColumn3.MinimumWidth = 6
+        Me.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3"
+        Me.DataGridViewCheckBoxColumn3.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn3.Width = 125
         '
         'FrmConsultaVentas
         '
@@ -809,6 +903,9 @@ Partial Class FrmConsultaVentas
         Me.PanelMostrarProducto.PerformLayout()
         CType(Me.DgvDetalleProducto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DgvListadoProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
+        CType(Me.DgvListadoM, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -877,4 +974,12 @@ Partial Class FrmConsultaVentas
     Friend WithEvents DataGridViewCheckBoxColumn2 As DataGridViewCheckBoxColumn
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents LblTotalProducto As Label
+    Friend WithEvents BtnFiltrarM As Button
+    Friend WithEvents DtFechaFinM As DateTimePicker
+    Friend WithEvents DtFechaInicioM As DateTimePicker
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents BtnReporteM As Button
+    Friend WithEvents DgvListadoM As DataGridView
+    Friend WithEvents DataGridViewCheckBoxColumn3 As DataGridViewCheckBoxColumn
 End Class

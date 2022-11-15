@@ -216,6 +216,24 @@
     <Compile Include="Reportes\FrmReporteComprobanteVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteFechaArticulos.Designer.vb">
+      <DependentUpon>FrmReporteFechaArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFechaArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFechas.Designer.vb">
+      <DependentUpon>FrmReporteFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteVendedor.Designer.vb">
+      <DependentUpon>FrmReporteVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -273,8 +291,20 @@
     <EmbeddedResource Include="Reportes\FrmReporteComprobanteVenta.resx">
       <DependentUpon>FrmReporteComprobanteVenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteFechaArticulos.resx">
+      <DependentUpon>FrmReporteFechaArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteFechas.resx">
+      <DependentUpon>FrmReporteFechas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteVendedor.resx">
+      <DependentUpon>FrmReporteVendedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptArticulos.rdlc" />
     <EmbeddedResource Include="Reportes\RptComprobanteVenta.rdlc" />
+    <EmbeddedResource Include="Reportes\RptPorFechas.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteFechaArticulos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteVendedor.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

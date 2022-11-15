@@ -371,8 +371,8 @@
         <DataSetName>DsComprobanteVenta</DataSetName>
         <Top>0.44733cm</Top>
         <Left>0.94687cm</Left>
-        <Height>1.41167cm</Height>
-        <Width>18.97756cm</Width>
+        <Height>1.41166cm</Height>
+        <Width>18.97757cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1095,7 +1095,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Fields!total.Value-Round(Fields!total.Value/(1+Fields!impuesto.Value),2)</Value>
+                  <Value>=Round(Fields!total.Value/(1+Fields!impuesto.Value),2)</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1125,7 +1125,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Round(Fields!total.Value/(1+Fields!impuesto.Value),2)</Value>
+                  <Value>=Fields!total.Value-Round(Fields!total.Value/(1+Fields!impuesto.Value),2)</Value>
                   <Style />
                 </TextRun>
               </TextRuns>

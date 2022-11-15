@@ -133,10 +133,11 @@
         For Each FilaTemp As DataGridViewRow In DgvDetalle.Rows
             Total = Total + CDec(FilaTemp.Cells("importe").Value)
         Next
-        SubTotal = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
+        TotalImpuesto = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
+        SubTotal = Total - TotalImpuesto
         TxtTotal.Text = Total
         TxtSubTotal.Text = SubTotal
-        TxtTotalImpuesto.Text = CStr(Total - SubTotal)
+        TxtTotalImpuesto.Text = CStr(TotalImpuesto)
     End Sub
 
     Private Sub FrmIngreso_Load(sender As Object, e As EventArgs) Handles MyBase.Load

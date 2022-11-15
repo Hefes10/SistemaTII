@@ -23,6 +23,7 @@
         DgvListado.Visible = False
         DgvListadoFecha.Visible = False
         DgvListadoProducto.Visible = False
+        DgvListadoM.Visible = False
     End Sub
 
     '----LISTADO POR VENDEDOR----
@@ -78,8 +79,10 @@
 
     Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
         Try
-            Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
-            FrmReporteComprobanteVenta.ShowDialog()
+            Variables.RepFechaInicio = DtFechaInicio.Value
+            Variables.RepFechaFin = DtFechaFin.Value
+            Variables.IdUsuario = CboVendedor.SelectedValue
+            FrmReporteVendedor.ShowDialog()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -149,8 +152,9 @@
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
         Try
-            Variables.IdVenta = DgvListadoFecha.SelectedCells.Item(1).Value
-            FrmReporteComprobanteVenta.ShowDialog()
+            Variables.RepFechaInicio = DtFechaIni.Value
+            Variables.RepFechaFin = DtFechaFi.Value
+            FrmReporteFechas.ShowDialog()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -232,8 +236,10 @@
     End Sub
     Private Sub BtnReporteProducto_Click(sender As Object, e As EventArgs) Handles BtnReporteProducto.Click
         Try
-            Variables.IdVenta = DgvListadoProducto.SelectedCells.Item(1).Value
-            FrmReporteComprobanteVenta.ShowDialog()
+            Variables.RepFechaInicio = DtFechaI.Value
+            Variables.RepFechaFin = DtFechaF.Value
+            Variables.IdArticulo = CboProducto.SelectedValue
+            FrmReporteFechaArticulos.ShowDialog()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -264,5 +270,46 @@
 
     Private Sub BtnCerrarP_Click(sender As Object, e As EventArgs) Handles BtnCerrarP.Click
         PanelMostrarProducto.Visible = False
+    End Sub
+
+    '----- LISTADO DE MÁS VENDIDOS -----
+
+    Private Sub FormatoM()
+        DgvListadoM.Columns(0).Visible = False
+        DgvListadoM.Columns(2).Visible = False
+        DgvListadoM.Columns(0).Width = 100
+        DgvListadoM.Columns(1).Width = 60
+        DgvListadoM.Columns(3).Width = 150
+        DgvListadoM.Columns(4).Width = 150
+        DgvListadoM.Columns(5).Width = 100
+        DgvListadoM.Columns(6).Width = 70
+        DgvListadoM.Columns(7).Width = 70
+        DgvListadoM.Columns(8).Width = 60
+        DgvListadoM.Columns(9).Width = 100
+        DgvListadoM.Columns(10).Width = 100
+        DgvListadoM.Columns(11).Width = 100
+    End Sub
+    Private Sub FiltrarM()
+        Try
+            Dim Neg As New Negocio.NVenta
+            Dim FechaInicio As Date
+            Dim FechaFin As Date
+            FechaInicio = DtFechaInicioM.Value
+            FechaFin = DtFechaFinM.Value
+            DgvListadoM.DataSource = Neg.ConsultaSoloFechas(FechaInicio, FechaFin)
+            DgvListadoM.Visible = True
+            LblTotalReg.Text = "Total Registros: " & DgvListadoM.DataSource.Rows.Count
+            Me.FormatoFecha()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnFiltrarM_Click(sender As Object, e As EventArgs) Handles BtnFiltrarM.Click
+        Me.FiltrarM()
+    End Sub
+
+    Private Sub BtnReporteM_Click(sender As Object, e As EventArgs) Handles BtnReporteM.Click
+
     End Sub
 End Class

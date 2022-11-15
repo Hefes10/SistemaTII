@@ -6,4 +6,8 @@
     Public Shared NombreCliente As String
     Public Shared Nombre As String
     Public Shared IdVenta As Integer
+    Public Shared RepFechaInicio As Date
+    Public Shared RepFechaFin As Date
+    Public Shared IdVendedor As Integer
+    Public Shared IdArticulo As Integer
 End Class
