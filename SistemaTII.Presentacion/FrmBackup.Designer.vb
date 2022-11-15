@@ -104,17 +104,17 @@ Partial Class FrmBackup
         '
         'TxtBaseRestaurar
         '
-        Me.TxtBaseRestaurar.Enabled = False
         Me.TxtBaseRestaurar.Location = New System.Drawing.Point(147, 346)
         Me.TxtBaseRestaurar.Name = "TxtBaseRestaurar"
+        Me.TxtBaseRestaurar.ReadOnly = True
         Me.TxtBaseRestaurar.Size = New System.Drawing.Size(322, 20)
         Me.TxtBaseRestaurar.TabIndex = 6
         '
         'TxtRutaRestaurar
         '
-        Me.TxtRutaRestaurar.Enabled = False
         Me.TxtRutaRestaurar.Location = New System.Drawing.Point(147, 311)
         Me.TxtRutaRestaurar.Name = "TxtRutaRestaurar"
+        Me.TxtRutaRestaurar.ReadOnly = True
         Me.TxtRutaRestaurar.Size = New System.Drawing.Size(322, 20)
         Me.TxtRutaRestaurar.TabIndex = 7
         '
