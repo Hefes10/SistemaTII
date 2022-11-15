@@ -132,7 +132,7 @@ Partial Class FrmVenta
         '
         'TxtTotal
         '
-        Me.TxtTotal.Location = New System.Drawing.Point(616, 218)
+        Me.TxtTotal.Location = New System.Drawing.Point(615, 307)
         Me.TxtTotal.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.ReadOnly = True
@@ -141,7 +141,7 @@ Partial Class FrmVenta
         '
         'TxtTotalImpuesto
         '
-        Me.TxtTotalImpuesto.Location = New System.Drawing.Point(616, 195)
+        Me.TxtTotalImpuesto.Location = New System.Drawing.Point(615, 284)
         Me.TxtTotalImpuesto.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtTotalImpuesto.Name = "TxtTotalImpuesto"
         Me.TxtTotalImpuesto.ReadOnly = True
@@ -150,7 +150,7 @@ Partial Class FrmVenta
         '
         'TxtSubTotal
         '
-        Me.TxtSubTotal.Location = New System.Drawing.Point(616, 171)
+        Me.TxtSubTotal.Location = New System.Drawing.Point(615, 260)
         Me.TxtSubTotal.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtSubTotal.Name = "TxtSubTotal"
         Me.TxtSubTotal.ReadOnly = True
@@ -160,7 +160,7 @@ Partial Class FrmVenta
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(526, 216)
+        Me.Label6.Location = New System.Drawing.Point(527, 310)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(31, 13)
@@ -170,7 +170,7 @@ Partial Class FrmVenta
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(526, 192)
+        Me.Label4.Location = New System.Drawing.Point(527, 286)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 13)
@@ -180,7 +180,7 @@ Partial Class FrmVenta
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(526, 168)
+        Me.Label2.Location = New System.Drawing.Point(527, 262)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
@@ -198,7 +198,7 @@ Partial Class FrmVenta
         Me.DgvDetalle.RowHeadersWidth = 51
         Me.DgvDetalle.RowTemplate.Height = 24
         Me.DgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvDetalle.Size = New System.Drawing.Size(728, 114)
+        Me.DgvDetalle.Size = New System.Drawing.Size(728, 199)
         Me.DgvDetalle.TabIndex = 0
         '
         'GroupBox1
@@ -230,7 +230,7 @@ Partial Class FrmVenta
         Me.TxtImpuesto.ReadOnly = True
         Me.TxtImpuesto.Size = New System.Drawing.Size(71, 20)
         Me.TxtImpuesto.TabIndex = 23
-        Me.TxtImpuesto.Text = "0.18"
+        Me.TxtImpuesto.Text = "0.21"
         '
         'Label1
         '
@@ -329,7 +329,7 @@ Partial Class FrmVenta
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(134, 428)
+        Me.BtnCancelar.Location = New System.Drawing.Point(134, 506)
         Me.BtnCancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(109, 19)
@@ -339,7 +339,7 @@ Partial Class FrmVenta
         '
         'BtnInsertar
         '
-        Me.BtnInsertar.Location = New System.Drawing.Point(13, 428)
+        Me.BtnInsertar.Location = New System.Drawing.Point(13, 506)
         Me.BtnInsertar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnInsertar.Name = "BtnInsertar"
         Me.BtnInsertar.Size = New System.Drawing.Size(107, 19)
@@ -354,7 +354,7 @@ Partial Class FrmVenta
         'LblTotalArticulos
         '
         Me.LblTotalArticulos.AutoSize = True
-        Me.LblTotalArticulos.Location = New System.Drawing.Point(404, 166)
+        Me.LblTotalArticulos.Location = New System.Drawing.Point(529, 307)
         Me.LblTotalArticulos.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblTotalArticulos.Name = "LblTotalArticulos"
         Me.LblTotalArticulos.Size = New System.Drawing.Size(31, 13)
@@ -376,7 +376,7 @@ Partial Class FrmVenta
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage1.Size = New System.Drawing.Size(803, 457)
+        Me.TabPage1.Size = New System.Drawing.Size(803, 529)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -402,7 +402,7 @@ Partial Class FrmVenta
         Me.PanelMostrar.Controls.Add(Me.Label9)
         Me.PanelMostrar.Controls.Add(Me.Label8)
         Me.PanelMostrar.Controls.Add(Me.DgvMostrarDetalle)
-        Me.PanelMostrar.Location = New System.Drawing.Point(114, 91)
+        Me.PanelMostrar.Location = New System.Drawing.Point(108, 92)
         Me.PanelMostrar.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelMostrar.Name = "PanelMostrar"
         Me.PanelMostrar.Size = New System.Drawing.Size(691, 387)
@@ -512,7 +512,7 @@ Partial Class FrmVenta
         '
         'BtnAnular
         '
-        Me.BtnAnular.Location = New System.Drawing.Point(365, 362)
+        Me.BtnAnular.Location = New System.Drawing.Point(373, 499)
         Me.BtnAnular.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnAnular.Name = "BtnAnular"
         Me.BtnAnular.Size = New System.Drawing.Size(116, 19)
@@ -523,7 +523,7 @@ Partial Class FrmVenta
         'ChkSeleccionar
         '
         Me.ChkSeleccionar.AutoSize = True
-        Me.ChkSeleccionar.Location = New System.Drawing.Point(5, 362)
+        Me.ChkSeleccionar.Location = New System.Drawing.Point(13, 499)
         Me.ChkSeleccionar.Margin = New System.Windows.Forms.Padding(2)
         Me.ChkSeleccionar.Name = "ChkSeleccionar"
         Me.ChkSeleccionar.Size = New System.Drawing.Size(82, 17)
@@ -552,7 +552,7 @@ Partial Class FrmVenta
         'Lbltotal
         '
         Me.Lbltotal.AutoSize = True
-        Me.Lbltotal.Location = New System.Drawing.Point(516, 366)
+        Me.Lbltotal.Location = New System.Drawing.Point(681, 505)
         Me.Lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Lbltotal.Name = "Lbltotal"
         Me.Lbltotal.Size = New System.Drawing.Size(31, 13)
@@ -573,7 +573,7 @@ Partial Class FrmVenta
         Me.DgvListado.RowHeadersWidth = 51
         Me.DgvListado.RowTemplate.Height = 24
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(765, 275)
+        Me.DgvListado.Size = New System.Drawing.Size(765, 420)
         Me.DgvListado.TabIndex = 0
         '
         'Seleccionar
@@ -592,10 +592,10 @@ Partial Class FrmVenta
         Me.PanelArticulos.Controls.Add(Me.DgvArticulos)
         Me.PanelArticulos.Controls.Add(Me.BtnBuscarArticulosDetalles)
         Me.PanelArticulos.Controls.Add(Me.TxtBuscarArticulos)
-        Me.PanelArticulos.Location = New System.Drawing.Point(75, 13)
+        Me.PanelArticulos.Location = New System.Drawing.Point(108, 160)
         Me.PanelArticulos.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelArticulos.Name = "PanelArticulos"
-        Me.PanelArticulos.Size = New System.Drawing.Size(673, 287)
+        Me.PanelArticulos.Size = New System.Drawing.Size(673, 334)
         Me.PanelArticulos.TabIndex = 10
         Me.PanelArticulos.Visible = False
         '
@@ -611,7 +611,7 @@ Partial Class FrmVenta
         Me.DgvArticulos.RowHeadersWidth = 51
         Me.DgvArticulos.RowTemplate.Height = 24
         Me.DgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvArticulos.Size = New System.Drawing.Size(620, 85)
+        Me.DgvArticulos.Size = New System.Drawing.Size(620, 234)
         Me.DgvArticulos.TabIndex = 2
         '
         'BtnBuscarArticulosDetalles
@@ -640,11 +640,12 @@ Partial Class FrmVenta
         Me.TabGeneral.Margin = New System.Windows.Forms.Padding(2)
         Me.TabGeneral.Name = "TabGeneral"
         Me.TabGeneral.SelectedIndex = 0
-        Me.TabGeneral.Size = New System.Drawing.Size(811, 483)
+        Me.TabGeneral.Size = New System.Drawing.Size(811, 555)
         Me.TabGeneral.TabIndex = 3
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.PanelArticulos)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.TxtId)
@@ -654,14 +655,13 @@ Partial Class FrmVenta
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(803, 457)
+        Me.TabPage2.Size = New System.Drawing.Size(803, 529)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mantenimiento"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.PanelArticulos)
         Me.GroupBox2.Controls.Add(Me.BtnBuscarArticulos)
         Me.GroupBox2.Controls.Add(Me.TxtCodigo)
         Me.GroupBox2.Controls.Add(Me.Label7)
@@ -676,7 +676,7 @@ Partial Class FrmVenta
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(752, 240)
+        Me.GroupBox2.Size = New System.Drawing.Size(752, 331)
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalles"
@@ -686,7 +686,7 @@ Partial Class FrmVenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(840, 497)
+        Me.ClientSize = New System.Drawing.Size(840, 568)
         Me.Controls.Add(Me.TabGeneral)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmVenta"

@@ -141,10 +141,11 @@
         For Each FilaTemp As DataGridViewRow In DgvDetalle.Rows
             Total = Total + CDec(FilaTemp.Cells("importe").Value)
         Next
-        SubTotal = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
+        TotalImpuesto = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
+        SubTotal = Total - TotalImpuesto
         TxtTotal.Text = Total
         TxtSubTotal.Text = SubTotal
-        TxtTotalImpuesto.Text = CStr(Total - SubTotal)
+        TxtTotalImpuesto.Text = CStr(TotalImpuesto)
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
@@ -277,8 +278,8 @@
             Dim TotalImpuesto As Decimal = 0
 
             Total = DgvListado.SelectedCells.Item(10).Value
-            SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
-            TotalImpuesto = Total - SubTotal
+            TotalImpuesto = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
+            SubTotal = Total - TotalImpuesto
 
             LblTotalM.Text = Total
             LblTotalImpuestoM.Text = TotalImpuesto
