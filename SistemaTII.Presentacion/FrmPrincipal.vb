@@ -151,30 +151,41 @@ Public Class FrmPrincipal
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TsBarrainferior.Text = "Usuario:" & Me.Nombre
         MsgBox("Bienvenido " & Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
-        If (Me.Rol = "Administrador") Then
+        If (Me.Rol = "Superadmin") Then
             MnuAlmacen.Enabled = True
             MnuIngresos.Enabled = True
             MnuVentas.Enabled = True
             MnuAcceso.Enabled = True
             MnuConsultas.Enabled = True
+            MnuBackup.Enabled = True
+        ElseIf (Me.Rol = "Administrador") Then
+            MnuAlmacen.Enabled = True
+            MnuIngresos.Enabled = True
+            MnuVentas.Enabled = True
+            MnuAcceso.Enabled = True
+            MnuConsultas.Enabled = True
+            MnuBackup.Enabled = True
         ElseIf (Me.Rol = "Almacenero") Then
             MnuAlmacen.Enabled = False
             MnuIngresos.Enabled = True
             MnuVentas.Enabled = False
             MnuAcceso.Enabled = False
             MnuConsultas.Enabled = False
+            MnuBackup.Enabled = False
         ElseIf (Me.Rol = "Vendedor") Then
             MnuAlmacen.Enabled = False
             MnuIngresos.Enabled = False
             MnuVentas.Enabled = True
             MnuAcceso.Enabled = False
             MnuConsultas.Enabled = False
+            MnuBackup.Enabled = False
         Else
             MnuAlmacen.Enabled = False
             MnuIngresos.Enabled = False
             MnuVentas.Enabled = False
             MnuAcceso.Enabled = False
             MnuConsultas.Enabled = False
+            MnuBackup.Enabled = False
         End If
     End Sub
 
@@ -224,7 +235,7 @@ Public Class FrmPrincipal
         frm.Show()
     End Sub
 
-    Private Sub BackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupToolStripMenuItem.Click
+    Private Sub BackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MnuBackup.Click
         Dim frm As New FrmBackup
         frm.MdiParent = Me
         frm.Show()
