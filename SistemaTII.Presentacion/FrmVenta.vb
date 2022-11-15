@@ -278,8 +278,8 @@
             Dim TotalImpuesto As Decimal = 0
 
             Total = DgvListado.SelectedCells.Item(10).Value
-            SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
-            TotalImpuesto = Total - SubTotal
+            TotalImpuesto = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
+            SubTotal = Total - TotalImpuesto
 
             LblTotalM.Text = Total
             LblTotalImpuestoM.Text = TotalImpuesto
@@ -375,4 +375,9 @@
         End If
     End Sub
 
+    Private Sub CboTipoComprobante_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboTipoComprobante.SelectedIndexChanged
+        Dim Neg As New Negocio.NVenta
+        TxtSerieComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(0).ToString
+        TxtNumComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(1).ToString + 1
+    End Sub
 End Class
