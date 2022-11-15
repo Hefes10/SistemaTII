@@ -237,12 +237,11 @@ Partial Class FrmVenta
         'CboTipoComprobante
         '
         Me.CboTipoComprobante.FormattingEnabled = True
-        Me.CboTipoComprobante.Items.AddRange(New Object() {"Factura", "Boleta", "Ticket"})
+        Me.CboTipoComprobante.Items.AddRange(New Object() {"Factura", "Remito", "Ticket"})
         Me.CboTipoComprobante.Location = New System.Drawing.Point(140, 92)
         Me.CboTipoComprobante.Name = "CboTipoComprobante"
         Me.CboTipoComprobante.Size = New System.Drawing.Size(90, 24)
         Me.CboTipoComprobante.TabIndex = 20
-        Me.CboTipoComprobante.Text = "Factura"
         '
         'BtnBuscarCliente
         '
