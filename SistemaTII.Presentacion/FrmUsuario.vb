@@ -185,11 +185,17 @@ Public Class FrmUsuario
                 Obj.Email = TxtEmail.Text
                 Obj.Clave = TxtClave.Text
 
-                If (Neg.Insertar(Obj)) Then
-                    MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                If Obj.IdRol = 4 And Variables.IdRol <> 4 Then
+                    MsgBox("Ud. No tiene privilegios para dar de alta un usuario con el rol de Superadmin", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Sistema")
                     Me.Listar()
                 Else
-                    MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
+                    If (Neg.Insertar(Obj)) Then
+                        MsgBox("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                        Me.Listar()
+                    Else
+                        MsgBox("No se ha podido registrar", vbOKOnly + vbCritical, "Registro Incorrecto")
+                        Me.Listar()
+                    End If
                 End If
             Else
                 MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
@@ -215,11 +221,17 @@ Public Class FrmUsuario
                 Obj.Email = TxtEmail.Text
                 Obj.Clave = TxtClave.Text
 
-                If (Neg.Actualizar(Obj)) Then
-                    MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
+                If Obj.IdRol = 4 And Variables.IdRol <> 4 Then
+                    MsgBox("Ud. No tiene privilegios para actualizar un usuario con el rol de Superadmin", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Sistema")
                     Me.Listar()
                 Else
-                    MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
+                    If (Neg.Actualizar(Obj)) Then
+                        MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
+                        Me.Listar()
+                    Else
+                        MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
+                        Me.Listar()
+                    End If
                 End If
             Else
                 MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")

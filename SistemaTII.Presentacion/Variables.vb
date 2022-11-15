@@ -1,5 +1,6 @@
 ﻿Public Class Variables
     Public Shared IdUsuario As Integer
+    Public Shared IdRol As Integer
     Public Shared IdProveedor As Integer
     Public Shared NombreProveedor As String
     Public Shared IdCliente As Integer

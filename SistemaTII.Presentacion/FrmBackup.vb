@@ -57,12 +57,26 @@ Public Class FrmBackup
 
     Private Sub BtnRestaurar_Click(sender As Object, e As EventArgs) Handles BtnRestaurar.Click
         Try
-            Dim Neg As New Negocio.NBackup
-            Neg.Restore(TxtBaseRestaurar.Text, TxtRutaRestaurar.Text)
-
-            MsgBox("Se ha realizado el restore correctamente.", vbOKOnly + vbInformation, "Restore Backup Correcto")
+            Dim Result As Integer
+            Result = MsgBox("Está a punto de restaurar la Base de Datos. Perderá toda la información que no haya sido guardada. Desea continuar?", MsgBoxStyle.OkCancel + vbExclamation, "Advertencia")
+            If Result = 1 Then
+                Dim Neg As New Negocio.NBackup
+                Neg.Restore(TxtBaseRestaurar.Text, TxtRutaRestaurar.Text)
+                MsgBox("Se ha realizado el restore correctamente.", vbOKOnly + vbInformation, "Restore Backup Correcto")
+            End If
         Catch ex As Exception
             MessageBox.Show(Err.Description)
         End Try
+    End Sub
+
+    Private Sub FrmBackup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If (Variables.IdRol = 4) Then
+            BtnRutaRestaurar.Enabled = True
+            BtnRestaurar.Enabled = True
+        Else
+            BtnRutaRestaurar.Enabled = False
+            BtnRestaurar.Enabled = False
+        End If
+
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class FrmPrincipal
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrincipal))
@@ -41,6 +41,7 @@ Partial Class FrmPrincipal
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuConsultas = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MnuBackup = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,7 +73,6 @@ Partial Class FrmPrincipal
         Me.TsBarrainferior = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -81,7 +81,7 @@ Partial Class FrmPrincipal
         'MenuStrip
         '
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuAlmacen, Me.MnuIngresos, Me.MnuVentas, Me.MnuAcceso, Me.MnuConsultas, Me.BackupToolStripMenuItem, Me.ViewMenu, Me.WindowsMenu, Me.MnuSalir, Me.HelpMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuAlmacen, Me.MnuIngresos, Me.MnuVentas, Me.MnuAcceso, Me.MnuConsultas, Me.MnuBackup, Me.ViewMenu, Me.WindowsMenu, Me.MnuSalir, Me.HelpMenu})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
@@ -100,13 +100,13 @@ Partial Class FrmPrincipal
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CategoriasToolStripMenuItem.Text = "Cate&gorías"
         '
         'ArtículosToolStripMenuItem
         '
         Me.ArtículosToolStripMenuItem.Name = "ArtículosToolStripMenuItem"
-        Me.ArtículosToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.ArtículosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ArtículosToolStripMenuItem.Text = "&Artículos"
         '
         'MnuIngresos
@@ -184,6 +184,12 @@ Partial Class FrmPrincipal
         Me.ConsultaVentasToolStripMenuItem.Name = "ConsultaVentasToolStripMenuItem"
         Me.ConsultaVentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultaVentasToolStripMenuItem.Text = "Consulta Ventas"
+        '
+        'MnuBackup
+        '
+        Me.MnuBackup.Name = "MnuBackup"
+        Me.MnuBackup.Size = New System.Drawing.Size(58, 20)
+        Me.MnuBackup.Text = "Backup"
         '
         'ViewMenu
         '
@@ -401,12 +407,6 @@ Partial Class FrmPrincipal
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(23, 23)
         '
-        'BackupToolStripMenuItem
-        '
-        Me.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem"
-        Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
-        Me.BackupToolStripMenuItem.Text = "Backup"
-        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -477,5 +477,5 @@ Partial Class FrmPrincipal
     Friend WithEvents ConsultaVentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MnuSalir As ToolStripMenuItem
     Friend WithEvents MisVentasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BackupToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MnuBackup As ToolStripMenuItem
 End Class

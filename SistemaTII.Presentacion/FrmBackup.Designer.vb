@@ -23,11 +23,11 @@ Partial Class FrmBackup
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtRutaGuardar = New System.Windows.Forms.TextBox()
         Me.TxtBaseRestaurar = New System.Windows.Forms.TextBox()
         Me.TxtRutaRestaurar = New System.Windows.Forms.TextBox()
@@ -49,6 +49,15 @@ Partial Class FrmBackup
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(605, 102)
         Me.Panel1.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(50, 40)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(259, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Backup y restauración de Base de Datos SQL Server"
         '
         'Label1
         '
@@ -86,15 +95,6 @@ Partial Class FrmBackup
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Base de datos a restaurar"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(50, 40)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(259, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Backup y restauración de Base de Datos SQL Server"
-        '
         'TxtRutaGuardar
         '
         Me.TxtRutaGuardar.Location = New System.Drawing.Point(115, 170)
@@ -106,6 +106,7 @@ Partial Class FrmBackup
         '
         Me.TxtBaseRestaurar.Location = New System.Drawing.Point(147, 346)
         Me.TxtBaseRestaurar.Name = "TxtBaseRestaurar"
+        Me.TxtBaseRestaurar.ReadOnly = True
         Me.TxtBaseRestaurar.Size = New System.Drawing.Size(322, 20)
         Me.TxtBaseRestaurar.TabIndex = 6
         '
@@ -113,6 +114,7 @@ Partial Class FrmBackup
         '
         Me.TxtRutaRestaurar.Location = New System.Drawing.Point(147, 311)
         Me.TxtRutaRestaurar.Name = "TxtRutaRestaurar"
+        Me.TxtRutaRestaurar.ReadOnly = True
         Me.TxtRutaRestaurar.Size = New System.Drawing.Size(322, 20)
         Me.TxtRutaRestaurar.TabIndex = 7
         '
