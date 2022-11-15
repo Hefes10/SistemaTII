@@ -38,6 +38,18 @@ Public Class NVenta
         End Try
     End Function
 
+    Public Function ConsultaFechasProducto(FechaInicio As Date, FechaFin As Date, IdArticulo As Integer) As DataTable
+        Try
+            Dim Datos As New DVenta
+            Dim Tabla As New DataTable
+            Tabla = Datos.ConsultaFechasProducto(FechaInicio, FechaFin, IdArticulo)
+            Return Tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function ConsultaSoloFechas(FechaInicio As Date, FechaFin As Date) As DataTable
         Try
             Dim Datos As New DVenta
