@@ -1,13 +1,16 @@
 ﻿Public Class FrmConsultaVentas
     Private DtDetalle As New DataTable
     Private Sub FrmConsultaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (FrmPrincipal.IdRol = 1 Or 4) Then
+        If (FrmPrincipal.IdRol = 1 Or FrmPrincipal.IdRol = 4) Then
             CboVendedor.Enabled = True
             Me.CargarVendedor()
             Me.CargarProducto()
         ElseIf (FrmPrincipal.IdRol = 2) Then
             'aca se va a seleccionar el id del vendedor
             CboVendedor.Enabled = False
+            Me.TabPage2.Enabled = False
+            Me.TabPage3.Enabled = False
+            Me.TabPage4.Enabled = False
             Try
                 Dim Neg As New Negocio.NUsuario
                 CboVendedor.DataSource = Neg.Buscar(Variables.Nombre)
