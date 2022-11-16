@@ -357,18 +357,6 @@
         Me.CrearTablaDetalle()
     End Sub
 
-    Private Sub TxtSerieComprobante_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtSerieComprobante.KeyPress, TxtSerieComprobante.TextChanged
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TxtNumComprobante_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNumComprobante.KeyPress
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
     Private Sub TxtCodigo_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtCodigo.KeyPress
         If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
             e.Handled = True
