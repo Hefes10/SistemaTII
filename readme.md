@@ -78,3 +78,20 @@ Existen 4 perfiles de acceso:
 - Clientes: En esta funcionalidad es posible la busqueda de clientes, listado de clientes, alta baja y modificación de clientes.
 - Ventas: Buscar una venta, generar comprobante de venta, lsitar todas las ventas, anular una venta, generar una venta.
 - Mis Ventas: Como rol de vendedor es posible consultar todas las ventas propias en un rango de fechas.
+2. Solapa Ingresos:
+- Proveedores: En esta funcionalidad es posible la busqueda de proveedores, listado de proveedores, alta baja y modificación de proveedores.
+- Compras: Buscar una compra, generar comprobante de compra, lsitar todas las ventas, anular una compra, generar una compra.
+3. Solapa Almacén:
+- Categoría: En esta funcionalidad es posible la busqueda de categorías, listado de categorías, alta baja y modificación de categorías.
+- Artículos: En esta funcionalidad es posible la busqueda de artículos, listado de artículos, alta baja y modificación de artículos.
+4. Solapa Acceso:
+- Roles: Listado de roles.
+- Usuarios: En esta funcionalidad es posible la busqueda de usuarios, listado de usuarios, alta baja y modificación de usuarios.
+5. Solapa Consultas - Consulta de Ventas:
+- Listado por Vendedor: Reporte de Ventas por vendedor en un rango de fechas.
+- Listado entre Fechas: Reporte de ventas en un rango de fechas (sin filtro por vendedor).
+- Listado por Producto: Reporte de Ventas por producto en un rango de fechas.
+- Listado más Vendidos: Reporte del Top 10 de productos más vendidos en un rango de fechas.
+6. Solapa Backup:
+- Funcion backup: Permite realizar un backup de la base de datos (Administrador).
+- Función Restore: Permite restaurar la base de datos desde un archivo de backup (Solo usuario con provilegios de Sysadmin).
