@@ -252,7 +252,7 @@ Public Class FrmUsuario
             Try
                 Dim Neg As New Negocio.NUsuario
                 For Each row As DataGridViewRow In DgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Seleccionar").Value)
+                    Dim marcado As Boolean = Convert.ToBoolean(row.Selected)
                     If marcado Then
                         Dim OneKey As Integer = Convert.ToInt32(row.Cells("ID").Value)
                         Neg.Eliminar(OneKey)

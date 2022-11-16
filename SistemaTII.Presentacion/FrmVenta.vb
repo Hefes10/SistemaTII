@@ -369,4 +369,7 @@
         TxtNumComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(1).ToString + 1
     End Sub
 
+    Private Sub BtnEliminarSelec_Click(sender As Object, e As EventArgs) Handles BtnEliminarSelec.Click
+        Me.DgvDetalle.Rows.Remove(Me.DgvDetalle.CurrentRow)
+    End Sub
 End Class
