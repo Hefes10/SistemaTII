@@ -377,4 +377,5 @@ Public Class FrmArticulo
             Me.ErrorIcono.SetError(sender, "Ingrese el precio de venta del artículo, este dato es obligatorio")
         End If
     End Sub
+
 End Class

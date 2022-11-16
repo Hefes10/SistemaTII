@@ -64,7 +64,7 @@ Partial Class FrmProveedor
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(183, 306)
+        Me.TxtEmail.Location = New System.Drawing.Point(206, 308)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(316, 22)
         Me.TxtEmail.TabIndex = 3
@@ -106,7 +106,7 @@ Partial Class FrmProveedor
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(183, 259)
+        Me.TxtTelefono.Location = New System.Drawing.Point(206, 261)
         Me.TxtTelefono.Name = "TxtTelefono"
         Me.TxtTelefono.Size = New System.Drawing.Size(316, 22)
         Me.TxtTelefono.TabIndex = 23
@@ -114,8 +114,8 @@ Partial Class FrmProveedor
         'CboTipoDocumento
         '
         Me.CboTipoDocumento.FormattingEnabled = True
-        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "PASAPORTE", "CARNET", "RUC", "DNI"})
-        Me.CboTipoDocumento.Location = New System.Drawing.Point(183, 115)
+        Me.CboTipoDocumento.Items.AddRange(New Object() {"CEDULA", "PASAPORTE", "CARNET", "CUIT", "DNI"})
+        Me.CboTipoDocumento.Location = New System.Drawing.Point(206, 117)
         Me.CboTipoDocumento.Name = "CboTipoDocumento"
         Me.CboTipoDocumento.Size = New System.Drawing.Size(170, 24)
         Me.CboTipoDocumento.TabIndex = 22
@@ -132,14 +132,14 @@ Partial Class FrmProveedor
         '
         'TxtDireccion
         '
-        Me.TxtDireccion.Location = New System.Drawing.Point(183, 207)
+        Me.TxtDireccion.Location = New System.Drawing.Point(206, 209)
         Me.TxtDireccion.Name = "TxtDireccion"
         Me.TxtDireccion.Size = New System.Drawing.Size(316, 22)
         Me.TxtDireccion.TabIndex = 20
         '
         'TxtNumDocumento
         '
-        Me.TxtNumDocumento.Location = New System.Drawing.Point(183, 160)
+        Me.TxtNumDocumento.Location = New System.Drawing.Point(206, 162)
         Me.TxtNumDocumento.Name = "TxtNumDocumento"
         Me.TxtNumDocumento.Size = New System.Drawing.Size(316, 22)
         Me.TxtNumDocumento.TabIndex = 19
@@ -158,13 +158,13 @@ Partial Class FrmProveedor
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(45, 160)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(134, 17)
+        Me.Label6.Size = New System.Drawing.Size(153, 17)
         Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Número Documento"
+        Me.Label6.Text = "Número Documento (*)"
         '
         'BtnActualizar
         '
-        Me.BtnActualizar.Location = New System.Drawing.Point(159, 410)
+        Me.BtnActualizar.Location = New System.Drawing.Point(206, 384)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(143, 23)
         Me.BtnActualizar.TabIndex = 7
@@ -173,7 +173,7 @@ Partial Class FrmProveedor
         '
         'TxtId
         '
-        Me.TxtId.Location = New System.Drawing.Point(390, 21)
+        Me.TxtId.Location = New System.Drawing.Point(413, 23)
         Me.TxtId.Name = "TxtId"
         Me.TxtId.Size = New System.Drawing.Size(100, 22)
         Me.TxtId.TabIndex = 6
@@ -181,7 +181,7 @@ Partial Class FrmProveedor
         '
         'TxtNombre
         '
-        Me.TxtNombre.Location = New System.Drawing.Point(183, 71)
+        Me.TxtNombre.Location = New System.Drawing.Point(206, 73)
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.Size = New System.Drawing.Size(316, 22)
         Me.TxtNombre.TabIndex = 4
@@ -206,7 +206,7 @@ Partial Class FrmProveedor
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(330, 410)
+        Me.BtnCancelar.Location = New System.Drawing.Point(377, 384)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(145, 23)
         Me.BtnCancelar.TabIndex = 1
@@ -215,7 +215,7 @@ Partial Class FrmProveedor
         '
         'BtnInsertar
         '
-        Me.BtnInsertar.Location = New System.Drawing.Point(159, 410)
+        Me.BtnInsertar.Location = New System.Drawing.Point(206, 384)
         Me.BtnInsertar.Name = "BtnInsertar"
         Me.BtnInsertar.Size = New System.Drawing.Size(143, 23)
         Me.BtnInsertar.TabIndex = 0

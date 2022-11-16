@@ -228,6 +228,12 @@
     <Compile Include="Reportes\FrmReporteFechas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteTop.Designer.vb">
+      <DependentUpon>FrmReporteTop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteTop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\FrmReporteVendedor.Designer.vb">
       <DependentUpon>FrmReporteVendedor.vb</DependentUpon>
     </Compile>
@@ -297,6 +303,9 @@
     <EmbeddedResource Include="Reportes\FrmReporteFechas.resx">
       <DependentUpon>FrmReporteFechas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteTop.resx">
+      <DependentUpon>FrmReporteTop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteVendedor.resx">
       <DependentUpon>FrmReporteVendedor.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +313,7 @@
     <EmbeddedResource Include="Reportes\RptComprobanteVenta.rdlc" />
     <EmbeddedResource Include="Reportes\RptPorFechas.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteFechaArticulos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteTop.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteVendedor.rdlc" />
   </ItemGroup>
   <ItemGroup>

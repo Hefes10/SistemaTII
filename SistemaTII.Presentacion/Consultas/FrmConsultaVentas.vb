@@ -1,7 +1,7 @@
 ﻿Public Class FrmConsultaVentas
     Private DtDetalle As New DataTable
     Private Sub FrmConsultaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (FrmPrincipal.IdRol = 1) Then
+        If (FrmPrincipal.IdRol = 1 Or 4) Then
             CboVendedor.Enabled = True
             Me.CargarVendedor()
             Me.CargarProducto()
@@ -13,6 +13,7 @@
                 CboVendedor.DataSource = Neg.Buscar(Variables.Nombre)
                 CboVendedor.ValueMember = "ID"
                 CboVendedor.DisplayMember = "Nombre"
+                CboVendedor.Enabled = False
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -98,9 +99,8 @@
             Dim TotalImpuesto As Decimal = 0
 
             Total = DgvListado.SelectedCells.Item(10).Value
-            SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
-            TotalImpuesto = Total - SubTotal
-
+            TotalImpuesto = Math.Round((Total / (1 + DgvListado.SelectedCells.Item(9).Value)), 2)
+            SubTotal = Total - TotalImpuesto
             LblTotalM.Text = Total
             LblTotalImpuestoM.Text = TotalImpuesto
             LblSubTotalM.Text = SubTotal
@@ -276,18 +276,11 @@
 
     Private Sub FormatoM()
         DgvListadoM.Columns(0).Visible = False
-        DgvListadoM.Columns(2).Visible = False
         DgvListadoM.Columns(0).Width = 100
         DgvListadoM.Columns(1).Width = 60
+        DgvListadoM.Columns(2).Width = 150
         DgvListadoM.Columns(3).Width = 150
         DgvListadoM.Columns(4).Width = 150
-        DgvListadoM.Columns(5).Width = 100
-        DgvListadoM.Columns(6).Width = 70
-        DgvListadoM.Columns(7).Width = 70
-        DgvListadoM.Columns(8).Width = 60
-        DgvListadoM.Columns(9).Width = 100
-        DgvListadoM.Columns(10).Width = 100
-        DgvListadoM.Columns(11).Width = 100
     End Sub
     Private Sub FiltrarM()
         Try
@@ -296,10 +289,10 @@
             Dim FechaFin As Date
             FechaInicio = DtFechaInicioM.Value
             FechaFin = DtFechaFinM.Value
-            DgvListadoM.DataSource = Neg.ConsultaSoloFechas(FechaInicio, FechaFin)
+            DgvListadoM.DataSource = Neg.ConsultaFechasMas(FechaInicio, FechaFin)
             DgvListadoM.Visible = True
             LblTotalReg.Text = "Total Registros: " & DgvListadoM.DataSource.Rows.Count
-            Me.FormatoFecha()
+            Me.FormatoM()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -310,6 +303,12 @@
     End Sub
 
     Private Sub BtnReporteM_Click(sender As Object, e As EventArgs) Handles BtnReporteM.Click
-
+        Try
+            Variables.RepFechaInicio = DtFechaInicioM.Value
+            Variables.RepFechaFin = DtFechaFinM.Value
+            FrmReporteTop.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

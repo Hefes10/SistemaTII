@@ -40,10 +40,6 @@
         End Try
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs)
-        Me.Buscar()
-    End Sub
-
     Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
         Variables.IdProveedor = DgvListado.SelectedCells.Item(1).Value
         Variables.NombreProveedor = DgvListado.SelectedCells.Item(3).Value
@@ -52,5 +48,13 @@
 
     Private Sub FrmProveedor__Ingreso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Listar()
+    End Sub
+
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        Me.Buscar()
+    End Sub
+
+    Private Sub BtnNuevoProveedor_Click(sender As Object, e As EventArgs) Handles BtnNuevoProveedor.Click
+        FrmProveedor.Show()
     End Sub
 End Class

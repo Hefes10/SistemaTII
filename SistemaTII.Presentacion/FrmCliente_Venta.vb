@@ -39,11 +39,6 @@
         End Try
     End Sub
 
-
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs)
-        Me.Buscar()
-    End Sub
-
     Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
         Variables.IdCliente = DgvListado.SelectedCells.Item(1).Value
         Variables.NombreCliente = DgvListado.SelectedCells.Item(3).Value
@@ -51,5 +46,13 @@
     End Sub
     Private Sub FrmCliente_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Listar()
+    End Sub
+
+    Private Sub BtnNuevoCliente_Click(sender As Object, e As EventArgs) Handles BtnNuevoCliente.Click
+        FrmCliente.Show()
+    End Sub
+
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        Me.Buscar()
     End Sub
 End Class

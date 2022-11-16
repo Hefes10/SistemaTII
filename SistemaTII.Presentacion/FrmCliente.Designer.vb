@@ -229,7 +229,7 @@ Partial Class FrmCliente
         '
         'BtnActualizar
         '
-        Me.BtnActualizar.Location = New System.Drawing.Point(159, 410)
+        Me.BtnActualizar.Location = New System.Drawing.Point(183, 412)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(143, 23)
         Me.BtnActualizar.TabIndex = 7
@@ -271,7 +271,7 @@ Partial Class FrmCliente
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(330, 410)
+        Me.BtnCancelar.Location = New System.Drawing.Point(354, 412)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(145, 23)
         Me.BtnCancelar.TabIndex = 1
@@ -280,7 +280,7 @@ Partial Class FrmCliente
         '
         'BtnInsertar
         '
-        Me.BtnInsertar.Location = New System.Drawing.Point(159, 410)
+        Me.BtnInsertar.Location = New System.Drawing.Point(183, 412)
         Me.BtnInsertar.Name = "BtnInsertar"
         Me.BtnInsertar.Size = New System.Drawing.Size(143, 23)
         Me.BtnInsertar.TabIndex = 0

@@ -53,7 +53,7 @@
             Dim Valor As String
             Valor = TxtValor.Text
             DgvListado.DataSource = Neg.Buscar(Valor)
-
+            DgvListado.Visible = True
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -157,7 +157,6 @@
         If TxtValor.Text <> "" Then
             Me.Buscar()
         End If
-        ChkSeleccionar.Visible = True
     End Sub
     Private Sub BtnBuscarProveedor_Click(sender As Object, e As EventArgs) Handles BtnBuscarProveedor.Click
         FrmProveedor__Ingreso.ShowDialog()
@@ -273,9 +272,8 @@
             Dim TotalImpuesto As Decimal = 0
 
             Total = DgvListado.SelectedCells.Item(10).Value
-            SubTotal = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
-            TotalImpuesto = Total - SubTotal
-
+            TotalImpuesto = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
+            SubTotal = Total - TotalImpuesto
             LblTotalM.Text = Total
             LblTotalImpuestoM.Text = TotalImpuesto
             LblSubTotalM.Text = SubTotal
@@ -347,4 +345,5 @@
             e.Handled = True
         End If
     End Sub
+
 End Class

@@ -37,6 +37,7 @@ Public Class FrmCliente
             Dim Valor As String
             Valor = TxtValor.Text
             DgvListado.DataSource = Neg.BuscarClientes(Valor)
+            DgvListado.Visible = True
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -132,11 +133,13 @@ Public Class FrmCliente
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         If TxtValor.Text <> "" Then
             Me.Buscar()
+            ChkSeleccionar.Visible = True
         End If
     End Sub
 
     Private Sub BtnListarClientes_Click(sender As Object, e As EventArgs) Handles BtnListarClientes.Click
         Me.Listar()
+        ChkSeleccionar.Visible = True
     End Sub
 
     Private Sub ChkSeleccionar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSeleccionar.CheckedChanged
@@ -190,6 +193,7 @@ Public Class FrmCliente
             Else
                 MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
             End If
+            FrmCliente_Venta.Refresh()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -227,5 +231,13 @@ Public Class FrmCliente
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Limpiar()
         TabGeneral.SelectedIndex = 0
+    End Sub
+
+    Private Sub TxtNombre_Validating(sender As Object, e As CancelEventArgs) Handles TxtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el nombre del cliente, este dato es obligatorio")
+        End If
     End Sub
 End Class

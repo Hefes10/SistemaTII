@@ -278,7 +278,7 @@
             Dim TotalImpuesto As Decimal = 0
 
             Total = DgvListado.SelectedCells.Item(10).Value
-            TotalImpuesto = Math.Round(Total / (1 + DgvListado.SelectedCells.Item(9).Value), 2)
+            TotalImpuesto = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
             SubTotal = Total - TotalImpuesto
 
             LblTotalM.Text = Total
@@ -357,7 +357,7 @@
         Me.CrearTablaDetalle()
     End Sub
 
-    Private Sub TxtSerieComprobante_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtSerieComprobante.KeyPress
+    Private Sub TxtSerieComprobante_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtSerieComprobante.KeyPress, TxtSerieComprobante.TextChanged
         If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
             e.Handled = True
         End If
@@ -380,4 +380,5 @@
         TxtSerieComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(0).ToString
         TxtNumComprobante.Text = Neg.CargarComprobante(CboTipoComprobante.Text).Rows(0).ItemArray(1).ToString + 1
     End Sub
+
 End Class

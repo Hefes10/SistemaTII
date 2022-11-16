@@ -124,7 +124,7 @@ Partial Class FrmIngreso
         '
         'BtnAnular
         '
-        Me.BtnAnular.Location = New System.Drawing.Point(487, 445)
+        Me.BtnAnular.Location = New System.Drawing.Point(494, 593)
         Me.BtnAnular.Name = "BtnAnular"
         Me.BtnAnular.Size = New System.Drawing.Size(154, 23)
         Me.BtnAnular.TabIndex = 7
@@ -134,7 +134,7 @@ Partial Class FrmIngreso
         'ChkSeleccionar
         '
         Me.ChkSeleccionar.AutoSize = True
-        Me.ChkSeleccionar.Location = New System.Drawing.Point(7, 446)
+        Me.ChkSeleccionar.Location = New System.Drawing.Point(19, 595)
         Me.ChkSeleccionar.Name = "ChkSeleccionar"
         Me.ChkSeleccionar.Size = New System.Drawing.Size(104, 21)
         Me.ChkSeleccionar.TabIndex = 4
@@ -160,7 +160,7 @@ Partial Class FrmIngreso
         'Lbltotal
         '
         Me.Lbltotal.AutoSize = True
-        Me.Lbltotal.Location = New System.Drawing.Point(688, 451)
+        Me.Lbltotal.Location = New System.Drawing.Point(695, 599)
         Me.Lbltotal.Name = "Lbltotal"
         Me.Lbltotal.Size = New System.Drawing.Size(40, 17)
         Me.Lbltotal.TabIndex = 1
@@ -179,7 +179,7 @@ Partial Class FrmIngreso
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1073, 566)
+        Me.TabPage1.Size = New System.Drawing.Size(1073, 647)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -195,9 +195,9 @@ Partial Class FrmIngreso
         Me.PanelMostrar.Controls.Add(Me.Label9)
         Me.PanelMostrar.Controls.Add(Me.Label8)
         Me.PanelMostrar.Controls.Add(Me.DgvMostrarDetalle)
-        Me.PanelMostrar.Location = New System.Drawing.Point(156, 100)
+        Me.PanelMostrar.Location = New System.Drawing.Point(136, 112)
         Me.PanelMostrar.Name = "PanelMostrar"
-        Me.PanelMostrar.Size = New System.Drawing.Size(921, 460)
+        Me.PanelMostrar.Size = New System.Drawing.Size(958, 529)
         Me.PanelMostrar.TabIndex = 9
         Me.PanelMostrar.Visible = False
         '
@@ -217,7 +217,7 @@ Partial Class FrmIngreso
         '
         Me.LblTotalM.AutoSize = True
         Me.LblTotalM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTotalM.Location = New System.Drawing.Point(771, 429)
+        Me.LblTotalM.Location = New System.Drawing.Point(802, 494)
         Me.LblTotalM.Name = "LblTotalM"
         Me.LblTotalM.Size = New System.Drawing.Size(19, 20)
         Me.LblTotalM.TabIndex = 6
@@ -227,7 +227,7 @@ Partial Class FrmIngreso
         '
         Me.LblTotalImpuestoM.AutoSize = True
         Me.LblTotalImpuestoM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTotalImpuestoM.Location = New System.Drawing.Point(771, 398)
+        Me.LblTotalImpuestoM.Location = New System.Drawing.Point(802, 463)
         Me.LblTotalImpuestoM.Name = "LblTotalImpuestoM"
         Me.LblTotalImpuestoM.Size = New System.Drawing.Size(19, 20)
         Me.LblTotalImpuestoM.TabIndex = 5
@@ -237,7 +237,7 @@ Partial Class FrmIngreso
         '
         Me.LblSubTotalM.AutoSize = True
         Me.LblSubTotalM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblSubTotalM.Location = New System.Drawing.Point(771, 365)
+        Me.LblSubTotalM.Location = New System.Drawing.Point(802, 430)
         Me.LblSubTotalM.Name = "LblSubTotalM"
         Me.LblSubTotalM.Size = New System.Drawing.Size(19, 20)
         Me.LblSubTotalM.TabIndex = 4
@@ -246,7 +246,7 @@ Partial Class FrmIngreso
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(588, 429)
+        Me.Label10.Location = New System.Drawing.Point(619, 494)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(40, 17)
         Me.Label10.TabIndex = 3
@@ -255,7 +255,7 @@ Partial Class FrmIngreso
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(588, 398)
+        Me.Label9.Location = New System.Drawing.Point(619, 463)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(101, 17)
         Me.Label9.TabIndex = 2
@@ -264,7 +264,7 @@ Partial Class FrmIngreso
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(588, 365)
+        Me.Label8.Location = New System.Drawing.Point(619, 430)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 17)
         Me.Label8.TabIndex = 1
@@ -275,13 +275,13 @@ Partial Class FrmIngreso
         Me.DgvMostrarDetalle.AllowUserToAddRows = False
         Me.DgvMostrarDetalle.AllowUserToDeleteRows = False
         Me.DgvMostrarDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvMostrarDetalle.Location = New System.Drawing.Point(40, 49)
+        Me.DgvMostrarDetalle.Location = New System.Drawing.Point(19, 49)
         Me.DgvMostrarDetalle.Name = "DgvMostrarDetalle"
         Me.DgvMostrarDetalle.ReadOnly = True
         Me.DgvMostrarDetalle.RowHeadersWidth = 51
         Me.DgvMostrarDetalle.RowTemplate.Height = 24
         Me.DgvMostrarDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvMostrarDetalle.Size = New System.Drawing.Size(835, 309)
+        Me.DgvMostrarDetalle.Size = New System.Drawing.Size(895, 368)
         Me.DgvMostrarDetalle.TabIndex = 0
         '
         'DgvListado
@@ -297,7 +297,7 @@ Partial Class FrmIngreso
         Me.DgvListado.RowHeadersWidth = 51
         Me.DgvListado.RowTemplate.Height = 24
         Me.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvListado.Size = New System.Drawing.Size(1020, 339)
+        Me.DgvListado.Size = New System.Drawing.Size(1020, 499)
         Me.DgvListado.TabIndex = 0
         '
         'TabGeneral
@@ -307,7 +307,7 @@ Partial Class FrmIngreso
         Me.TabGeneral.Location = New System.Drawing.Point(12, 12)
         Me.TabGeneral.Name = "TabGeneral"
         Me.TabGeneral.SelectedIndex = 0
-        Me.TabGeneral.Size = New System.Drawing.Size(1081, 595)
+        Me.TabGeneral.Size = New System.Drawing.Size(1081, 676)
         Me.TabGeneral.TabIndex = 2
         '
         'TabPage2
@@ -320,7 +320,7 @@ Partial Class FrmIngreso
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1073, 566)
+        Me.TabPage2.Size = New System.Drawing.Size(1073, 647)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mantenimiento"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -524,7 +524,7 @@ Partial Class FrmIngreso
         Me.TxtImpuesto.ReadOnly = True
         Me.TxtImpuesto.Size = New System.Drawing.Size(93, 22)
         Me.TxtImpuesto.TabIndex = 23
-        Me.TxtImpuesto.Text = "0.18"
+        Me.TxtImpuesto.Text = "0.21"
         '
         'Label1
         '
@@ -621,7 +621,7 @@ Partial Class FrmIngreso
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1105, 619)
+        Me.ClientSize = New System.Drawing.Size(1134, 700)
         Me.Controls.Add(Me.TabGeneral)
         Me.Name = "FrmIngreso"
         Me.Text = "Ingresos"

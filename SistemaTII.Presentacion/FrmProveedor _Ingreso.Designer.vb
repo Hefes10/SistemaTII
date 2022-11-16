@@ -24,6 +24,7 @@ Partial Class FrmProveedor__Ingreso
     Private Sub InitializeComponent()
         Me.TabGeneral = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnNuevoProveedor = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
@@ -45,6 +46,7 @@ Partial Class FrmProveedor__Ingreso
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnNuevoProveedor)
         Me.TabPage1.Controls.Add(Me.BtnBuscar)
         Me.TabPage1.Controls.Add(Me.TxtValor)
         Me.TabPage1.Controls.Add(Me.Lbltotal)
@@ -56,6 +58,15 @@ Partial Class FrmProveedor__Ingreso
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnNuevoProveedor
+        '
+        Me.BtnNuevoProveedor.Location = New System.Drawing.Point(40, 430)
+        Me.BtnNuevoProveedor.Name = "BtnNuevoProveedor"
+        Me.BtnNuevoProveedor.Size = New System.Drawing.Size(228, 37)
+        Me.BtnNuevoProveedor.TabIndex = 4
+        Me.BtnNuevoProveedor.Text = "Nuevo Proveedor"
+        Me.BtnNuevoProveedor.UseVisualStyleBackColor = True
         '
         'BtnBuscar
         '
@@ -133,4 +144,5 @@ Partial Class FrmProveedor__Ingreso
     Friend WithEvents Lbltotal As Label
     Friend WithEvents DgvListado As DataGridView
     Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
+    Friend WithEvents BtnNuevoProveedor As Button
 End Class

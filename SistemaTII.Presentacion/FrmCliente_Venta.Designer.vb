@@ -29,6 +29,7 @@ Partial Class FrmCliente_Venta
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Lbltotal = New System.Windows.Forms.Label()
+        Me.BtnNuevoCliente = New System.Windows.Forms.Button()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -70,6 +71,7 @@ Partial Class FrmCliente_Venta
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnNuevoCliente)
         Me.TabPage1.Controls.Add(Me.BtnBuscar)
         Me.TabPage1.Controls.Add(Me.TxtValor)
         Me.TabPage1.Controls.Add(Me.Lbltotal)
@@ -107,6 +109,15 @@ Partial Class FrmCliente_Venta
         Me.Lbltotal.TabIndex = 1
         Me.Lbltotal.Text = "Total"
         '
+        'BtnNuevoCliente
+        '
+        Me.BtnNuevoCliente.Location = New System.Drawing.Point(48, 428)
+        Me.BtnNuevoCliente.Name = "BtnNuevoCliente"
+        Me.BtnNuevoCliente.Size = New System.Drawing.Size(199, 39)
+        Me.BtnNuevoCliente.TabIndex = 4
+        Me.BtnNuevoCliente.Text = "Nuevo cliente"
+        Me.BtnNuevoCliente.UseVisualStyleBackColor = True
+        '
         'FrmCliente_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -133,4 +144,5 @@ Partial Class FrmCliente_Venta
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents TxtValor As TextBox
     Friend WithEvents Lbltotal As Label
+    Friend WithEvents BtnNuevoCliente As Button
 End Class

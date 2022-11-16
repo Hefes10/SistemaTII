@@ -1,4 +1,6 @@
-﻿Public Class FrmProveedor
+﻿Imports System.ComponentModel
+
+Public Class FrmProveedor
 
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False
@@ -36,6 +38,7 @@
             Dim Valor As String
             Valor = TxtValor.Text
             DgvListado.DataSource = Neg.BuscarProveedores(Valor)
+            DgvListado.Visible = True
             Lbltotal.Text = "Total Registros: " & DgvListado.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -74,35 +77,6 @@
         End Try
     End Sub
 
-    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs)
-        Try
-            If Me.ValidateChildren = True And TxtNombre.Text <> "" And TxtId.Text <> "" Then
-                Dim Obj As New Entidades.Persona
-                Dim Neg As New Negocio.NPersona
-
-                Obj.IdPersona = TxtId.Text
-                Obj.TipoPersona = "Proveedor"
-                Obj.Nombre = TxtNombre.Text
-                Obj.TipoDocumento = CboTipoDocumento.Text
-                Obj.NumDocumento = TxtNumDocumento.Text
-                Obj.Direccion = TxtDireccion.Text
-                Obj.Telefono = TxtTelefono.Text
-                Obj.Email = TxtEmail.Text
-
-                If (Neg.Actualizar(Obj)) Then
-                    MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
-                    Me.Listar()
-                Else
-                    MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
-                End If
-            Else
-                MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
     Private Sub DgvListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellContentClick
         If e.ColumnIndex = DgvListado.Columns.Item("Seleccionar").Index Then
             Dim chkcell As DataGridViewCheckBoxCell = DgvListado.Rows(e.RowIndex).Cells("Seleccionar")
@@ -112,12 +86,6 @@
 
     Private Sub TxtNombre_TextChanged(sender As Object, e As KeyPressEventArgs)
         If IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs)
-        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
             e.Handled = True
         End If
     End Sub
@@ -141,7 +109,9 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Me.Buscar()
+        If TxtValor.Text <> "" Then
+            Me.Buscar()
+        End If
     End Sub
 
     Private Sub BtnListarProveedores_Click(sender As Object, e As EventArgs) Handles BtnListarProveedores.Click
@@ -208,4 +178,56 @@
             End Try
         End If
     End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Try
+            If Me.ValidateChildren = True And TxtNombre.Text <> "" And TxtId.Text <> "" Then
+                Dim Obj As New Entidades.Persona
+                Dim Neg As New Negocio.NPersona
+
+                Obj.IdPersona = TxtId.Text
+                Obj.TipoPersona = "Proveedor"
+                Obj.Nombre = TxtNombre.Text
+                Obj.TipoDocumento = CboTipoDocumento.Text
+                Obj.NumDocumento = TxtNumDocumento.Text
+                Obj.Direccion = TxtDireccion.Text
+                Obj.Telefono = TxtTelefono.Text
+                Obj.Email = TxtEmail.Text
+
+                If (Neg.Actualizar(Obj)) Then
+                    MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización Correcta")
+                    Me.Listar()
+                Else
+                    MsgBox("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización Incorrecta")
+                End If
+            Else
+                MsgBox("Rellene todos los campos obligatorios (*)", vbOKOnly + vbCritical, "Falta ingresar datos")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub TxtNombre_Validating(sender As Object, e As CancelEventArgs) Handles TxtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el nombre del Proveedor, este campo es obligatorio")
+        End If
+    End Sub
+
+    Private Sub TxtNumDocumento_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TxtNumDocumento.KeyPress
+        If Not IsNumeric(e.KeyChar) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtNumDocumento_Validating(sender As Object, e As CancelEventArgs) Handles TxtNumDocumento.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorIcono.SetError(sender, "")
+        Else
+            Me.ErrorIcono.SetError(sender, "Ingrese el número de documento del proveedor, este dato es obligatorio")
+        End If
+    End Sub
+
 End Class

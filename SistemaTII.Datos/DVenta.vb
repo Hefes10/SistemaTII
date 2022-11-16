@@ -90,7 +90,23 @@ Public Class DVenta
             Throw ex
         End Try
     End Function
-
+    Public Function ConsultaFechasMas(FechaInicio As Date, FechaFin As Date) As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("venta_consulta_top10", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            Comando.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = FechaInicio
+            Comando.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = FechaFin
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
     Public Function UltimoComprobante(name As String) As Object
         Try
             Dim Resultado As SqlDataReader
